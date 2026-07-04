@@ -62,13 +62,13 @@ JSON-LD, footer, contact page, branches, sitemap, etc).
   (accessible accordion), `/privacy-policy`, `/terms`, custom 404.
 - **SEO**: per-page metadata, Open Graph/Twitter cards, dynamic
   `sitemap.xml`, dynamic `robots.txt`, LocalBusiness JSON-LD structured
-  data driven from the verified branch data.
+data driven from the verified branch data.
 - **Accessibility**: skip-to-content link, visible focus rings, ARIA
   labels/expanded states, `prefers-reduced-motion` support (disables
   Lenis smooth scroll and cursor glow), keyboard-operable nav/menu/forms.
 - **Motion system**: Lenis smooth scroll + GSAP ScrollTrigger wired up
-  globally; Framer Motion for scroll reveals, page transitions, and
-  micro-interactions (hover lift, glow, tab transitions).
+globally; Framer Motion for scroll reveals, page transitions, and
+micro-interactions (hover lift, glow, tab transitions).
 
 ## What's intentionally scoped as a next pass
 
@@ -83,7 +83,7 @@ shallow pass at everything. Natural next steps:
    photography of the real salons/work.
 3. Wire `ContactForm.tsx` and `BookingFlow.tsx` submit handlers to a real
    backend (email service, CRM, or booking system) — they currently log
-   to console and simulate success.
+to console and simulate success.
 4. Expand the 3D hero if desired (additional models like a chair or
    dryer) — current scene is deliberately lightweight for performance;
    heavier GLTF models should be compressed (Draco/Meshopt) and lazy

@@ -15,6 +15,7 @@ const detailsSchema = z.object({
   name: z.string().min(2, 'Please enter your full name.'),
   phone: z.string().min(10, 'Enter a valid phone number.').max(15),
   notes: z.string().max(300).optional(),
+  colourNumber: z.string().max(100).optional(),
 });
 type Details = z.infer<typeof detailsSchema>;
 
@@ -143,11 +144,17 @@ export default function BookingFlow() {
       const appointmentTime = `${formattedDate} at ${selectedTime}`;
       const webBookingId = `#W${Math.floor(100 + Math.random() * 900)}`;
 
+      let parsedColour = details.colourNumber || "";
+      if (!parsedColour && details.notes && details.notes.includes("Requested Shade:")) {
+        parsedColour = details.notes.split("Requested Shade:")[1]?.trim() || "";
+      }
+
       await addDoc(collection(db, "tickets"), {
         id: webBookingId,
         customerName: details.name,
         phone: details.phone,
         serviceType: service,
+        colourNumber: parsedColour,
         gender: gender,
         serviceCategory: serviceCategory,
         status: "Waiting",
@@ -379,6 +386,14 @@ export default function BookingFlow() {
                   <label htmlFor="b-notes" className="mb-2 block text-sm text-muted">Notes (optional)</label>
                   <textarea id="b-notes" rows={3} {...register('notes')} className="w-full resize-none rounded-lg border border-border bg-transparent px-4 py-3 text-white outline-none focus:border-gold" />
                 </div>
+                {(service?.toLowerCase().includes("colour") || 
+                  service?.toLowerCase().includes("highlights") || 
+                  service?.toLowerCase().includes("touch up")) && (
+                  <div>
+                    <label htmlFor="b-colour" className="mb-2 block text-sm text-muted">Hair Colour Number / Shade (optional)</label>
+                    <input id="b-colour" {...register('colourNumber')} placeholder="e.g. Igora 5-0, Yutika 4.0" className="w-full rounded-lg border border-border bg-transparent px-4 py-3 text-white outline-none focus:border-gold" />
+                  </div>
+                )}
                 <button type="submit" className="w-full rounded-full bg-gold py-3.5 text-sm font-medium text-bg transition-all hover:shadow-gold hover:brightness-110 cursor-pointer">
                   Review Booking
                 </button>
@@ -396,6 +411,7 @@ export default function BookingFlow() {
                   <p><span className="text-white font-medium">Name:</span> {details.name}</p>
                   <p><span className="text-white font-medium">Phone:</span> {details.phone}</p>
                   {details.notes && <p><span className="text-white font-medium">Notes:</span> {details.notes}</p>}
+                  {details.colourNumber && <p><span className="text-white font-medium">Colour Number:</span> {details.colourNumber}</p>}
                 </div>
                 <button
                   onClick={handleConfirm}

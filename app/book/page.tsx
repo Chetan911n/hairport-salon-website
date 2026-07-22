@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import PageHeader from '@/components/PageHeader';
 import BookingFlow from '@/components/BookingFlow';
@@ -18,7 +19,9 @@ export default function BookPage() {
       />
       <section className="pb-28 pt-4 md:pb-40">
         <div className="container-luxury">
-          <BookingFlow />
+          <Suspense fallback={<div className="text-center text-muted font-sans py-20">Loading booking portal...</div>}>
+            <BookingFlow />
+          </Suspense>
         </div>
       </section>
     </>

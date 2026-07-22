@@ -1,7 +1,8 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { useSearchParams } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -80,6 +81,10 @@ function buildCalendarDays(monthOffset: number) {
 const steps = ['Service', 'Branch', 'Date & Time', 'Your Details', 'Confirm'];
 
 export default function BookingFlow() {
+  const searchParams = useSearchParams();
+  const preselectedService = searchParams.get('preselectedService');
+  const preselectedShade = searchParams.get('shade');
+
   const [step, setStep] = useState(0);
   const [gender, setGender] = useState<"Male" | "Female">("Male");
   const [serviceCategory, setServiceCategory] = useState<"Hair" | "Skin">("Hair");
@@ -97,8 +102,24 @@ export default function BookingFlow() {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<Details>({ resolver: zodResolver(detailsSchema) });
+
+  // Handle pre-selected service & shade from Colour Guide
+  useEffect(() => {
+    if (preselectedService === 'Hair Colour') {
+      setGender('Female'); // Default to female or male, let's keep gender selector open
+      setServiceCategory('Hair');
+      setService('Hair Colour');
+    }
+  }, [preselectedService]);
+
+  useEffect(() => {
+    if (preselectedShade) {
+      setValue('notes', `Requested Shade: ${preselectedShade}`);
+    }
+  }, [preselectedShade, setValue]);
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);

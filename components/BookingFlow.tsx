@@ -79,7 +79,7 @@ function buildCalendarDays(monthOffset: number) {
   return { days, label: base.toLocaleDateString('en-IN', { month: 'long', year: 'numeric' }) };
 }
 
-const steps = ['Service', 'Branch', 'Date & Time', 'Your Details', 'Confirm'];
+const steps = ['Service', 'Date & Time', 'Your Details', 'Confirm'];
 
 export default function BookingFlow() {
   const searchParams = useSearchParams();
@@ -90,7 +90,7 @@ export default function BookingFlow() {
   const [gender, setGender] = useState<"Male" | "Female">("Male");
   const [serviceCategory, setServiceCategory] = useState<"Hair" | "Skin">("Hair");
   const [service, setService] = useState<string | null>(null);
-  const [branchId, setBranchId] = useState<string | null>(null);
+  const [branchId, setBranchId] = useState<string | null>('nashik-road');
   const [monthOffset, setMonthOffset] = useState(0);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
@@ -127,10 +127,9 @@ export default function BookingFlow() {
 
   const canProceed =
     (step === 0 && service) ||
-    (step === 1 && branchId) ||
-    (step === 2 && selectedDate && selectedTime) ||
-    step === 3 ||
-    step === 4;
+    (step === 1 && selectedDate && selectedTime) ||
+    step === 2 ||
+    step === 3;
 
   const handleConfirm = async () => {
     if (!service || !branchId || !selectedDate || !selectedTime || !details) return;
@@ -289,28 +288,6 @@ export default function BookingFlow() {
 
             {step === 1 && (
               <div>
-                <h2 className="font-display text-2xl text-white">Choose a branch</h2>
-                <div className="mt-6 space-y-3">
-                  {branches.map((b) => (
-                    <button
-                      key={b.id}
-                      onClick={() => setBranchId(b.id)}
-                      className={`w-full rounded-xl border p-4 text-left transition-all cursor-pointer ${
-                        branchId === b.id ? 'border-gold bg-gold/10' : 'border-border hover:border-gold/40'
-                      }`}
-                    >
-                      <p className="text-white">
-                        {b.name} {b.status === 'placeholder' && <span className="text-xs text-gold">(placeholder)</span>}
-                      </p>
-                      <p className="mt-1 text-xs text-muted">{b.address}</p>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {step === 2 && (
-              <div>
                 <h2 className="font-display text-2xl text-white">Pick date &amp; time</h2>
                 <div className="mt-6 flex items-center justify-between">
                   <button onClick={() => setMonthOffset((m) => Math.max(0, m - 1))} aria-label="Previous month" className="text-muted hover:text-gold cursor-pointer">
@@ -362,11 +339,11 @@ export default function BookingFlow() {
               </div>
             )}
 
-            {step === 3 && (
+            {step === 2 && (
               <form
                 onSubmit={handleSubmit((data) => {
                   setDetails(data);
-                  setStep(4);
+                  setStep(3);
                 })}
                 className="space-y-5"
                 noValidate
@@ -400,7 +377,7 @@ export default function BookingFlow() {
               </form>
             )}
 
-            {step === 4 && details && (
+            {step === 3 && details && (
               <div>
                 <h2 className="font-display text-2xl text-white">Review &amp; confirm</h2>
                 <div className="mt-6 space-y-2 rounded-xl border border-border bg-bg/40 p-6 text-sm text-muted">
@@ -427,7 +404,7 @@ export default function BookingFlow() {
         </AnimatePresence>
       </div>
 
-      {step < 4 && (
+      {step < 3 && (
         <div className="mt-6 flex justify-between">
           <button
             onClick={() => setStep((s) => Math.max(0, s - 1))}
@@ -435,7 +412,7 @@ export default function BookingFlow() {
           >
             Back
           </button>
-          {step !== 3 && (
+          {step !== 2 && (
             <button
               onClick={() => canProceed && setStep((s) => s + 1)}
               disabled={!canProceed}

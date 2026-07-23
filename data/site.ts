@@ -52,30 +52,6 @@ export const branches: Branch[] = [
     lat: 19.9525,
     lng: 73.8656,
   },
-  {
-    id: 'branch-2-placeholder',
-    name: 'Hairport — Second Branch (PLACEHOLDER)',
-    status: 'placeholder',
-    address: 'Address not publicly verified — replace before launch',
-    area: 'TBD',
-    pincode: '—',
-    hours: 'TBD',
-    mapsQuery: 'Hairport Nashik',
-    lat: 20.0059,
-    lng: 73.7912,
-  },
-  {
-    id: 'branch-3-placeholder',
-    name: 'Hairport — Third Branch (PLACEHOLDER)',
-    status: 'placeholder',
-    address: 'Address not publicly verified — replace before launch',
-    area: 'TBD',
-    pincode: '—',
-    hours: 'TBD',
-    mapsQuery: 'Hairport Nashik',
-    lat: 19.9975,
-    lng: 73.7898,
-  },
 ];
 
 export const contact = {

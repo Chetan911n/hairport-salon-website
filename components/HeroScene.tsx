@@ -56,7 +56,6 @@ export default function HeroScene() {
       gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
       camera={{ position: [0, 0.2, 6.5], fov: 42 }}
     >
-      <color attach="background" args={['#0B0B0B']} />
       <ambientLight intensity={0.4} />
       <pointLight position={[4, 4, 4]} intensity={80} color="#C8A552" />
       <pointLight position={[-4, -2, -3]} intensity={30} color="#8a6f30" />

@@ -84,7 +84,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-bg text-white font-body antialiased">
+      <body className="bg-[#0B0B0B] text-white font-body antialiased relative min-h-screen">
+        {/* Animated Flowing Gold & Black Silk Wallpaper */}
+        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+          <div 
+            style={{
+              backgroundImage: 'url("/option3_bg.jpg")',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+            className="absolute -inset-10 animate-wallpaper-flow"
+          />
+          <div className="absolute inset-0 opacity-[0.02] mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        </div>
+
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-gold focus:text-bg focus:px-4 focus:py-2 focus:rounded"
@@ -94,7 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SmoothScrollProvider>
           <CursorGlow />
           <Nav />
-          <main id="main-content">{children}</main>
+          <main id="main-content" className="relative z-10">{children}</main>
           <Footer />
         </SmoothScrollProvider>
       </body>

@@ -6,8 +6,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#0B0B0B',
-        surface: '#161616',
+        bg: 'rgba(11, 11, 11, 0.55)',
+        surface: 'rgba(22, 22, 22, 0.75)',
         card: 'rgba(255,255,255,0.05)',
         gold: {
           DEFAULT: '#C8A552',

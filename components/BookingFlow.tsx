@@ -28,7 +28,8 @@ const SERVICES_CONFIG = {
   Male: {
     Hair: [
       { name: "Haircut", description: "Precision haircut styled to your preference." },
-      { name: "Hair Colour", description: "Full head professional hair colouring." },
+      { name: "Global Colour", description: "Rich, seamless global hair colouring." },
+      { name: "Highlights Colour", description: "Custom multi-tonal highlights & detailing." },
       { name: "Hair Spa", description: "Deep conditioning and scalp treatment." },
       { name: "Head Massage", description: "Relaxing head massage with premium oils." },
       { name: "Beard Style", description: "Beard shaping, line-up and styling." },
@@ -41,14 +42,22 @@ const SERVICES_CONFIG = {
       { name: "Facial", description: "Deep skin cleansing and moisturizing treatment." },
       { name: "Cleanup", description: "Quick exfoliation and hydration cleanup." },
       { name: "Face Massage", description: "Gentle facial massage to boost blood flow." }
+    ],
+    Waxing: [
+      { name: "Chest Wax", description: "Smooth, clean chest waxing." },
+      { name: "Back Wax", description: "Clean back waxing." },
+      { name: "Full Arms Wax", description: "Waxing for smooth full arms." },
+      { name: "Full Legs Wax", description: "Waxing for smooth full legs." },
+      { name: "Underarms Wax", description: "Quick underarms waxing." },
+      { name: "Rica Wax (Arms/Legs)", description: "Premium Rica wax for sensitive skin." }
     ]
   },
   Female: {
     Hair: [
       { name: "Haircut", description: "Women's wash, cut and custom style finish." },
       { name: "Hair Spa", description: "Restorative deep conditioning treatment for hair strength." },
-      { name: "Hair Colour", description: "Professional global hair colouring." },
-      { name: "Global Colour & Highlights", description: "Seamless global colour with custom highlight detailing." },
+      { name: "Global Colour", description: "Professional global hair colouring." },
+      { name: "Highlights Colour", description: "Premium multi-tonal highlight detailing." },
       { name: "Root Touch Up", description: "Quick grey coverage and root refresh." },
       { name: "Oil Massage", description: "Therapeutic hot oil head massage." },
       { name: "Hair Fall Treatment", description: "Targeted therapy to reduce hair fall and strengthen roots." }
@@ -58,10 +67,20 @@ const SERVICES_CONFIG = {
       { name: "Facial", description: "Customized luxurious skin facial therapy." },
       { name: "Clean Up", description: "Refreshing facial exfoliation and pack." },
       { name: "Regular Pedicure & Spa", description: "Complete foot exfoliation, massage and spa mask." },
-      { name: "Regular Wax", description: "Standard waxing for smooth, hair-free skin." },
+      { name: "Bleach & D-Tan", description: "Quick skin brightening and tan removal." }
+    ],
+    Waxing: [
+      { name: "Regular Wax", description: "Standard waxing for smooth skin." },
       { name: "Rica Wax", description: "Premium, gentle Rica wax treatment." },
       { name: "Hard Wax", description: "Painless hard waxing for sensitive areas." },
-      { name: "Roll-On Wax", description: "Mess-free, efficient cartridge waxing." }
+      { name: "Roll-On Wax", description: "Mess-free, efficient cartridge waxing." },
+      { name: "Full Arms Wax", description: "Full arms waxing." },
+      { name: "Full Legs Wax", description: "Full legs waxing." },
+      { name: "Underarms Wax", description: "Quick underarms waxing." },
+      { name: "Half Arms Wax", description: "Half arms waxing." },
+      { name: "Half Legs Wax", description: "Half legs waxing." },
+      { name: "Full Body Wax", description: "Full body waxing for ultimate smoothness." },
+      { name: "Face Waxing", description: "Gentle waxing for facial areas." }
     ]
   }
 };
@@ -88,7 +107,7 @@ export default function BookingFlow() {
 
   const [step, setStep] = useState(0);
   const [gender, setGender] = useState<"Male" | "Female">("Male");
-  const [serviceCategory, setServiceCategory] = useState<"Hair" | "Skin">("Hair");
+  const [serviceCategory, setServiceCategory] = useState<"Hair" | "Skin" | "Waxing">("Hair");
   const [service, setService] = useState<string | null>(null);
   const [branchId, setBranchId] = useState<string | null>('nashik-road');
   const [monthOffset, setMonthOffset] = useState(0);
@@ -112,7 +131,7 @@ export default function BookingFlow() {
     if (preselectedService === 'Hair Colour') {
       setGender('Female'); // Default to female or male, let's keep gender selector open
       setServiceCategory('Hair');
-      setService('Hair Colour');
+      setService('Global Colour');
     }
   }, [preselectedService]);
 
@@ -250,7 +269,7 @@ export default function BookingFlow() {
 
                 {/* Service Category selector */}
                 <div className="mt-4 flex gap-3">
-                  {(["Hair", "Skin"] as const).map((cat) => (
+                  {(["Hair", "Skin", "Waxing"] as const).map((cat) => (
                     <button
                       key={cat}
                       type="button"

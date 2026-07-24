@@ -30,6 +30,7 @@ const SERVICES_CONFIG = {
       { name: "Haircut", description: "Precision haircut styled to your preference." },
       { name: "Global Colour", description: "Rich, seamless global hair colouring." },
       { name: "Highlights Colour", description: "Custom multi-tonal highlights & detailing." },
+      { name: "Beard Colour", description: "Professional beard color & grey coverage." },
       { name: "Hair Spa", description: "Deep conditioning and scalp treatment." },
       { name: "Head Massage", description: "Relaxing head massage with premium oils." },
       { name: "Beard Style", description: "Beard shaping, line-up and styling." },

@@ -31,13 +31,13 @@ export default function Nav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'py-3.5 bg-[#F8F6F2]/95 backdrop-blur-md border-b border-[#DDD4C6] shadow-md' : 'py-6 bg-gradient-to-b from-[#0A1628]/80 to-transparent'
+        scrolled ? 'py-3.5 bg-[#0F172A]/95 backdrop-blur-md border-b border-[#FACC15]/30 shadow-2xl' : 'py-6 bg-gradient-to-b from-[#0F172A]/85 to-transparent'
       }`}
     >
       <nav className="container-luxury flex items-center justify-between" aria-label="Primary">
-        <Link href="/" className="font-display text-xl sm:text-2xl tracking-widest2 text-white flex items-center gap-2 drop-shadow-md">
-          HAIR<span className="text-[#E2C067] font-serif">PORT</span>
-          <span className="text-[10px] tracking-widest text-[#E2C067] border border-[#C5A059]/40 bg-[#0A1628]/80 px-2.5 py-0.5 rounded-full uppercase font-sans font-bold hidden sm:inline-block">
+        <Link href="/" className="font-display text-xl sm:text-2xl tracking-widest2 text-white flex items-center gap-2 drop-shadow-md font-bold">
+          HAIR<span className="text-[#FACC15] font-serif">PORT</span>
+          <span className="text-[10px] tracking-widest text-[#FACC15] border border-[#FACC15]/40 bg-[#0F172A]/90 px-2.5 py-0.5 rounded-full uppercase font-sans font-bold hidden sm:inline-block">
             Est. 2018
           </span>
         </Link>
@@ -47,25 +47,23 @@ export default function Nav() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className={`relative text-xs tracking-wider uppercase font-bold transition-colors group py-1 drop-shadow-sm ${
-                  scrolled ? 'text-[#2B2B2B] hover:text-[#A87444]' : 'text-white hover:text-[#E2C067]'
-                }`}
+                className="relative text-xs tracking-wider uppercase font-bold text-white hover:text-[#FACC15] transition-colors group py-1 drop-shadow-sm"
               >
                 {l.label}
-                <span className={`absolute -bottom-1 left-0 h-px w-0 transition-all duration-300 group-hover:w-full ${scrolled ? 'bg-[#A87444]' : 'bg-[#E2C067]'}`} />
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#FACC15] transition-all duration-300 group-hover:w-full" />
               </Link>
             </li>
           ))}
         </ul>
 
         <div className="hidden lg:block">
-          <Link href="/book" className="btn-royal-gold text-xs py-2.5 px-6 shadow-lg font-bold">
+          <Link href="/book" className="btn-royal-gold text-xs py-2.5 px-6 shadow-xl font-bold">
             Book Appointment
           </Link>
         </div>
 
         <button
-          className={`lg:hidden ${scrolled ? 'text-[#2B2B2B]' : 'text-white'}`}
+          className="lg:hidden text-white"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label={open ? 'Close menu' : 'Open menu'}
@@ -81,12 +79,12 @@ export default function Nav() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:hidden overflow-hidden bg-[#F8F6F2] border-b border-[#DDD4C6] shadow-xl"
+            className="lg:hidden overflow-hidden bg-[#0F172A] border-b border-[#FACC15]/30 shadow-2xl"
           >
             <ul className="container-luxury flex flex-col gap-1 py-6">
               {links.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="block py-2.5 text-base font-bold text-[#2B2B2B] hover:text-[#A87444] transition-colors">
+                  <Link href={l.href} className="block py-2.5 text-base font-bold text-[#F8FAFC] hover:text-[#FACC15] transition-colors">
                     {l.label}
                   </Link>
                 </li>

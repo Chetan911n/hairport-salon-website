@@ -8,23 +8,23 @@
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #A87444 #F8F6F2;
+  scrollbar-color: #FACC15 #0F172A;
 }
 
 html {
-  background: #F8F6F2;
+  background: #FFFFFF;
 }
 
 body {
-  background-color: #F8F6F2;
-  color: #2B2B2B;
+  background-color: #FFFFFF;
+  color: #1F2937;
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: #A87444;
-  color: #FFFFFF;
+  background: #FACC15;
+  color: #0F172A;
 }
 
 /* Visible focus states for keyboard navigation (WCAG) */
@@ -33,25 +33,25 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #A87444;
+  outline: 2px solid #FACC15;
   outline-offset: 3px;
   border-radius: 2px;
 }
 
 .eyebrow {
-  @apply text-[#A87444] text-xs md:text-sm tracking-widest2 uppercase font-body font-semibold;
+  @apply text-[#EAB308] text-xs md:text-sm tracking-widest2 uppercase font-body font-bold;
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid #DDD4C6;
-  box-shadow: 0 4px 25px rgba(43, 43, 43, 0.05);
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  box-shadow: 0 4px 25px rgba(15, 23, 42, 0.2);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
 .gold-text {
-  color: #A87444;
+  color: #FACC15;
 }
 
 .container-luxury {
@@ -86,22 +86,22 @@ html.lenis {
   overflow: hidden;
 }
 
-/* Warm Editorial Button Styling (Clean, Tactile & Refined) */
+/* Vibrant Yellow Button on Deep Navy Fill */
 .btn-royal-gold {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #A87444;
-  color: #FFFFFF;
-  font-weight: 600;
+  background: #FACC15;
+  color: #0F172A;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   border-radius: 9999px;
   padding: 14px 32px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 18px rgba(168, 116, 68, 0.22);
+  box-shadow: 0 4px 20px rgba(250, 204, 21, 0.3);
   cursor: pointer;
 }
 
@@ -112,24 +112,18 @@ html.lenis {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
   transition: left 0.5s ease;
 }
 
 .btn-royal-gold:hover {
-  background: #8A5C33;
+  background: #EAB308;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(168, 116, 68, 0.35);
-  color: #FFFFFF;
+  box-shadow: 0 8px 30px rgba(250, 204, 21, 0.45);
 }
 
 .btn-royal-gold:hover::before {
   left: 100%;
-}
-
-.btn-royal-gold:active {
-  transform: translateY(1px) scale(0.98);
-  box-shadow: 0 2px 8px rgba(168, 116, 68, 0.2);
 }
 
 .btn-royal-outline {
@@ -137,28 +131,28 @@ html.lenis {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #DDD4C6;
-  background: #FFFFFF;
-  color: #2B2B2B;
-  font-weight: 600;
+  background: #0F172A;
+  color: #FACC15;
+  border: 1px solid #FACC15;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   border-radius: 9999px;
   padding: 14px 32px;
-  overflow: hidden;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 10px rgba(43, 43, 43, 0.04);
   cursor: pointer;
 }
 
 .btn-royal-outline:hover {
-  border-color: #A87444;
-  background: #A87444;
-  color: #FFFFFF;
+  background: #FACC15;
+  color: #0F172A;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(168, 116, 68, 0.2);
+  box-shadow: 0 8px 30px rgba(250, 204, 21, 0.3);
 }
 
-.btn-royal-outline:active {
-  transform: translateY(1px) scale(0.98);
+/* Box Styling utility */
+.card-navy-yellow {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  border: 1px solid rgba(250, 204, 21, 0.3);
 }

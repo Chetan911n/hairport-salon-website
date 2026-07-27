@@ -36,7 +36,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="relative rounded-2xl border border-[#C5A059]/40 bg-[#2B2B2B] p-8 md:p-10 shadow-2xl">
+    <div className="relative rounded-2xl border border-[#FACC15]/40 bg-[#0F172A] p-8 md:p-10 shadow-2xl">
       <AnimatePresence mode="wait">
         {submitted ? (
           <motion.div
@@ -45,14 +45,14 @@ export default function ContactForm() {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center py-10 text-center"
           >
-            <CheckCircle2 className="text-[#E2C067]" size={44} />
-            <h3 className="mt-5 font-display text-2xl font-bold text-[#F8F6F2]">Message received</h3>
-            <p className="mt-2 max-w-sm text-sm text-[#F4EFE6]/80 leading-relaxed">
+            <CheckCircle2 className="text-[#FACC15]" size={44} />
+            <h3 className="mt-5 font-display text-2xl font-bold text-[#FACC15]">Message received</h3>
+            <p className="mt-2 max-w-sm text-sm text-[#F8FAFC]/80 leading-relaxed">
               Thank you — our reception desk will get back to you shortly.
             </p>
             <button
               onClick={() => setSubmitted(false)}
-              className="mt-6 text-sm text-[#E2C067] font-bold underline underline-offset-4"
+              className="mt-6 text-sm text-[#FACC15] font-bold underline underline-offset-4"
             >
               Send another message
             </button>
@@ -66,18 +66,18 @@ export default function ContactForm() {
             className="space-y-6"
             noValidate
           >
-            <h3 className="font-display text-2xl font-bold text-[#F8F6F2] border-b border-[#C5A059]/30 pb-3">
+            <h3 className="font-display text-2xl font-bold text-[#FACC15] border-b border-[#FACC15]/30 pb-3">
               Send a Message
             </h3>
 
             <div>
-              <label htmlFor="name" className="mb-2 block text-sm font-bold text-[#F8F6F2]">
+              <label htmlFor="name" className="mb-2 block text-sm font-bold text-[#FACC15]">
                 Full name
               </label>
               <input
                 id="name"
                 {...register('name')}
-                className="w-full rounded-xl border border-[#C5A059]/40 bg-[#1E293B]/80 px-4 py-3 text-[#F8F6F2] font-semibold outline-none transition-all focus:border-[#E2C067] focus:ring-1 focus:ring-[#E2C067]"
+                className="w-full rounded-xl border border-[#FACC15]/40 bg-[#1E293B] px-4 py-3 text-[#F8FAFC] font-semibold outline-none transition-all focus:border-[#FACC15] focus:ring-1 focus:ring-[#FACC15]"
                 aria-invalid={!!errors.name}
                 aria-describedby={errors.name ? 'name-error' : undefined}
               />
@@ -90,13 +90,13 @@ export default function ContactForm() {
 
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label htmlFor="phone" className="mb-2 block text-sm font-bold text-[#F8F6F2]">
+                <label htmlFor="phone" className="mb-2 block text-sm font-bold text-[#FACC15]">
                   Phone number
                 </label>
                 <input
                   id="phone"
                   {...register('phone')}
-                  className="w-full rounded-xl border border-[#C5A059]/40 bg-[#1E293B]/80 px-4 py-3 text-[#F8F6F2] font-semibold outline-none transition-all focus:border-[#E2C067] focus:ring-1 focus:ring-[#E2C067]"
+                  className="w-full rounded-xl border border-[#FACC15]/40 bg-[#1E293B] px-4 py-3 text-[#F8FAFC] font-semibold outline-none transition-all focus:border-[#FACC15] focus:ring-1 focus:ring-[#FACC15]"
                   aria-invalid={!!errors.phone}
                   aria-describedby={errors.phone ? 'phone-error' : undefined}
                 />
@@ -107,14 +107,14 @@ export default function ContactForm() {
                 )}
               </div>
               <div>
-                <label htmlFor="email" className="mb-2 block text-sm font-bold text-[#F8F6F2]">
+                <label htmlFor="email" className="mb-2 block text-sm font-bold text-[#FACC15]">
                   Email (optional)
                 </label>
                 <input
                   id="email"
                   type="email"
                   {...register('email')}
-                  className="w-full rounded-xl border border-[#C5A059]/40 bg-[#1E293B]/80 px-4 py-3 text-[#F8F6F2] font-semibold outline-none transition-all focus:border-[#E2C067] focus:ring-1 focus:ring-[#E2C067]"
+                  className="w-full rounded-xl border border-[#FACC15]/40 bg-[#1E293B] px-4 py-3 text-[#F8FAFC] font-semibold outline-none transition-all focus:border-[#FACC15] focus:ring-1 focus:ring-[#FACC15]"
                   aria-invalid={!!errors.email}
                   aria-describedby={errors.email ? 'email-error' : undefined}
                 />
@@ -127,14 +127,14 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label htmlFor="message" className="mb-2 block text-sm font-bold text-[#F8F6F2]">
+              <label htmlFor="message" className="mb-2 block text-sm font-bold text-[#FACC15]">
                 Message
               </label>
               <textarea
                 id="message"
                 rows={4}
                 {...register('message')}
-                className="w-full resize-none rounded-xl border border-[#C5A059]/40 bg-[#1E293B]/80 px-4 py-3 text-[#F8F6F2] font-semibold outline-none transition-all focus:border-[#E2C067] focus:ring-1 focus:ring-[#E2C067]"
+                className="w-full resize-none rounded-xl border border-[#FACC15]/40 bg-[#1E293B] px-4 py-3 text-[#F8FAFC] font-semibold outline-none transition-all focus:border-[#FACC15] focus:ring-1 focus:ring-[#FACC15]"
                 aria-invalid={!!errors.message}
                 aria-describedby={errors.message ? 'message-error' : undefined}
               />

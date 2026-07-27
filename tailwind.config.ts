@@ -6,23 +6,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#F8F6F2',
-        surface: '#EFE8DE',
-        card: '#FFFFFF',
+        bg: '#FFFFFF',
+        mainText: '#1F2937',
+        surface: '#F8FAFC',
+        card: '#0F172A', // Color Y: Deep Navy Blue
+        navy: {
+          DEFAULT: '#0F172A',
+          dark: '#020617',
+          light: '#1E293B'
+        },
+        yellow: {
+          DEFAULT: '#FACC15', // Color X: Vibrant Yellow
+          soft: '#FDE047',
+          deep: '#EAB308'
+        },
         gold: {
-          DEFAULT: '#A87444',
-          soft: '#C48B57',
-          deep: '#8A5C33'
+          DEFAULT: '#FACC15',
+          soft: '#FDE047',
+          deep: '#EAB308'
         },
-        accent: {
-          DEFAULT: '#A87444',
-          soft: '#C48B57',
-          deep: '#8A5C33'
-        },
-        border: '#DDD4C6',
-        muted: '#6E6A63',
+        border: '#E2E8F0',
+        muted: '#64748B',
         white: '#FFFFFF',
-        charcoal: '#2B2B2B'
+        charcoal: '#1F2937'
       },
       fontFamily: {
         display: ['var(--font-playfair)', 'serif'],
@@ -31,14 +37,10 @@ const config: Config = {
       letterSpacing: {
         widest2: '0.35em'
       },
-      backgroundImage: {
-        'editorial-gradient': 'linear-gradient(180deg, #F8F6F2 0%, #EFE8DE 100%)',
-        'paper-grain': "url('https://www.transparenttextures.com/patterns/handmade-paper.png')"
-      },
       boxShadow: {
-        gold: '0 8px 30px rgba(168, 116, 68, 0.15)',
-        card: '0 4px 25px rgba(43, 43, 43, 0.06)',
-        subtle: '0 2px 12px rgba(43, 43, 43, 0.04)'
+        navy: '0 10px 30px rgba(15, 23, 42, 0.15)',
+        card: '0 8px 30px rgba(15, 23, 42, 0.12)',
+        subtle: '0 2px 12px rgba(15, 23, 42, 0.06)'
       },
       animation: {
         'fade-up': 'fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',

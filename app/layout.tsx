@@ -84,23 +84,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-[#F8F6F2] text-[#2B2B2B] font-body antialiased relative min-h-screen">
-        {/* Warm Editorial Luxury Background Layer */}
-        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-          {/* Warm Off-White / Cream Linen Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F8F6F2] via-[#F4EFE6] to-[#F8F6F2]" />
-          
-          {/* Soft Travertine Ambient Glow */}
-          <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(239,232,222,0.6),_transparent_70%)] blur-2xl" />
-          <div className="absolute top-1/3 right-0 w-[600px] h-[500px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(168,116,68,0.04),_transparent_70%)] blur-3xl" />
-          
-          {/* Fine Handmade Paper Texture (3% Opacity) */}
-          <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/handmade-paper.png')]" />
-        </div>
+      <body className="bg-[#FFFFFF] text-[#1F2937] font-body antialiased relative min-h-screen">
+        {/* Main Background: Pure White (#FFFFFF) */}
+        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#FFFFFF]" />
 
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#A87444] focus:text-white focus:px-4 focus:py-2 focus:rounded"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#FACC15] focus:text-[#0F172A] focus:px-4 focus:py-2 focus:rounded"
         >
           Skip to content
         </a>

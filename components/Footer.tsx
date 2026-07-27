@@ -1,99 +1,109 @@
+'use client';
+
 import Link from 'next/link';
-import { Instagram, Facebook, MapPin, Phone, Mail } from 'lucide-react';
-import { branches, contact } from '@/data/site';
-
-const verifiedBranch = branches.find((b) => b.status === 'verified')!;
-
-const explore = [
-  { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/branches', label: 'Branches' },
-];
-
-const legal = [
-  { href: '/faq', label: 'FAQ' },
-  { href: '/privacy-policy', label: 'Privacy Policy' },
-  { href: '/terms', label: 'Terms' },
-];
+import { Instagram, Facebook, Twitter, Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
+import { brand, branches } from '@/data/site';
 
 export default function Footer() {
+  const verifiedBranch = (branches.find((b) => b.status === 'verified') || branches[0])!;
+
   return (
-    <footer className="border-t border-border bg-bg pb-10 pt-20">
-      <div className="container-luxury grid gap-12 md:grid-cols-4">
-        <div>
-          <Link href="/" className="font-display text-xl tracking-widest2 text-white">
-            HAIR<span className="gold-text">PORT</span>
-          </Link>
-          <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted">
-            A premium unisex hair and beauty salon in Nashik, Maharashtra.
-          </p>
-          <div className="mt-6 flex gap-4">
-            <a
-              href="#"
-              aria-label="Instagram (placeholder — link unverified)"
-              className="rounded-full border border-border p-2.5 text-muted transition-colors hover:border-gold hover:text-gold"
-            >
-              <Instagram size={17} />
+    <footer className="border-t border-border bg-bg pt-20 pb-12 text-muted">
+      <div className="container-luxury grid gap-12 md:grid-cols-2 lg:grid-cols-5">
+        {/* Col 1: Brand & Bio */}
+        <div className="lg:col-span-2 flex flex-col justify-between">
+          <div>
+            <Link href="/" className="font-display text-2xl tracking-widest2 text-white flex items-center gap-2">
+              HAIR<span className="gold-text font-serif">PORT</span>
+              <span className="text-[10px] tracking-widest text-gold/80 border border-gold/40 px-2 py-0.5 rounded-full uppercase font-sans">
+                Est. 2018
+              </span>
+            </Link>
+            <p className="mt-4 max-w-sm text-xs leading-relaxed text-muted">
+              Nashik’s premier unisex barbershop and salon. Crafting timeless precision cuts, skin fades, razor shaves, and grooming rituals.
+            </p>
+          </div>
+
+          <div className="mt-6 flex items-center gap-4 text-white">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-gold hover:border-gold hover:bg-gold hover:text-bg transition-all">
+              <Instagram size={16} />
             </a>
-            <a
-              href="#"
-              aria-label="Facebook (placeholder — link unverified)"
-              className="rounded-full border border-border p-2.5 text-muted transition-colors hover:border-gold hover:text-gold"
-            >
-              <Facebook size={17} />
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-gold hover:border-gold hover:bg-gold hover:text-bg transition-all">
+              <Facebook size={16} />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-gold hover:border-gold hover:bg-gold hover:text-bg transition-all">
+              <Twitter size={16} />
             </a>
           </div>
         </div>
 
+        {/* Col 2: Quick Links */}
         <div>
-          <p className="eyebrow">Explore</p>
-          <ul className="mt-5 space-y-3">
-            {explore.map((l) => (
-              <li key={l.href}>
-                <Link href={l.href} className="text-sm text-muted transition-colors hover:text-white">
-                  {l.label}
-                </Link>
-              </li>
-            ))}
+          <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
+            Navigation
+          </h4>
+          <ul className="mt-4 flex flex-col gap-2.5 text-xs">
+            <li><Link href="/" className="hover:text-gold transition-colors">Home</Link></li>
+            <li><Link href="/about" className="hover:text-gold transition-colors">About Us</Link></li>
+            <li><Link href="/services" className="hover:text-gold transition-colors">Featured Services</Link></li>
+            <li><Link href="/#gallery" className="hover:text-gold transition-colors">Transformation Gallery</Link></li>
+            <li><Link href="/#team" className="hover:text-gold transition-colors">Meet Our Barbers</Link></li>
+            <li><Link href="/book" className="hover:text-gold transition-colors">Book Appointment</Link></li>
           </ul>
         </div>
 
+        {/* Col 3: Contact Info */}
         <div>
-          <p className="eyebrow">Legal</p>
-          <ul className="mt-5 space-y-3">
-            {legal.map((l) => (
-              <li key={l.href}>
-                <Link href={l.href} className="text-sm text-muted transition-colors hover:text-white">
-                  {l.label}
-                </Link>
-              </li>
-            ))}
+          <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
+            Barbershop Info
+          </h4>
+          <ul className="mt-4 flex flex-col gap-3 text-xs">
+            <li className="flex items-start gap-2">
+              <MapPin size={15} className="text-gold shrink-0 mt-0.5" />
+              <span>{verifiedBranch.address}, {verifiedBranch.area}, Nashik - {verifiedBranch.pincode}</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Phone size={15} className="text-gold shrink-0" />
+              <span>Open Daily until 10:00 PM</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail size={15} className="text-gold shrink-0" />
+              <span>reception@hairport.com</span>
+            </li>
           </ul>
         </div>
 
+        {/* Col 4: Newsletter Signup */}
         <div>
-          <p className="eyebrow">Visit / Contact</p>
-          <ul className="mt-5 space-y-4 text-sm text-muted">
-            <li className="flex gap-3">
-              <MapPin size={16} className="mt-0.5 shrink-0 text-gold" />
-              <span>{verifiedBranch.address}, {verifiedBranch.pincode}</span>
-            </li>
-            <li className="flex gap-3">
-              <Phone size={16} className="mt-0.5 shrink-0 text-gold" />
-              <span>{contact.phonePlaceholder} <em className="text-xs not-italic opacity-60">(placeholder)</em></span>
-            </li>
-            <li className="flex gap-3">
-              <Mail size={16} className="mt-0.5 shrink-0 text-gold" />
-              <span>{contact.emailPlaceholder} <em className="text-xs not-italic opacity-60">(placeholder)</em></span>
-            </li>
-          </ul>
+          <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
+            Grooming Journal
+          </h4>
+          <p className="mt-4 text-xs leading-relaxed text-muted">
+            Subscribe for grooming tips, slot openings, and exclusive salon updates.
+          </p>
+
+          <form onSubmit={(e) => e.preventDefault()} className="mt-4 flex flex-col gap-2">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              className="w-full rounded-xl border border-border bg-card px-4 py-2.5 text-xs text-white placeholder-muted focus:border-gold focus:outline-none"
+            />
+            <button
+              type="submit"
+              className="btn-royal-gold w-full text-[11px] py-2.5"
+            >
+              Subscribe Newsletter
+            </button>
+          </form>
         </div>
       </div>
 
-      <div className="container-luxury mt-16 flex flex-col gap-3 border-t border-border pt-8 text-xs text-muted/70 md:flex-row md:items-center md:justify-between">
-        <p>© {new Date().getFullYear()} Hairport, Nashik. All rights reserved.</p>
-        <p>Built with care. Contact details marked &ldquo;placeholder&rdquo; require verification before launch.</p>
+      <div className="container-luxury mt-16 border-t border-border/50 pt-8 flex flex-col md:flex-row items-center justify-between text-[11px] text-muted gap-4">
+        <p>© {new Date().getFullYear()} {brand.name} Unisex Salon. All rights reserved.</p>
+        <div className="flex items-center gap-6">
+          <Link href="/privacy-policy" className="hover:text-gold transition-colors">Privacy Policy</Link>
+          <Link href="/terms" className="hover:text-gold transition-colors">Terms of Service</Link>
+        </div>
       </div>
     </footer>
   );

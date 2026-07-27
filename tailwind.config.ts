@@ -6,22 +6,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: 'rgba(10, 22, 40, 0.75)',
-        surface: 'rgba(18, 34, 56, 0.92)',
-        card: 'rgba(27, 38, 59, 0.75)',
-        royal: {
-          navy: '#0A1628',
-          deep: '#122238',
-          crimson: '#7A1C2E',
-          gold: '#C5A059'
-        },
+        bg: '#111111',
+        surface: '#1C1C1C',
+        card: 'rgba(28, 28, 28, 0.85)',
         gold: {
-          DEFAULT: '#C5A059',
-          soft: '#E2C067',
-          deep: '#B8860B'
+          DEFAULT: '#C9A227',
+          soft: '#DFBB48',
+          deep: '#9B7B16'
         },
-        border: 'rgba(197, 160, 89, 0.28)',
-        muted: '#94A3B8'
+        border: 'rgba(201, 162, 39, 0.22)',
+        muted: '#888888',
+        white: '#F8F8F8'
       },
       fontFamily: {
         display: ['var(--font-playfair)', 'serif'],
@@ -31,15 +26,15 @@ const config: Config = {
         widest2: '0.35em'
       },
       backgroundImage: {
-        'gold-glow': 'radial-gradient(circle at 50% 50%, rgba(200,165,82,0.18), transparent 70%)',
+        'gold-glow': 'radial-gradient(circle at 50% 50%, rgba(201, 162, 39, 0.18), transparent 70%)',
         'grain': "url('/images/grain.png')"
       },
       boxShadow: {
-        gold: '0 0 40px rgba(200,165,82,0.25)',
-        card: '0 8px 40px rgba(0,0,0,0.5)'
+        gold: '0 0 35px rgba(201, 162, 39, 0.3)',
+        card: '0 8px 30px rgba(0, 0, 0, 0.7)'
       },
       animation: {
-        'fade-up': 'fadeUp 1s cubic-bezier(0.16,1,0.3,1) forwards',
+        'fade-up': 'fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         'shimmer': 'shimmer 3s linear infinite'
       },
       keyframes: {

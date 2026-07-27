@@ -7,15 +7,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const links = [
-  { href: '/about', label: 'Heritage' },
-  { href: '/services', label: 'Services' },
-  { href: '/services/shaving', label: 'Shaving' },
-  { href: '/services/skin', label: 'Skin & Facial' },
-  { href: '/services/hair', label: 'Hair & Styling' },
-  { href: '/services/hair-spa', label: 'Spa & Grooming' },
-  { href: '/branches', label: 'Barbershop Lounge' },
-  { href: '/testimonials', label: 'Reviews' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/', label: 'Home' },
+  { href: '/#about', label: 'About' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#gallery', label: 'Gallery' },
+  { href: '/#team', label: 'Team' },
+  { href: '/#reviews', label: 'Reviews' },
+  { href: '/#contact', label: 'Contact' },
 ];
 
 export default function Nav() {
@@ -34,7 +32,7 @@ export default function Nav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'py-3 glass' : 'py-6 bg-transparent'
+        scrolled ? 'py-3 glass shadow-card' : 'py-6 bg-transparent'
       }`}
     >
       <nav className="container-luxury flex items-center justify-between" aria-label="Primary">
@@ -45,12 +43,12 @@ export default function Nav() {
           </span>
         </Link>
 
-        <ul className="hidden xl:flex items-center gap-7">
+        <ul className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="relative text-xs tracking-wider uppercase font-medium text-muted hover:text-gold transition-colors group py-1"
+                className="relative text-xs tracking-wider uppercase font-semibold text-muted hover:text-gold transition-colors group py-1"
               >
                 {l.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
@@ -59,17 +57,14 @@ export default function Nav() {
           ))}
         </ul>
 
-        <div className="hidden xl:block">
-          <Link
-            href="/book"
-            className="btn-royal-gold text-xs py-2.5 px-6"
-          >
-            Book Barbershop
+        <div className="hidden lg:block">
+          <Link href="/book" className="btn-royal-gold text-xs py-2.5 px-6">
+            Book Appointment
           </Link>
         </div>
 
         <button
-          className="md:hidden text-white"
+          className="lg:hidden text-white"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label={open ? 'Close menu' : 'Open menu'}
@@ -85,12 +80,12 @@ export default function Nav() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="md:hidden overflow-hidden glass"
+            className="lg:hidden overflow-hidden glass"
           >
             <ul className="container-luxury flex flex-col gap-1 py-6">
               {links.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="block py-3 text-lg text-white/90">
+                  <Link href={l.href} className="block py-2.5 text-base font-medium text-white hover:text-gold transition-colors">
                     {l.label}
                   </Link>
                 </li>
@@ -98,7 +93,7 @@ export default function Nav() {
               <li className="pt-3">
                 <Link
                   href="/book"
-                  className="inline-block rounded-full border border-gold px-6 py-2.5 text-sm text-gold"
+                  className="btn-royal-gold w-full text-xs text-center block"
                 >
                   Book Appointment
                 </Link>

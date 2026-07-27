@@ -36,7 +36,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="relative rounded-2xl border border-[#DDD4C6] bg-white p-8 md:p-10 shadow-card">
+    <div className="relative rounded-2xl border border-[#C5A059]/40 bg-[#2B2B2B] p-8 md:p-10 shadow-2xl">
       <AnimatePresence mode="wait">
         {submitted ? (
           <motion.div
@@ -45,14 +45,14 @@ export default function ContactForm() {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-center py-10 text-center"
           >
-            <CheckCircle2 className="text-[#A87444]" size={40} />
-            <h3 className="mt-5 font-display text-2xl text-[#2B2B2B]">Message received</h3>
-            <p className="mt-2 max-w-sm text-sm text-[#6E6A63]">
-              Thank you — our team will get back to you shortly.
+            <CheckCircle2 className="text-[#E2C067]" size={44} />
+            <h3 className="mt-5 font-display text-2xl font-bold text-[#F8F6F2]">Message received</h3>
+            <p className="mt-2 max-w-sm text-sm text-[#F4EFE6]/80 leading-relaxed">
+              Thank you — our reception desk will get back to you shortly.
             </p>
             <button
               onClick={() => setSubmitted(false)}
-              className="mt-6 text-sm text-[#A87444] font-semibold underline underline-offset-4"
+              className="mt-6 text-sm text-[#E2C067] font-bold underline underline-offset-4"
             >
               Send another message
             </button>
@@ -66,19 +66,23 @@ export default function ContactForm() {
             className="space-y-6"
             noValidate
           >
+            <h3 className="font-display text-2xl font-bold text-[#F8F6F2] border-b border-[#C5A059]/30 pb-3">
+              Send a Message
+            </h3>
+
             <div>
-              <label htmlFor="name" className="mb-2 block text-sm font-semibold text-[#2B2B2B]">
+              <label htmlFor="name" className="mb-2 block text-sm font-bold text-[#F8F6F2]">
                 Full name
               </label>
               <input
                 id="name"
                 {...register('name')}
-                className="w-full rounded-lg border border-[#DDD4C6] bg-[#F8F6F2] px-4 py-3 text-[#2B2B2B] font-medium outline-none transition-colors focus:border-[#A87444]"
+                className="w-full rounded-xl border border-[#C5A059]/40 bg-[#1E293B]/80 px-4 py-3 text-[#F8F6F2] font-semibold outline-none transition-all focus:border-[#E2C067] focus:ring-1 focus:ring-[#E2C067]"
                 aria-invalid={!!errors.name}
                 aria-describedby={errors.name ? 'name-error' : undefined}
               />
               {errors.name && (
-                <p id="name-error" className="mt-1.5 text-xs text-red-600 font-semibold">
+                <p id="name-error" className="mt-1.5 text-xs text-red-400 font-bold">
                   {errors.name.message}
                 </p>
               )}
@@ -86,36 +90,36 @@ export default function ContactForm() {
 
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
-                <label htmlFor="phone" className="mb-2 block text-sm font-semibold text-[#2B2B2B]">
+                <label htmlFor="phone" className="mb-2 block text-sm font-bold text-[#F8F6F2]">
                   Phone number
                 </label>
                 <input
                   id="phone"
                   {...register('phone')}
-                  className="w-full rounded-lg border border-[#DDD4C6] bg-[#F8F6F2] px-4 py-3 text-[#2B2B2B] font-medium outline-none transition-colors focus:border-[#A87444]"
+                  className="w-full rounded-xl border border-[#C5A059]/40 bg-[#1E293B]/80 px-4 py-3 text-[#F8F6F2] font-semibold outline-none transition-all focus:border-[#E2C067] focus:ring-1 focus:ring-[#E2C067]"
                   aria-invalid={!!errors.phone}
                   aria-describedby={errors.phone ? 'phone-error' : undefined}
                 />
                 {errors.phone && (
-                  <p id="phone-error" className="mt-1.5 text-xs text-red-600 font-semibold">
+                  <p id="phone-error" className="mt-1.5 text-xs text-red-400 font-bold">
                     {errors.phone.message}
                   </p>
                 )}
               </div>
               <div>
-                <label htmlFor="email" className="mb-2 block text-sm font-semibold text-[#2B2B2B]">
+                <label htmlFor="email" className="mb-2 block text-sm font-bold text-[#F8F6F2]">
                   Email (optional)
                 </label>
                 <input
                   id="email"
                   type="email"
                   {...register('email')}
-                  className="w-full rounded-lg border border-[#DDD4C6] bg-[#F8F6F2] px-4 py-3 text-[#2B2B2B] font-medium outline-none transition-colors focus:border-[#A87444]"
+                  className="w-full rounded-xl border border-[#C5A059]/40 bg-[#1E293B]/80 px-4 py-3 text-[#F8F6F2] font-semibold outline-none transition-all focus:border-[#E2C067] focus:ring-1 focus:ring-[#E2C067]"
                   aria-invalid={!!errors.email}
                   aria-describedby={errors.email ? 'email-error' : undefined}
                 />
                 {errors.email && (
-                  <p id="email-error" className="mt-1.5 text-xs text-red-600 font-semibold">
+                  <p id="email-error" className="mt-1.5 text-xs text-red-400 font-bold">
                     {errors.email.message}
                   </p>
                 )}
@@ -123,19 +127,19 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <label htmlFor="message" className="mb-2 block text-sm font-semibold text-[#2B2B2B]">
+              <label htmlFor="message" className="mb-2 block text-sm font-bold text-[#F8F6F2]">
                 Message
               </label>
               <textarea
                 id="message"
                 rows={4}
                 {...register('message')}
-                className="w-full resize-none rounded-lg border border-[#DDD4C6] bg-[#F8F6F2] px-4 py-3 text-[#2B2B2B] font-medium outline-none transition-colors focus:border-[#A87444]"
+                className="w-full resize-none rounded-xl border border-[#C5A059]/40 bg-[#1E293B]/80 px-4 py-3 text-[#F8F6F2] font-semibold outline-none transition-all focus:border-[#E2C067] focus:ring-1 focus:ring-[#E2C067]"
                 aria-invalid={!!errors.message}
                 aria-describedby={errors.message ? 'message-error' : undefined}
               />
               {errors.message && (
-                <p id="message-error" className="mt-1.5 text-xs text-red-600 font-semibold">
+                <p id="message-error" className="mt-1.5 text-xs text-red-400 font-bold">
                   {errors.message.message}
                 </p>
               )}
@@ -144,7 +148,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="btn-royal-gold w-full py-3.5 text-sm font-bold tracking-wide"
+              className="btn-royal-gold w-full py-3.5 text-sm font-bold tracking-wide shadow-xl cursor-pointer"
             >
               {isSubmitting ? 'Sending…' : 'Send Message'}
             </button>

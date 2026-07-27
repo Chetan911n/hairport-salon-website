@@ -22,48 +22,56 @@ export default function ContactPage() {
         description="Call our reception hotline or visit our flagship salon at Shop 3-5 Laxman Villa, Nashik Road."
       />
 
-      <section className="pb-28 pt-4 md:pb-40">
-        <div className="container-luxury grid gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+      <section className="pb-28 pt-8 md:pb-40">
+        <div className="container-luxury grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          {/* Dark Charcoal Contact Details Box */}
           <Reveal>
-            <div className="space-y-8">
+            <div className="rounded-2xl border border-[#C5A059]/40 bg-[#2B2B2B] p-8 md:p-10 shadow-2xl space-y-8">
+              <h3 className="font-display text-2xl font-bold text-[#F8F6F2] border-b border-[#C5A059]/30 pb-3">
+                Salon Details
+              </h3>
+
               <div className="flex gap-4">
-                <MapPin className="mt-1 shrink-0 text-[#A87444]" size={22} />
+                <MapPin className="mt-1 shrink-0 text-[#E2C067]" size={24} />
                 <div>
-                  <p className="text-[#2B2B2B] font-bold text-lg">{verifiedBranch.name}</p>
-                  <p className="mt-1 text-sm font-semibold text-[#2B2B2B]">
+                  <p className="text-[#F8F6F2] font-bold text-xl">{verifiedBranch.name}</p>
+                  <p className="mt-1.5 text-sm font-medium text-[#F4EFE6] leading-relaxed">
                     {verifiedBranch.address}, {verifiedBranch.pincode}
                   </p>
-                  <p className="mt-1 text-xs font-semibold text-[#A87444]">
+                  <p className="mt-2 text-xs font-bold text-[#E2C067]">
                     Landmark: {verifiedBranch.landmark || 'Near Datta Mandir Stop & Taran Talav Rd'}
                   </p>
                 </div>
               </div>
+
               <div className="flex gap-4">
-                <Phone className="mt-1 shrink-0 text-[#A87444]" size={22} />
+                <Phone className="mt-1 shrink-0 text-[#E2C067]" size={24} />
                 <div>
-                  <a href={`tel:${contact.phone}`} className="text-[#2B2B2B] hover:text-[#A87444] transition-colors font-bold text-base block">{contact.phoneFormatted}</a>
-                  <p className="mt-0.5 text-xs font-semibold text-[#6E6A63]">Verified Reception Hotline</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <MessageCircle className="mt-1 shrink-0 text-[#A87444]" size={22} />
-                <div>
-                  <a href={`https://wa.me/${contact.phone}`} target="_blank" rel="noopener noreferrer" className="text-[#2B2B2B] hover:text-[#A87444] transition-colors font-bold text-base block">{contact.phoneFormatted}</a>
-                  <p className="mt-0.5 text-xs font-semibold text-[#6E6A63]">WhatsApp Booking Support</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <Mail className="mt-1 shrink-0 text-[#A87444]" size={22} />
-                <div>
-                  <p className="text-[#2B2B2B] font-semibold text-base">{contact.email}</p>
-                  <p className="mt-0.5 text-xs font-semibold text-[#6E6A63]">Official Salon Email</p>
+                  <a href={`tel:${contact.phone}`} className="text-[#F8F6F2] hover:text-[#E2C067] transition-colors font-bold text-lg block">{contact.phoneFormatted}</a>
+                  <p className="mt-0.5 text-xs font-medium text-[#F4EFE6]/70">Verified Reception Hotline</p>
                 </div>
               </div>
 
-              <div className="overflow-hidden rounded-2xl border border-[#DDD4C6] shadow-card">
+              <div className="flex gap-4">
+                <MessageCircle className="mt-1 shrink-0 text-[#E2C067]" size={24} />
+                <div>
+                  <a href={`https://wa.me/${contact.phone}`} target="_blank" rel="noopener noreferrer" className="text-[#F8F6F2] hover:text-[#E2C067] transition-colors font-bold text-lg block">{contact.phoneFormatted}</a>
+                  <p className="mt-0.5 text-xs font-medium text-[#F4EFE6]/70">WhatsApp Booking Support</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <Mail className="mt-1 shrink-0 text-[#E2C067]" size={24} />
+                <div>
+                  <p className="text-[#F8F6F2] font-bold text-base">{contact.email}</p>
+                  <p className="mt-0.5 text-xs font-medium text-[#F4EFE6]/70">Official Salon Email</p>
+                </div>
+              </div>
+
+              <div className="overflow-hidden rounded-xl border border-[#C5A059]/40 shadow-lg">
                 <iframe
                   title="Hairport — Nashik Road map"
-                  className="h-64 w-full"
+                  className="h-56 w-full"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   src={`https://maps.google.com/maps?q=${encodeURIComponent(
@@ -74,6 +82,7 @@ export default function ContactPage() {
             </div>
           </Reveal>
 
+          {/* Dark Charcoal Form Box */}
           <Reveal delay={0.15}>
             <ContactForm />
           </Reveal>

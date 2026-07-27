@@ -8,7 +8,7 @@
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #C8A552 #0B0B0B;
+  scrollbar-color: #D4AF37 #07111E;
 }
 
 html {
@@ -17,14 +17,14 @@ html {
 
 body {
   background-color: transparent;
-  color: #FFFFFF;
+  color: #F5F2EB;
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: #C8A552;
-  color: #0B0B0B;
+  background: #D4AF37;
+  color: #07111E;
 }
 
 /* Visible focus states for keyboard navigation (WCAG) */
@@ -33,7 +33,7 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #C8A552;
+  outline: 2px solid #D4AF37;
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -43,14 +43,14 @@ select:focus-visible {
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(13, 27, 46, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.25);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
 .gold-text {
-  background: linear-gradient(120deg, #C8A552, #F0DFA8, #C8A552);
+  background: linear-gradient(120deg, #E2C067, #FFFFFF, #D4AF37);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

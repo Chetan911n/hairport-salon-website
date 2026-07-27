@@ -10,13 +10,15 @@ export const featuredServicesList = [
     title: 'Classic Haircut',
     category: 'Hair Cut & Styling',
     description: 'Precision scissor and clipper work tailored to your head shape, finished with styling & hot towel.',
+    price: '₹200',
     icon: Scissors
   },
   {
     slug: 'skin-fade',
-    title: 'Skin Fade',
+    title: 'Skin Fade & Precision Cut',
     category: 'Precision Cut',
     description: 'Seamless gradient fade from zero skin, detailed hair line shape-up and texture styling.',
+    price: '₹250',
     icon: Sparkles
   },
   {
@@ -24,41 +26,47 @@ export const featuredServicesList = [
     title: 'Beard Trim & Sculpt',
     category: 'Beard Care',
     description: 'Sharp razor lines, length trimming, hot oil massage and beard balm conditioning.',
+    price: '₹100',
     icon: Flame
   },
   {
     slug: 'royal-shave',
-    title: 'Royal Shave',
+    title: 'Royal Clean Shave',
     category: 'Hot Towel Ritual',
     description: 'Traditional straight razor shave with essential pre-shave oils, steam, and cold towel finish.',
+    price: '₹100',
     icon: ShieldCheck
   },
   {
     slug: 'hair-spa',
-    title: 'Restorative Hair Spa',
+    title: 'Warm Water Wash & Hair Spa',
     category: 'Scalp & Hair Therapy',
-    description: 'Deep conditioning scalp massage, steam treatment, keratin rebuilding and scalp nourishment.',
+    description: 'Deep conditioning scalp massage, warm water hair wash, and scalp nourishment.',
+    price: '₹300',
     icon: Droplets
   },
   {
     slug: 'hair-colour',
-    title: 'Hair Colour (Global & Highlights)',
+    title: 'Hair & Beard Colour',
     category: 'Colour Artistry',
-    description: 'Ammonia-free global colour coverage or hand-crafted highlight streaks for rich dimension.',
+    description: 'Ammonia-free global colour coverage or beard colouring for rich natural shade.',
+    price: '₹300',
     icon: Palette
   },
   {
     slug: 'facial',
-    title: 'Signature Facial',
+    title: 'Skin Cleanup & Facial',
     category: 'Skin Therapy',
-    description: 'Deep pore cleansing, exfoliation, face massage, and clarifying mask for healthy radiant skin.',
+    description: 'Deep pore cleansing, exfoliation, face massage, and clarifying mask for healthy skin.',
+    price: '₹400',
     icon: Sparkles
   },
   {
     slug: 'kids-haircut',
-    title: 'Kids Haircut',
+    title: 'Kids & Junior Haircut',
     category: 'Junior Styling',
     description: 'Patient, gentle styling experience for young gents with neat cut and fun styling.',
+    price: '₹150',
     icon: Smile
   }
 ];
@@ -68,12 +76,12 @@ export default function Services() {
     <section className="border-t border-[#DDD4C6] bg-[#F8F6F2] py-24 md:py-36" id="services">
       <div className="container-luxury">
         <Reveal className="max-w-2xl">
-          <span className="eyebrow">Barbershop Services</span>
+          <span className="eyebrow">Barbershop Services &amp; Pricing</span>
           <h2 className="mt-4 font-display text-4xl leading-tight text-[#2B2B2B] md:text-5xl">
-            Precision Crafts. <span className="text-[#A87444] italic font-serif">Unmatched Distinction.</span>
+            Precision Crafts. <span className="text-[#A87444] italic font-serif">Verified Rates.</span>
           </h2>
           <p className="mt-4 text-[#6E6A63] text-base md:text-lg">
-            Each service includes a personal consultation, hot towel refresh, and premium grooming finish.
+            Transparent pricing sourced directly from our salon register. Each service includes personal consultation &amp; hot towel finish.
           </p>
         </Reveal>
 
@@ -88,6 +96,9 @@ export default function Services() {
                       <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EFE8DE] text-[#A87444] border border-[#DDD4C6]">
                         <Icon size={22} />
                       </div>
+                      <span className="rounded-full border border-[#DDD4C6] bg-[#F8F6F2] px-3 py-1 text-xs font-bold text-[#A87444]">
+                        {service.price}
+                      </span>
                     </div>
 
                     <span className="mt-5 block text-xs tracking-wider uppercase text-[#A87444] font-semibold">
@@ -101,7 +112,10 @@ export default function Services() {
                     </p>
                   </div>
 
-                  <div className="mt-6 flex items-center justify-end border-t border-[#DDD4C6]/60 pt-4">
+                  <div className="mt-6 flex items-center justify-between border-t border-[#DDD4C6]/60 pt-4">
+                    <span className="font-display text-lg font-bold text-[#2B2B2B]">
+                      {service.price}
+                    </span>
                     <Link
                       href="/book"
                       className="inline-flex items-center gap-1 text-xs font-semibold uppercase text-[#A87444] transition-all hover:translate-x-1"

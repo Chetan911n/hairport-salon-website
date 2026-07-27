@@ -19,7 +19,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Let's get you"
         goldWord="booked in."
-        description="Phone, email and WhatsApp details below are placeholders — no verified public contact number could be confirmed for this listing. Replace before launch."
+        description="Call our reception hotline or visit our flagship salon at Shop 3-5 Laxman Villa, Nashik Road."
       />
 
       <section className="pb-28 pt-4 md:pb-40">
@@ -27,40 +27,43 @@ export default function ContactPage() {
           <Reveal>
             <div className="space-y-8">
               <div className="flex gap-4">
-                <MapPin className="mt-1 shrink-0 text-gold" size={20} />
+                <MapPin className="mt-1 shrink-0 text-[#A87444]" size={22} />
                 <div>
-                  <p className="text-white">{verifiedBranch.name}</p>
-                  <p className="mt-1 text-sm text-muted">
+                  <p className="text-[#2B2B2B] font-bold text-lg">{verifiedBranch.name}</p>
+                  <p className="mt-1 text-sm font-semibold text-[#2B2B2B]">
                     {verifiedBranch.address}, {verifiedBranch.pincode}
+                  </p>
+                  <p className="mt-1 text-xs font-semibold text-[#A87444]">
+                    Landmark: {verifiedBranch.landmark || 'Near Datta Mandir Stop & Taran Talav Rd'}
                   </p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <Phone className="mt-1 shrink-0 text-gold" size={20} />
+                <Phone className="mt-1 shrink-0 text-[#A87444]" size={22} />
                 <div>
-                  <a href={`tel:${contact.phone}`} className="text-white hover:text-gold transition-colors font-semibold">{contact.phoneFormatted}</a>
-                  <p className="mt-1 text-xs text-muted">Verified Reception Hotline</p>
+                  <a href={`tel:${contact.phone}`} className="text-[#2B2B2B] hover:text-[#A87444] transition-colors font-bold text-base block">{contact.phoneFormatted}</a>
+                  <p className="mt-0.5 text-xs font-semibold text-[#6E6A63]">Verified Reception Hotline</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <MessageCircle className="mt-1 shrink-0 text-gold" size={20} />
+                <MessageCircle className="mt-1 shrink-0 text-[#A87444]" size={22} />
                 <div>
-                  <a href={`https://wa.me/${contact.phone}`} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors font-semibold">{contact.phoneFormatted}</a>
-                  <p className="mt-1 text-xs text-muted">WhatsApp Booking Support</p>
+                  <a href={`https://wa.me/${contact.phone}`} target="_blank" rel="noopener noreferrer" className="text-[#2B2B2B] hover:text-[#A87444] transition-colors font-bold text-base block">{contact.phoneFormatted}</a>
+                  <p className="mt-0.5 text-xs font-semibold text-[#6E6A63]">WhatsApp Booking Support</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <Mail className="mt-1 shrink-0 text-gold" size={20} />
+                <Mail className="mt-1 shrink-0 text-[#A87444]" size={22} />
                 <div>
-                  <p className="text-white">{contact.email}</p>
-                  <p className="mt-1 text-xs text-muted">Official Salon Email</p>
+                  <p className="text-[#2B2B2B] font-semibold text-base">{contact.email}</p>
+                  <p className="mt-0.5 text-xs font-semibold text-[#6E6A63]">Official Salon Email</p>
                 </div>
               </div>
 
-              <div className="overflow-hidden rounded-2xl border border-border">
+              <div className="overflow-hidden rounded-2xl border border-[#DDD4C6] shadow-card">
                 <iframe
                   title="Hairport — Nashik Road map"
-                  className="h-64 w-full grayscale invert-[0.92] contrast-[1.1]"
+                  className="h-64 w-full"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   src={`https://maps.google.com/maps?q=${encodeURIComponent(

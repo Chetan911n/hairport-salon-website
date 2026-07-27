@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Reveal from './Reveal';
-import { Star, Scissors, Award } from 'lucide-react';
+import { Star, Award } from 'lucide-react';
 
 export const teamMembers = [
   {
@@ -12,7 +12,7 @@ export const teamMembers = [
     experience: '12+ Years Exp',
     speciality: 'Precision Haircuts & Style Architecture (Alim Hakim Trained)',
     rating: '4.9★',
-    image: '/hero.jpg'
+    image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80'
   },
   {
     name: 'Tejas',
@@ -20,7 +20,7 @@ export const teamMembers = [
     experience: '9+ Years Exp',
     speciality: 'Skin Fades, Beard Sculpting & Custom Texture',
     rating: '4.9★',
-    image: '/about.jpg'
+    image: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80'
   },
   {
     name: 'Kunal',
@@ -28,7 +28,7 @@ export const teamMembers = [
     experience: '8+ Years Exp',
     speciality: 'Warm Water Hair Wash, Hair Spa & Beard Styling',
     rating: '4.8★',
-    image: '/hero.jpg'
+    image: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80'
   }
 ];
 

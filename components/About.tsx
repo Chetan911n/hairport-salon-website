@@ -6,10 +6,10 @@ import Reveal from './Reveal';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 const highlights = [
-  'Certified Master Barbers & Grooming Specialists',
+  'Certified Master Barbers & Prashant Sir Team',
   'Unhurried, Private Consultation & Custom Styling',
-  'Premium Imported Hair & Beard Care Formulations',
-  'Strict Hygiene Standards & Sterilized Tools'
+  'Warm & Cold Water Hair Wash Available Everyday',
+  'Separate Sections for Men & Women with Full Privacy'
 ];
 
 export default function About() {
@@ -22,8 +22,8 @@ export default function About() {
             <Reveal>
               <div className="relative rounded-2xl overflow-hidden border border-gold/30 shadow-card">
                 <Image
-                  src="/hero.jpg"
-                  alt="Hairport Barber Crafting Precision Haircut"
+                  src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80"
+                  alt="THE HAIRPORT Salon Craft"
                   width={600}
                   height={700}
                   className="w-full object-cover h-[450px] md:h-[550px] transition-transform duration-700 hover:scale-105"
@@ -35,8 +35,8 @@ export default function About() {
             <Reveal delay={0.2} className="absolute -bottom-8 -right-4 sm:-right-8 w-1/2 max-w-[280px]">
               <div className="rounded-2xl overflow-hidden border-2 border-gold bg-bg p-2 shadow-gold">
                 <Image
-                  src="/about.jpg"
-                  alt="Luxury Barbershop Interior"
+                  src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80"
+                  alt="THE HAIRPORT Salon Interior"
                   width={300}
                   height={350}
                   className="w-full object-cover h-[180px] md:h-[220px] rounded-xl"
@@ -48,12 +48,12 @@ export default function About() {
           {/* Right Column: Story & Philosophy */}
           <div className="lg:col-span-6">
             <Reveal>
-              <span className="eyebrow">About Hairport</span>
+              <span className="eyebrow">About THE HAIRPORT</span>
               <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl">
                 Crafting timeless styles with <span className="gold-text italic">modern precision.</span>
               </h2>
               <p className="mt-6 text-base leading-relaxed text-muted md:text-lg font-light">
-                Established with a vision for refined men’s and unisex grooming, Hairport brings a signature blend of traditional barbering mastery and modern luxury aesthetic to Nashik Road.
+                Located near Datta Mandir stop in Laxman Villa, THE HAIRPORT brings a signature blend of Alim Hakim-trained barbering mastery, warm water washes, and separate sections to Nashik Road.
               </p>
             </Reveal>
 

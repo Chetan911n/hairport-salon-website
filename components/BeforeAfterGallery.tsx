@@ -3,11 +3,10 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Reveal from './Reveal';
-import { Sliders, Eye } from 'lucide-react';
+import { Sliders } from 'lucide-react';
 
 export default function BeforeAfterGallery() {
   const [sliderPos, setSliderPos] = useState(50);
-  const [isDragging, setIsDragging] = useState(false);
 
   const handleMove = (clientX: number, rect: DOMRect) => {
     const x = clientX - rect.left;
@@ -16,10 +15,10 @@ export default function BeforeAfterGallery() {
   };
 
   const galleryImages = [
-    { src: '/hero.jpg', title: 'Precision Fade & Contour', tag: 'Fade & Beard' },
-    { src: '/about.jpg', title: 'Royal Hot Towel Shave', tag: 'Razor Shave' },
-    { src: '/hero.jpg', title: 'Global Colour & Restorative Spa', tag: 'Hair Colour' },
-    { src: '/about.jpg', title: 'Classic Pompadour Finish', tag: 'Styling' }
+    { src: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80', title: 'Royal Hot Towel Shave', tag: 'Razor Shave' },
+    { src: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80', title: 'Nashik Road Salon Interior', tag: 'Lounge' },
+    { src: 'https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=800&q=80', title: 'Beard Contour & Edge Lines', tag: 'Beard Sculpting' },
+    { src: 'https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80', title: 'Classic Texture Styling', tag: 'Hair Craft' }
   ];
 
   return (
@@ -52,7 +51,7 @@ export default function BeforeAfterGallery() {
           >
             {/* After Image (Full width background) */}
             <Image
-              src="/hero.jpg"
+              src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80"
               alt="After Barber Transformation"
               fill
               className="object-cover"
@@ -67,7 +66,7 @@ export default function BeforeAfterGallery() {
               style={{ width: `${sliderPos}%` }}
             >
               <Image
-                src="/about.jpg"
+                src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=1200&q=80"
                 alt="Before Barber Transformation"
                 fill
                 className="object-cover w-full max-w-none"

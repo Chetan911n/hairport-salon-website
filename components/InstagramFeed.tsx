@@ -5,10 +5,10 @@ import Reveal from './Reveal';
 import { Instagram, Heart, MessageCircle } from 'lucide-react';
 
 const posts = [
-  { image: '/hero.jpg', likes: '342', comments: '28', tag: '#PrecisionFade' },
-  { image: '/about.jpg', likes: '489', comments: '42', tag: '#RoyalShave' },
-  { image: '/hero.jpg', likes: '298', comments: '19', tag: '#BeardSculpting' },
-  { image: '/about.jpg', likes: '512', comments: '63', tag: '#HairportNashik' }
+  { image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80', likes: '342', comments: '28', tag: '#PrecisionFade' },
+  { image: 'https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80', likes: '489', comments: '42', tag: '#RoyalShave' },
+  { image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80', likes: '298', comments: '19', tag: '#NashikRoad' },
+  { image: 'https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=800&q=80', likes: '512', comments: '63', tag: '#BeardSculpting' }
 ];
 
 export default function InstagramFeed() {
@@ -19,7 +19,7 @@ export default function InstagramFeed() {
           <div>
             <span className="eyebrow">Social Feed</span>
             <h2 className="mt-2 font-display text-3xl md:text-4xl text-white">
-              Follow Us <span className="gold-text italic">@hairport.nashik</span>
+              Follow Us <span className="gold-text italic">@hairport_nashik</span>
             </h2>
           </div>
           <a

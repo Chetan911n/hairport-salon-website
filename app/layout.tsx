@@ -84,9 +84,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-[#FFFFFF] text-[#1F2937] font-body antialiased relative min-h-screen">
-        {/* Main Background: Pure White (#FFFFFF) */}
-        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#FFFFFF]" />
+      <body className="bg-[#0F172A] text-[#F8FAFC] font-body antialiased relative min-h-screen">
+        {/* Main Background: Deep Navy Blue (#0F172A) */}
+        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#0F172A]" />
 
         <a
           href="#main-content"

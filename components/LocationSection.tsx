@@ -8,14 +8,14 @@ export default function LocationSection() {
   const branch = branches.find((b) => b.status === 'verified') || branches[0]!;
 
   return (
-    <section className="border-t border-[#E2E8F0] bg-[#FFFFFF] py-24 md:py-36" id="contact">
+    <section className="border-t border-[#FACC15]/20 bg-[#0F172A] py-24 md:py-36" id="contact">
       <div className="container-luxury">
         <Reveal className="max-w-2xl">
-          <span className="eyebrow text-[#EAB308]">Visit Our Salon</span>
-          <h2 className="mt-4 font-display text-4xl leading-tight text-[#1F2937] md:text-5xl font-bold">
-            Flagship Location in <span className="text-[#EAB308] italic font-serif">Nashik Road.</span>
+          <span className="eyebrow text-[#FACC15]">Visit Our Salon</span>
+          <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold">
+            Flagship Location in <span className="text-[#FACC15] italic font-serif">Nashik Road.</span>
           </h2>
-          <p className="mt-4 text-[#1F2937] text-base md:text-lg font-medium">
+          <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium leading-relaxed">
             Located conveniently near Taran Talav Rd &amp; Datta Mandir stop with easy parking and unhurried service.
           </p>
         </Reveal>

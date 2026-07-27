@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 * {
@@ -12,12 +12,12 @@
 }
 
 html {
-  background: #FFFFFF;
+  background: #0F172A;
 }
 
 body {
-  background-color: #FFFFFF;
-  color: #1F2937;
+  background-color: #0F172A;
+  color: #F8FAFC;
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
 }
@@ -39,7 +39,7 @@ select:focus-visible {
 }
 
 .eyebrow {
-  @apply text-[#EAB308] text-xs md:text-sm tracking-widest2 uppercase font-body font-bold;
+  @apply text-[#FACC15] text-xs md:text-sm tracking-widest2 uppercase font-body font-bold;
 }
 
 .glass {

@@ -22,7 +22,7 @@ export default function ContactPage() {
         description="Call our reception hotline or visit our flagship salon at Shop 3-5 Laxman Villa, Nashik Road."
       />
 
-      <section className="pb-28 pt-8 md:pb-40 bg-[#FFFFFF]">
+      <section className="pb-28 pt-8 md:pb-40 bg-[#0F172A]">
         <div className="container-luxury grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           {/* Deep Navy Blue Box Fill (#0F172A) with Vibrant Yellow (#FACC15) Box Text */}
           <Reveal>

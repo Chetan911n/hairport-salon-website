@@ -96,8 +96,8 @@ export const serviceCategories = [
 
 export const sampleServices: Service[] = [
   { slug: 'signature-cut', name: 'Signature Haircut by Prashant Sir', category: 'hair', description: 'Expert precision haircut by Alim Hakim-trained senior hairstylist Prashant.' },
-  { slug: 'beard-sculpt', name: 'Beard Trim & Sculpt by Akshay', category: 'hair', description: 'Custom beard shaping, hot towel conditioning, and razor edge lines.' },
-  { slug: 'hair-wash-spa', name: 'Warm Water Wash & Restorative Spa', category: 'hair-spa', description: 'Relaxing scalp massage and warm water hair wash.' },
+  { slug: 'beard-sculpt', name: 'Beard Trim & Sculpt by Tejas', category: 'hair', description: 'Custom beard shaping, hot towel conditioning, and razor edge lines.' },
+  { slug: 'hair-wash-spa', name: 'Warm Water Wash & Spa by Kunal', category: 'hair-spa', description: 'Relaxing scalp massage and warm water hair wash.' },
   { slug: 'signature-facial', name: 'Skin Refresh Facial', category: 'skin', description: 'Tailored deep-pore facial for healthy, glowing skin.' },
   { slug: 'toddler-cut', name: 'Gentle Toddler & Kids Cut', category: 'bridal', description: 'Patient, fun haircut experience for toddlers and kids.' },
 ];
@@ -106,5 +106,5 @@ export const seo = {
   siteUrl: 'https://hairportsalon.online',
   defaultTitle: 'THE HAIRPORT — Premium Salon in Nashik Road (4.5★ Rated)',
   defaultDescription:
-    'THE HAIRPORT is a 4.5★ rated premium unisex salon in Nashik Road, Maharashtra. Precision cuts by Prashant Sir & Akshay, hair spa, separate ladies section & warm water hair wash.',
+    'THE HAIRPORT is a 4.5★ rated premium unisex salon in Nashik Road, Maharashtra. Precision cuts by Prashant Sir, Tejas & Kunal, hair spa, separate ladies section & warm water hair wash.',
 };

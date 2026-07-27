@@ -61,7 +61,7 @@ export default function Testimonials() {
             Real Reviews From <span className="gold-text italic">Google Business.</span>
           </h2>
           <p className="mt-4 text-muted text-base md:text-lg">
-            Read what our clients say about Prashant Sir, Akshay, Kavita, and our Nashik Road salon experience.
+            Read what our clients say about Prashant Sir, Tejas, Kunal, and our Nashik Road salon experience.
           </p>
         </Reveal>
 

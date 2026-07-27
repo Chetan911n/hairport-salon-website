@@ -21,7 +21,7 @@ const config: Config = {
         },
         border: '#DDD4C6',
         muted: '#6E6A63',
-        white: '#2B2B2B', // Main editorial text on light background
+        white: '#FFFFFF',
         charcoal: '#2B2B2B'
       },
       fontFamily: {

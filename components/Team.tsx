@@ -15,18 +15,18 @@ export const teamMembers = [
     image: '/hero.jpg'
   },
   {
-    name: 'Akshay',
-    role: 'Beard & Haircut Specialist',
+    name: 'Tejas',
+    role: 'Master Barber & Fade Specialist',
     experience: '9+ Years Exp',
     speciality: 'Skin Fades, Beard Sculpting & Custom Texture',
     rating: '4.9★',
     image: '/about.jpg'
   },
   {
-    name: 'Kavita',
-    role: 'Senior Stylist & Beauty Specialist',
+    name: 'Kunal',
+    role: 'Grooming & Hair Spa Specialist',
     experience: '8+ Years Exp',
-    speciality: 'Pampering Spa, Skin Facials & Toddler Styling',
+    speciality: 'Warm Water Hair Wash, Hair Spa & Beard Styling',
     rating: '4.8★',
     image: '/hero.jpg'
   }
@@ -42,7 +42,7 @@ export default function Team() {
             Master Hairstylists Behind <span className="gold-text italic">The Chair.</span>
           </h2>
           <p className="mt-4 text-muted text-base md:text-lg">
-            Our expert team brings years of certified Alim Hakim &amp; Jawed Habib training, gentle care, and precision to every haircut.
+            Our expert team brings years of dedicated salon mastery, attention to detail, and precision to every cut and trim.
           </p>
         </Reveal>
 

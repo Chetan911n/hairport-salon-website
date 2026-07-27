@@ -17,8 +17,8 @@ export default function InstagramFeed() {
       <div className="container-luxury">
         <Reveal className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
-            <span className="eyebrow">Social Feed</span>
-            <h2 className="mt-2 font-display text-3xl md:text-4xl text-[#2B2B2B]">
+            <span className="eyebrow text-[#A87444]">Social Feed</span>
+            <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-[#2B2B2B]">
               Follow Us <span className="text-[#A87444] italic font-serif">@hairport_nashik</span>
             </h2>
           </div>
@@ -35,20 +35,20 @@ export default function InstagramFeed() {
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           {posts.map((post, i) => (
             <Reveal key={i} delay={i * 0.08}>
-              <div className="group relative h-64 w-full overflow-hidden rounded-xl border border-[#DDD4C6] bg-white shadow-card">
+              <div className="group relative h-64 w-full overflow-hidden rounded-2xl border border-[#C5A059]/40 bg-[#2B2B2B] shadow-2xl">
                 <Image
                   src={post.image}
                   alt={`Instagram Post ${i + 1}`}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-90"
                 />
-                <div className="absolute inset-0 bg-[#2B2B2B]/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col items-center justify-center gap-3">
-                  <span className="text-xs font-semibold text-[#A87444] tracking-widest uppercase">
+                <div className="absolute inset-0 bg-[#2B2B2B]/85 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col items-center justify-center gap-3">
+                  <span className="text-xs font-bold text-[#E2C067] tracking-widest uppercase">
                     {post.tag}
                   </span>
-                  <div className="flex items-center gap-4 text-xs font-bold text-white">
-                    <span className="flex items-center gap-1"><Heart size={14} className="fill-[#A87444] text-[#A87444]" /> {post.likes}</span>
-                    <span className="flex items-center gap-1"><MessageCircle size={14} className="text-white" /> {post.comments}</span>
+                  <div className="flex items-center gap-4 text-xs font-bold text-[#F8F6F2]">
+                    <span className="flex items-center gap-1"><Heart size={14} className="fill-[#E2C067] text-[#E2C067]" /> {post.likes}</span>
+                    <span className="flex items-center gap-1"><MessageCircle size={14} className="text-[#F8F6F2]" /> {post.comments}</span>
                   </div>
                 </div>
               </div>

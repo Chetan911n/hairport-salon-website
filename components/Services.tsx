@@ -76,11 +76,11 @@ export default function Services() {
     <section className="border-t border-[#DDD4C6] bg-[#F8F6F2] py-24 md:py-36" id="services">
       <div className="container-luxury">
         <Reveal className="max-w-2xl">
-          <span className="eyebrow">Barbershop Services &amp; Pricing</span>
-          <h2 className="mt-4 font-display text-4xl leading-tight text-[#2B2B2B] md:text-5xl">
+          <span className="eyebrow text-[#A87444]">Barbershop Services &amp; Pricing</span>
+          <h2 className="mt-4 font-display text-4xl leading-tight text-[#2B2B2B] md:text-5xl font-bold">
             Precision Crafts. <span className="text-[#A87444] italic font-serif">Verified Rates.</span>
           </h2>
-          <p className="mt-4 text-[#6E6A63] text-base md:text-lg">
+          <p className="mt-4 text-[#2B2B2B] text-base md:text-lg font-medium">
             Transparent pricing sourced directly from our salon register. Each service includes personal consultation &amp; hot towel finish.
           </p>
         </Reveal>
@@ -90,35 +90,35 @@ export default function Services() {
             const Icon = service.icon;
             return (
               <Reveal key={service.slug} delay={i * 0.06}>
-                <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-[#DDD4C6] bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-2 hover:border-[#A87444]">
+                <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-[#C5A059]/40 bg-[#2B2B2B] p-6 shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:border-[#E2C067]">
                   <div>
                     <div className="flex items-center justify-between">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#EFE8DE] text-[#A87444] border border-[#DDD4C6]">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1E293B] text-[#E2C067] border border-[#C5A059]/40">
                         <Icon size={22} />
                       </div>
-                      <span className="rounded-full border border-[#DDD4C6] bg-[#F8F6F2] px-3 py-1 text-xs font-bold text-[#A87444]">
+                      <span className="rounded-full border border-[#C5A059]/50 bg-[#1E293B] px-3.5 py-1 text-xs font-bold text-[#E2C067]">
                         {service.price}
                       </span>
                     </div>
 
-                    <span className="mt-5 block text-xs tracking-wider uppercase text-[#A87444] font-semibold">
+                    <span className="mt-5 block text-xs tracking-wider uppercase text-[#E2C067] font-bold">
                       {service.category}
                     </span>
-                    <h3 className="mt-1 font-display text-xl text-[#2B2B2B] group-hover:text-[#A87444] transition-colors">
+                    <h3 className="mt-1 font-display text-xl font-bold text-[#F8F6F2] group-hover:text-[#E2C067] transition-colors">
                       {service.title}
                     </h3>
-                    <p className="mt-2 text-xs leading-relaxed text-[#6E6A63]">
+                    <p className="mt-2 text-xs leading-relaxed text-[#F4EFE6]/80 font-medium">
                       {service.description}
                     </p>
                   </div>
 
-                  <div className="mt-6 flex items-center justify-between border-t border-[#DDD4C6]/60 pt-4">
-                    <span className="font-display text-lg font-bold text-[#2B2B2B]">
+                  <div className="mt-6 flex items-center justify-between border-t border-[#C5A059]/30 pt-4">
+                    <span className="font-display text-lg font-bold text-[#F8F6F2]">
                       {service.price}
                     </span>
                     <Link
                       href="/book"
-                      className="inline-flex items-center gap-1 text-xs font-semibold uppercase text-[#A87444] transition-all hover:translate-x-1"
+                      className="inline-flex items-center gap-1 text-xs font-bold uppercase text-[#E2C067] transition-all hover:translate-x-1"
                     >
                       Book Service <ArrowUpRight size={14} />
                     </Link>

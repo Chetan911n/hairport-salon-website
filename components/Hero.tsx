@@ -1,34 +1,17 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-
-const HeroScene = dynamic(() => import('./HeroScene'), { ssr: false });
 
 const headline = ['Where hair', 'meets craft.'];
 
 export default function Hero() {
-  const [ready, setReady] = useState(false);
   const shouldReduceMotion = useReducedMotion();
-  const sceneVisible = useRef(false);
-
-  useEffect(() => {
-    // Small delay lets the entrance sequence feel intentional rather
-    // than instant — the 3D scene fades in once type has settled.
-    const t = setTimeout(() => setReady(true), 200);
-    return () => clearTimeout(t);
-  }, []);
 
   return (
     <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden bg-bg">
-      <div className="absolute inset-0 z-0 opacity-80">
-        {ready && <HeroScene />}
-      </div>
-
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-bg/10 via-transparent to-bg pointer-events-none" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-bg/20 via-transparent to-bg pointer-events-none" />
 
       <div className="relative z-10 container-luxury flex flex-col items-center text-center pt-24">
         <motion.span

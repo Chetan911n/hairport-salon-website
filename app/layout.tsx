@@ -84,8 +84,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-[#07111E] text-[#F5F2EB] font-body antialiased relative min-h-screen">
-        {/* Animated Flowing Gold & Oxford Navy Silk Wallpaper */}
+      <body className="bg-[#0A1628] text-[#F4F6F8] font-body antialiased relative min-h-screen">
+        {/* Imperial Royal Navy & Crest Gold Wallpaper */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
           <div 
             style={{
@@ -93,10 +93,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
-            className="absolute -inset-10 animate-wallpaper-flow opacity-40 mix-blend-luminosity"
+            className="absolute -inset-10 animate-wallpaper-flow opacity-30 mix-blend-luminosity"
           />
-          {/* Deep Navy Tint Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#07111E]/90 via-[#0D1B2E]/80 to-[#07111E]/95" />
+          {/* Deep Imperial Navy Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/95 via-[#122238]/90 to-[#0A1628]/98" />
           <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
         </div>
 

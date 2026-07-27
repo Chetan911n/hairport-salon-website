@@ -6,21 +6,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: 'rgba(7, 17, 30, 0.65)',
-        surface: 'rgba(13, 27, 46, 0.85)',
-        card: 'rgba(20, 38, 62, 0.65)',
+        bg: 'rgba(10, 22, 40, 0.75)',
+        surface: 'rgba(18, 34, 56, 0.92)',
+        card: 'rgba(27, 38, 59, 0.75)',
         royal: {
-          navy: '#07111E',
-          deep: '#0F223D',
-          crimson: '#7A1C2E'
+          navy: '#0A1628',
+          deep: '#122238',
+          crimson: '#7A1C2E',
+          gold: '#C5A059'
         },
         gold: {
-          DEFAULT: '#D4AF37',
+          DEFAULT: '#C5A059',
           soft: '#E2C067',
           deep: '#B8860B'
         },
-        border: 'rgba(212, 175, 55, 0.22)',
-        muted: '#A2B5CD'
+        border: 'rgba(197, 160, 89, 0.28)',
+        muted: '#94A3B8'
       },
       fontFamily: {
         display: ['var(--font-playfair)', 'serif'],

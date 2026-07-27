@@ -9,7 +9,20 @@ export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden bg-bg pt-28 pb-16">
+    <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden bg-[#F8F6F2] pt-28 pb-16">
+      {/* Background Image ONLY for Home Tab */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1920&q=85"
+          alt="Home Tab Luxury Barbershop Background"
+          fill
+          priority
+          className="object-cover opacity-20 mix-blend-multiply"
+        />
+        {/* Soft Editorial Warm Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F8F6F2]/90 via-[#F8F6F2]/85 to-[#F8F6F2]" />
+      </div>
+
       <div className="relative z-10 container-luxury grid gap-12 lg:grid-cols-12 lg:items-center">
         
         {/* Left Column: Text & CTAs */}
@@ -18,7 +31,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#DDD4C6] bg-white px-4 py-1.5 shadow-subtle mb-6"
+            className="inline-flex items-center gap-2 rounded-full border border-[#DDD4C6] bg-white/95 px-4 py-1.5 shadow-subtle mb-6 backdrop-blur-md"
           >
             <div className="flex items-center text-[#A87444]">
               {[...Array(5)].map((_, i) => (

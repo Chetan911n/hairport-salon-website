@@ -66,7 +66,7 @@ export const featuredServicesList = [
     title: 'Kids & Junior Haircut',
     category: 'Junior Styling',
     description: 'Patient, gentle styling experience for young gents with neat cut and fun styling.',
-    price: '₹150',
+    price: '₹200',
     icon: Smile
   }
 ];

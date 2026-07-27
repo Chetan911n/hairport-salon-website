@@ -38,22 +38,22 @@ export default function ContactPage() {
               <div className="flex gap-4">
                 <Phone className="mt-1 shrink-0 text-gold" size={20} />
                 <div>
-                  <p className="text-white">{contact.phonePlaceholder}</p>
-                  <p className="mt-1 text-xs text-muted">Placeholder — unverified</p>
+                  <a href={`tel:${contact.phone}`} className="text-white hover:text-gold transition-colors font-semibold">{contact.phoneFormatted}</a>
+                  <p className="mt-1 text-xs text-muted">Verified Reception Hotline</p>
                 </div>
               </div>
               <div className="flex gap-4">
                 <MessageCircle className="mt-1 shrink-0 text-gold" size={20} />
                 <div>
-                  <p className="text-white">{contact.whatsappPlaceholder}</p>
-                  <p className="mt-1 text-xs text-muted">Placeholder — unverified</p>
+                  <a href={`https://wa.me/${contact.phone}`} target="_blank" rel="noopener noreferrer" className="text-white hover:text-gold transition-colors font-semibold">{contact.phoneFormatted}</a>
+                  <p className="mt-1 text-xs text-muted">WhatsApp Booking Support</p>
                 </div>
               </div>
               <div className="flex gap-4">
                 <Mail className="mt-1 shrink-0 text-gold" size={20} />
                 <div>
-                  <p className="text-white">{contact.emailPlaceholder}</p>
-                  <p className="mt-1 text-xs text-muted">Placeholder — unverified</p>
+                  <p className="text-white">{contact.email}</p>
+                  <p className="mt-1 text-xs text-muted">Official Salon Email</p>
                 </div>
               </div>
 

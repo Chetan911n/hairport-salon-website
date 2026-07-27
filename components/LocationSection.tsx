@@ -12,12 +12,12 @@ export default function LocationSection() {
     <section className="border-t border-border bg-bg py-24 md:py-36" id="contact">
       <div className="container-luxury">
         <Reveal className="text-center max-w-2xl mx-auto">
-          <span className="eyebrow">Visit Our Salon</span>
+          <span className="eyebrow">Visit THE HAIRPORT</span>
           <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl">
-            Prime Barbershop <span className="gold-text italic">Location.</span>
+            Nashik Road <span className="gold-text italic">Location &amp; Hours.</span>
           </h2>
           <p className="mt-4 text-muted text-base md:text-lg">
-            Located conveniently in Nashik Road with ample parking and unhurried lounge service.
+            Located conveniently near Datta Mandir stop with dedicated sections for men and women, warm/cold water hair wash &amp; air-conditioned waiting room.
           </p>
         </Reveal>
 
@@ -27,10 +27,10 @@ export default function LocationSection() {
             <div className="md:col-span-7 flex flex-col gap-6">
               <div className="flex items-center gap-2">
                 <span className="rounded-full border border-gold/40 bg-gold/10 px-3.5 py-1 text-xs font-semibold text-gold">
-                  Verified Flagship Branch
+                  Verified Google Listing
                 </span>
                 <span className="flex items-center gap-1 text-xs text-white">
-                  <Star size={13} className="fill-gold text-gold" /> {verifiedBranch.rating} ({verifiedBranch.reviewCount} Reviews)
+                  <Star size={13} className="fill-gold text-gold" /> {verifiedBranch.rating}★ ({verifiedBranch.reviewCount} Reviews)
                 </span>
               </div>
 
@@ -55,15 +55,15 @@ export default function LocationSection() {
 
                 <div className="flex items-center gap-3">
                   <Phone size={20} className="text-gold shrink-0" />
-                  <span className="text-white font-light">
-                    Appointment Hotline: Contact On-Site Reception
-                  </span>
+                  <a href={`tel:${verifiedBranch.phone}`} className="text-gold hover:underline font-semibold text-base">
+                    {verifiedBranch.phone}
+                  </a>
                 </div>
               </div>
 
               <div className="mt-4 flex flex-wrap gap-4">
                 <Link href="/book" className="btn-royal-gold text-xs py-3 px-6">
-                  Book Chair Now
+                  Book Appointment Now
                 </Link>
                 <a
                   href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(verifiedBranch.mapsQuery)}`}
@@ -76,31 +76,34 @@ export default function LocationSection() {
               </div>
             </div>
 
-            {/* Right Visual Card Column (Static Interactive Map Badge - No API Key Required) */}
-            <div className="md:col-span-5 relative h-72 rounded-2xl overflow-hidden border border-gold/30 bg-bg p-6 flex flex-col justify-between">
+            {/* Right Visual Card Column */}
+            <div className="md:col-span-5 relative h-80 rounded-2xl overflow-hidden border border-gold/30 bg-bg p-6 flex flex-col justify-between">
               <div className="absolute inset-0 bg-[radial-gradient(#C9A227_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
               
               <div className="relative z-10 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-xs font-bold text-white uppercase tracking-wider">Open Today</span>
+                  <span className="text-xs font-bold text-white uppercase tracking-wider">Open Daily</span>
                 </div>
-                <span className="text-xs font-mono text-gold">422101</span>
+                <span className="text-xs font-mono text-gold">Closes 9 PM</span>
               </div>
 
               <div className="relative z-10 text-center my-auto">
                 <MapPin size={36} className="text-gold mx-auto animate-bounce mb-2" />
-                <h4 className="font-display text-xl text-white">Nashik Road</h4>
-                <p className="text-xs text-muted mt-1">Gaikhe Colony, Near Swimming Pool</p>
+                <h4 className="font-display text-xl text-white">THE HAIRPORT</h4>
+                <p className="text-xs text-muted mt-1">Shop No. 3-5 Laxman Villa, Nr Taran Talav Rd</p>
+                <span className="mt-2 inline-block text-[11px] font-mono text-gold bg-gold/10 px-2.5 py-1 rounded-full border border-gold/30">
+                  Tel: 099223 38669
+                </span>
               </div>
 
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(verifiedBranch.mapsQuery)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative z-10 rounded-xl bg-gold/10 border border-gold/40 py-2 text-center text-xs font-bold uppercase text-gold hover:bg-gold hover:text-bg transition-colors"
+                className="relative z-10 rounded-xl bg-gold/10 border border-gold/40 py-2.5 text-center text-xs font-bold uppercase text-gold hover:bg-gold hover:text-bg transition-colors"
               >
-                Open Maps Navigation
+                Open Google Maps Navigation
               </a>
             </div>
           </div>

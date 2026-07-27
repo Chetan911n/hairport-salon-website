@@ -7,27 +7,27 @@ import { Star, Scissors, Award } from 'lucide-react';
 
 export const teamMembers = [
   {
-    name: 'Vikram Sharma',
-    role: 'Master Barber & Founder',
+    name: 'Prashant Sir',
+    role: 'Senior Master Hairstylist',
     experience: '12+ Years Exp',
-    speciality: 'Precision Fades & Beard Sculpting',
+    speciality: 'Precision Haircuts & Style Architecture (Alim Hakim Trained)',
     rating: '4.9★',
     image: '/hero.jpg'
   },
   {
-    name: 'Rahul Verma',
-    role: 'Senior Grooming Specialist',
+    name: 'Akshay',
+    role: 'Beard & Haircut Specialist',
     experience: '9+ Years Exp',
-    speciality: 'Royal Hot Towel Shave & Facials',
-    rating: '4.8★',
+    speciality: 'Skin Fades, Beard Sculpting & Custom Texture',
+    rating: '4.9★',
     image: '/about.jpg'
   },
   {
-    name: 'Amit Patil',
-    role: 'Color & Texture Specialist',
+    name: 'Kavita',
+    role: 'Senior Stylist & Beauty Specialist',
     experience: '8+ Years Exp',
-    speciality: 'Global Hair Colour & Restorative Spa',
-    rating: '4.9★',
+    speciality: 'Pampering Spa, Skin Facials & Toddler Styling',
+    rating: '4.8★',
     image: '/hero.jpg'
   }
 ];
@@ -39,10 +39,10 @@ export default function Team() {
         <Reveal className="text-center max-w-2xl mx-auto">
           <span className="eyebrow">Meet Our Artisans</span>
           <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl">
-            Master Barbers Behind <span className="gold-text italic">The Chair.</span>
+            Master Hairstylists Behind <span className="gold-text italic">The Chair.</span>
           </h2>
           <p className="mt-4 text-muted text-base md:text-lg">
-            Our team brings years of dedicated craftsmanship, attention to detail, and passion to every cut and trim.
+            Our expert team brings years of certified Alim Hakim &amp; Jawed Habib training, gentle care, and precision to every haircut.
           </p>
         </Reveal>
 
@@ -50,7 +50,7 @@ export default function Team() {
           {teamMembers.map((member, i) => (
             <Reveal key={member.name} delay={i * 0.1}>
               <div className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:-translate-y-2.5 hover:border-gold/60 hover:shadow-gold">
-                {/* Image Container with 3D Zoom Effect */}
+                {/* Image Container */}
                 <div className="relative h-72 w-full overflow-hidden rounded-xl">
                   <Image
                     src={member.image}

@@ -8,25 +8,25 @@ const stats = [
     icon: Award,
     value: '15+',
     label: 'Years Experience',
-    description: 'Master barber craftsmanship since 2018'
+    description: 'Precision haircutting & salon craft'
   },
   {
     icon: Users,
     value: '25,000+',
     label: 'Happy Clients',
-    description: 'Served across Nashik & beyond'
+    description: 'Trusted in Nashik Road since 2018'
   },
   {
     icon: Star,
-    value: '4.4★',
+    value: '4.5★',
     label: 'Google Rating',
-    description: 'Based on 189+ verified guest reviews'
+    description: 'Based on 181+ verified Google reviews'
   },
   {
     icon: MapPin,
     value: '1 Prime',
     label: 'Nashik Road Location',
-    description: 'Lakshman Villa, Near Swimming Pool'
+    description: 'Shop 3-5 Laxman Villa, Nr Taran Talav Rd'
   }
 ];
 

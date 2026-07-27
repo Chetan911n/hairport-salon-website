@@ -20,7 +20,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-sm text-xs leading-relaxed text-muted">
-              Nashik’s premier unisex barbershop and salon. Crafting timeless precision cuts, skin fades, razor shaves, and grooming rituals.
+              THE HAIRPORT — Nashik Road’s 4.5★ rated premier unisex salon. Precision cuts by Prashant Sir &amp; Akshay, hair spa, skin therapies, and separate ladies section.
             </p>
           </div>
 
@@ -47,7 +47,7 @@ export default function Footer() {
             <li><Link href="/about" className="hover:text-gold transition-colors">About Us</Link></li>
             <li><Link href="/services" className="hover:text-gold transition-colors">Featured Services</Link></li>
             <li><Link href="/#gallery" className="hover:text-gold transition-colors">Transformation Gallery</Link></li>
-            <li><Link href="/#team" className="hover:text-gold transition-colors">Meet Our Barbers</Link></li>
+            <li><Link href="/#team" className="hover:text-gold transition-colors">Meet Prashant Sir &amp; Team</Link></li>
             <li><Link href="/book" className="hover:text-gold transition-colors">Book Appointment</Link></li>
           </ul>
         </div>
@@ -55,7 +55,7 @@ export default function Footer() {
         {/* Col 3: Contact Info */}
         <div>
           <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
-            Barbershop Info
+            Contact &amp; Hours
           </h4>
           <ul className="mt-4 flex flex-col gap-3 text-xs">
             <li className="flex items-start gap-2">
@@ -64,11 +64,13 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Phone size={15} className="text-gold shrink-0" />
-              <span>Open Daily until 10:00 PM</span>
+              <a href={`tel:${verifiedBranch.phone}`} className="hover:text-gold transition-colors font-mono">
+                {verifiedBranch.phone}
+              </a>
             </li>
             <li className="flex items-center gap-2">
               <Mail size={15} className="text-gold shrink-0" />
-              <span>reception@hairport.com</span>
+              <span>Open Daily · Closes 9:00 PM</span>
             </li>
           </ul>
         </div>

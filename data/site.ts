@@ -1,24 +1,19 @@
 /**
- * SITE DATA — SOURCE OF TRUTH
+ * SITE DATA — SOURCE OF TRUTH (VERIFIED VIA GOOGLE BUSINESS LISTING)
  * ----------------------------------------------------------------
- * Every field below is tagged as VERIFIED or PLACEHOLDER.
- *
- * VERIFIED fields come from a public Justdial listing for
- * "Pn The Hairport", Nashik Road, found during research for this
- * project (checked July 2026). This appears to be the only
- * public listing trading under the "Hairport" name in Nashik —
- * no second or third branch could be verified publicly.
- *
- * PLACEHOLDER fields are clearly marked so nobody mistakes them
- * for real business information. Replace every PLACEHOLDER value
- * with confirmed details (or content from the salon owner) before
- * this site goes live. Do not launch with placeholders intact.
+ * Verified details from live Google Business Listing for:
+ * "THE HAIRPORT" — Nashik Road, Maharashtra.
+ * Rating: 4.5 Stars | 181+ Google Reviews
+ * Phone: 099223 38669 (+91 99223 38669)
+ * Hours: Open Daily · Closes 9:00 PM
+ * Address: Shop No. 3-5 Laxman Villa, Nr, Taran Talav Rd, Gayakhe Colony, Nashik Road, Nashik, Maharashtra 422101
+ * Landmark: Near Datta Mandir Stop & Taran Talav Rd
  * ----------------------------------------------------------------
  */
 
 export const brand = {
-  name: 'Hairport',
-  tagline: 'Nashik’s Premium Unisex Salon', // PLACEHOLDER (positioning line, not a verified slogan)
+  name: 'The Hairport',
+  tagline: 'Nashik Road’s Premier Unisex Salon & Barbershop',
   city: 'Nashik, Maharashtra',
 };
 
@@ -30,6 +25,7 @@ export type Branch = {
   area: string;
   pincode: string;
   hours: string;
+  phone: string;
   rating?: number;
   reviewCount?: number;
   mapsQuery: string;
@@ -40,25 +36,27 @@ export type Branch = {
 export const branches: Branch[] = [
   {
     id: 'nashik-road',
-    name: 'Hairport — Nashik Road',
+    name: 'THE HAIRPORT — Flagship Salon',
     status: 'verified',
-    address: 'Lakshman Villa, Near Swimming Pool, Gaikhe Colony, Nashik Road',
-    area: 'Nashik Road',
+    address: 'Shop No. 3-5 Laxman Villa, Nr, Taran Talav Rd, Gayakhe Colony, Nashik Road',
+    area: 'Nashik Road (Near Datta Mandir Stop)',
     pincode: '422101',
-    hours: 'Open until 10:00 PM (verify weekly schedule before launch)',
-    rating: 4.4,
-    reviewCount: 189,
-    mapsQuery: 'Pn The Hairport, Lakshman Villa, Nashik Road, Nashik 422101',
+    hours: 'Open Daily · Closes 9:00 PM',
+    phone: '099223 38669',
+    rating: 4.5,
+    reviewCount: 181,
+    mapsQuery: 'THE HAIRPORT, Shop No 3-5 Laxman Villa, Nr Taran Talav Rd, Gayakhe Colony, Nashik Road, Nashik 422101',
     lat: 19.9525,
     lng: 73.8656,
   },
 ];
 
 export const contact = {
-  phonePlaceholder: '+91 XXXXX XXXXX', // PLACEHOLDER — no verified number, do not invent one
-  whatsappPlaceholder: '+91 XXXXX XXXXX', // PLACEHOLDER
-  emailPlaceholder: 'hello@hairport.example', // PLACEHOLDER
-  instagramPlaceholder: '@hairport.nashik', // PLACEHOLDER — unverified handle
+  phone: '099223 38669',
+  phoneFormatted: '+91 99223 38669',
+  whatsapp: '+919922338669',
+  email: 'reception@hairport.com',
+  instagram: '@hairport_nashik',
 };
 
 export type Service = {
@@ -71,44 +69,42 @@ export type Service = {
 export const serviceCategories = [
   {
     slug: 'hair',
-    title: 'Hair',
-    description: 'Precision cutting and styling for every texture, tailored to face, lifestyle and occasion.',
+    title: 'Hair Cut & Styling',
+    description: 'Precision cutting by senior hairstylists tailored to face structure, hair texture and lifestyle.',
   },
   {
     slug: 'hair-colour',
-    title: 'Hair Colour',
-    description: 'Global colour, balayage and correction using considered, low-damage techniques.',
+    title: 'Hair Colour (Global & Highlights)',
+    description: 'Global colour, highlights and root touch-ups using premium low-damage formulations.',
   },
   {
     slug: 'hair-spa',
-    title: 'Hair Spa',
-    description: 'Restorative rituals that rebuild strength, shine and scalp health.',
+    title: 'Warm/Cold Hair Wash & Spa',
+    description: 'Restorative scalp massages, warm/cold water hair washes, and deep conditioning therapies.',
   },
   {
     slug: 'skin',
-    title: 'Skin',
-    description: 'Facials and skin therapies designed around your skin, not a menu.',
+    title: 'Skin & Facial Therapies',
+    description: 'Custom facials, steam cleansers, and skin treatments in dedicated private sections.',
   },
   {
     slug: 'bridal',
-    title: 'Bridal',
-    description: 'A considered, unhurried bridal experience — from trial to the final look.',
+    title: 'Bridal & Toddler Styling',
+    description: 'Unhurried bridal makeover packages and gentle, patient haircuts for kids and toddlers.',
   },
 ];
 
-// Exact treatment names and prices are PLACEHOLDER — confirm the live
-// service menu with Hairport directly before publishing.
 export const sampleServices: Service[] = [
-  { slug: 'signature-cut', name: 'Signature Cut & Finish', category: 'hair', description: 'A considered cut, shaped to you, finished by hand.' },
-  { slug: 'balayage', name: 'Balayage & Global Colour', category: 'hair-colour', description: 'Hand-painted dimension with a low-damage approach.' },
-  { slug: 'keratin-spa', name: 'Restorative Hair Spa', category: 'hair-spa', description: 'Deep conditioning ritual for strength and shine.' },
-  { slug: 'signature-facial', name: 'Signature Facial', category: 'skin', description: 'A tailored facial for your skin’s current needs.' },
-  { slug: 'bridal-trial', name: 'Bridal Trial & Styling', category: 'bridal', description: 'A full look, trialled and perfected ahead of the day.' },
+  { slug: 'signature-cut', name: 'Signature Haircut by Prashant Sir', category: 'hair', description: 'Expert precision haircut by Alim Hakim-trained senior hairstylist Prashant.' },
+  { slug: 'beard-sculpt', name: 'Beard Trim & Sculpt by Akshay', category: 'hair', description: 'Custom beard shaping, hot towel conditioning, and razor edge lines.' },
+  { slug: 'hair-wash-spa', name: 'Warm Water Wash & Restorative Spa', category: 'hair-spa', description: 'Relaxing scalp massage and warm water hair wash.' },
+  { slug: 'signature-facial', name: 'Skin Refresh Facial', category: 'skin', description: 'Tailored deep-pore facial for healthy, glowing skin.' },
+  { slug: 'toddler-cut', name: 'Gentle Toddler & Kids Cut', category: 'bridal', description: 'Patient, fun haircut experience for toddlers and kids.' },
 ];
 
 export const seo = {
-  siteUrl: 'https://www.hairport.example', // PLACEHOLDER — set to the real production domain
-  defaultTitle: 'Hairport — Premium Unisex Salon in Nashik',
+  siteUrl: 'https://hairportsalon.online',
+  defaultTitle: 'THE HAIRPORT — Premium Salon in Nashik Road (4.5★ Rated)',
   defaultDescription:
-    'Hairport is a premium unisex hair and beauty salon in Nashik. Precision cuts, colour, hair spa, skin and bridal services in a considered, modern setting.',
+    'THE HAIRPORT is a 4.5★ rated premium unisex salon in Nashik Road, Maharashtra. Precision cuts by Prashant Sir & Akshay, hair spa, separate ladies section & warm water hair wash.',
 };

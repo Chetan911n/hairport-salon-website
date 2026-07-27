@@ -32,13 +32,13 @@ export default function Nav() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'py-3 glass shadow-card' : 'py-6 bg-transparent'
+        scrolled ? 'py-3 glass shadow-subtle' : 'py-6 bg-transparent'
       }`}
     >
       <nav className="container-luxury flex items-center justify-between" aria-label="Primary">
-        <Link href="/" className="font-display text-xl tracking-widest2 text-white flex items-center gap-2">
-          HAIR<span className="gold-text font-serif">PORT</span>
-          <span className="text-[10px] tracking-widest text-gold/80 border border-gold/40 px-2 py-0.5 rounded-full uppercase font-sans hidden sm:inline-block">
+        <Link href="/" className="font-display text-xl tracking-widest2 text-[#2B2B2B] flex items-center gap-2">
+          HAIR<span className="text-[#A87444] font-serif">PORT</span>
+          <span className="text-[10px] tracking-widest text-[#A87444] border border-[#DDD4C6] bg-white px-2 py-0.5 rounded-full uppercase font-sans hidden sm:inline-block">
             Est. 2018
           </span>
         </Link>
@@ -48,10 +48,10 @@ export default function Nav() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="relative text-xs tracking-wider uppercase font-semibold text-muted hover:text-gold transition-colors group py-1"
+                className="relative text-xs tracking-wider uppercase font-semibold text-[#6E6A63] hover:text-[#A87444] transition-colors group py-1"
               >
                 {l.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#A87444] transition-all duration-300 group-hover:w-full" />
               </Link>
             </li>
           ))}
@@ -64,7 +64,7 @@ export default function Nav() {
         </div>
 
         <button
-          className="lg:hidden text-white"
+          className="lg:hidden text-[#2B2B2B]"
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label={open ? 'Close menu' : 'Open menu'}
@@ -85,7 +85,7 @@ export default function Nav() {
             <ul className="container-luxury flex flex-col gap-1 py-6">
               {links.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="block py-2.5 text-base font-medium text-white hover:text-gold transition-colors">
+                  <Link href={l.href} className="block py-2.5 text-base font-medium text-[#2B2B2B] hover:text-[#A87444] transition-colors">
                     {l.label}
                   </Link>
                 </li>

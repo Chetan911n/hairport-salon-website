@@ -1,111 +1,48 @@
 'use client';
 
 import Link from 'next/link';
-import { Instagram, Facebook, Twitter, Mail, MapPin, Phone, ArrowRight } from 'lucide-react';
-import { brand, branches } from '@/data/site';
+import { branches } from '@/data/site';
 
 export default function Footer() {
-  const verifiedBranch = (branches.find((b) => b.status === 'verified') || branches[0])!;
+  const verifiedBranch = branches.find((b) => b.status === 'verified') || branches[0]!;
 
   return (
-    <footer className="border-t border-border bg-bg pt-20 pb-12 text-muted">
-      <div className="container-luxury grid gap-12 md:grid-cols-2 lg:grid-cols-5">
-        {/* Col 1: Brand & Bio */}
-        <div className="lg:col-span-2 flex flex-col justify-between">
-          <div>
-            <Link href="/" className="font-display text-2xl tracking-widest2 text-white flex items-center gap-2">
-              HAIR<span className="gold-text font-serif">PORT</span>
-              <span className="text-[10px] tracking-widest text-gold/80 border border-gold/40 px-2 py-0.5 rounded-full uppercase font-sans">
-                Est. 2018
-              </span>
-            </Link>
-            <p className="mt-4 max-w-sm text-xs leading-relaxed text-muted">
-              THE HAIRPORT — Nashik Road’s 4.5★ rated premier unisex salon. Precision cuts by Prashant Sir &amp; Akshay, hair spa, skin therapies, and separate ladies section.
-            </p>
-          </div>
-
-          <div className="mt-6 flex items-center gap-4 text-white">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-gold hover:border-gold hover:bg-gold hover:text-bg transition-all">
-              <Instagram size={16} />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-gold hover:border-gold hover:bg-gold hover:text-bg transition-all">
-              <Facebook size={16} />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-gold hover:border-gold hover:bg-gold hover:text-bg transition-all">
-              <Twitter size={16} />
-            </a>
-          </div>
-        </div>
-
-        {/* Col 2: Quick Links */}
-        <div>
-          <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
-            Navigation
-          </h4>
-          <ul className="mt-4 flex flex-col gap-2.5 text-xs">
-            <li><Link href="/" className="hover:text-gold transition-colors">Home</Link></li>
-            <li><Link href="/about" className="hover:text-gold transition-colors">About Us</Link></li>
-            <li><Link href="/services" className="hover:text-gold transition-colors">Featured Services</Link></li>
-            <li><Link href="/#gallery" className="hover:text-gold transition-colors">Transformation Gallery</Link></li>
-            <li><Link href="/#team" className="hover:text-gold transition-colors">Meet Prashant Sir &amp; Team</Link></li>
-            <li><Link href="/book" className="hover:text-gold transition-colors">Book Appointment</Link></li>
-          </ul>
-        </div>
-
-        {/* Col 3: Contact Info */}
-        <div>
-          <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
-            Contact &amp; Hours
-          </h4>
-          <ul className="mt-4 flex flex-col gap-3 text-xs">
-            <li className="flex items-start gap-2">
-              <MapPin size={15} className="text-gold shrink-0 mt-0.5" />
-              <span>{verifiedBranch.address}, {verifiedBranch.area}, Nashik - {verifiedBranch.pincode}</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <Phone size={15} className="text-gold shrink-0" />
-              <a href={`tel:${verifiedBranch.phone}`} className="hover:text-gold transition-colors font-mono">
-                {verifiedBranch.phone}
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <Mail size={15} className="text-gold shrink-0" />
-              <span>Open Daily · Closes 9:00 PM</span>
-            </li>
-          </ul>
-        </div>
-
-        {/* Col 4: Newsletter Signup */}
-        <div>
-          <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-white">
-            Grooming Journal
-          </h4>
-          <p className="mt-4 text-xs leading-relaxed text-muted">
-            Subscribe for grooming tips, slot openings, and exclusive salon updates.
+    <footer className="border-t border-[#DDD4C6] bg-[#F8F6F2] py-16 text-[#6E6A63]">
+      <div className="container-luxury grid gap-12 lg:grid-cols-12">
+        {/* Brand Info */}
+        <div className="lg:col-span-5">
+          <Link href="/" className="font-display text-2xl tracking-widest2 text-[#2B2B2B] flex items-center gap-2">
+            HAIR<span className="text-[#A87444] font-serif">PORT</span>
+          </Link>
+          <p className="mt-4 text-xs leading-relaxed text-[#6E6A63] max-w-sm">
+            THE HAIRPORT is a 4.5★ rated premium unisex salon in Nashik Road, Maharashtra. Precision haircuts by Prashant Sir, Tejas &amp; Kunal, hair spa, separate ladies section &amp; warm water hair wash.
           </p>
+        </div>
 
-          <form onSubmit={(e) => e.preventDefault()} className="mt-4 flex flex-col gap-2">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="w-full rounded-xl border border-border bg-card px-4 py-2.5 text-xs text-white placeholder-muted focus:border-gold focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="btn-royal-gold w-full text-[11px] py-2.5"
-            >
-              Subscribe Newsletter
-            </button>
-          </form>
+        {/* Quick Links */}
+        <div className="lg:col-span-3 space-y-3 text-xs">
+          <strong className="block text-sm font-display text-[#2B2B2B] uppercase tracking-wider mb-2">Quick Links</strong>
+          <ul className="space-y-2">
+            <li><Link href="/#about" className="hover:text-[#A87444] transition-colors">About Us</Link></li>
+            <li><Link href="/#services" className="hover:text-[#A87444] transition-colors">Services</Link></li>
+            <li><Link href="/#team" className="hover:text-[#A87444] transition-colors">Master Barbers</Link></li>
+            <li><Link href="/#gallery" className="hover:text-[#A87444] transition-colors">Before &amp; After</Link></li>
+            <li><Link href="/#reviews" className="hover:text-[#A87444] transition-colors">Verified Reviews</Link></li>
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div className="lg:col-span-4 space-y-3 text-xs">
+          <strong className="block text-sm font-display text-[#2B2B2B] uppercase tracking-wider mb-2">Salon Info</strong>
+          <p><strong className="text-[#2B2B2B]">Address:</strong> {verifiedBranch.address}</p>
+          <p><strong className="text-[#2B2B2B]">Phone:</strong> <a href={`tel:${verifiedBranch.phone}`} className="hover:text-[#A87444]">{verifiedBranch.phone}</a></p>
+          <p><strong className="text-[#2B2B2B]">Hours:</strong> {verifiedBranch.hours}</p>
         </div>
       </div>
 
-      <div className="container-luxury mt-16 border-t border-border/50 pt-8 flex flex-col md:flex-row items-center justify-between text-[11px] text-muted gap-4">
-        <p>© {new Date().getFullYear()} {brand.name} Unisex Salon. All rights reserved.</p>
-        <div className="flex items-center gap-6">
-          <Link href="/privacy-policy" className="hover:text-gold transition-colors">Privacy Policy</Link>
-          <Link href="/terms" className="hover:text-gold transition-colors">Terms of Service</Link>
-        </div>
+      <div className="container-luxury mt-12 pt-8 border-t border-[#DDD4C6]/60 flex flex-col sm:flex-row items-center justify-between text-[11px]">
+        <p>© {new Date().getFullYear()} THE HAIRPORT Nashik Road. All rights reserved.</p>
+        <p className="mt-2 sm:mt-0 text-[#A87444]">Warm Editorial Luxury Experience</p>
       </div>
     </footer>
   );

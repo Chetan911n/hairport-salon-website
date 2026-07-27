@@ -1,84 +1,51 @@
 'use client';
 
 import Reveal from './Reveal';
-import { Sparkles, Info, ShieldCheck } from 'lucide-react';
+import { Sparkles, Info } from 'lucide-react';
 
 const products = [
-  {
-    name: 'Matte Finish Hair Pomade',
-    category: 'Hair Styling',
-    description: 'High hold with a zero-shine natural matte finish. Ideal for textured crops and quiffs.',
-    size: '100g Jar',
-    benefit: 'Pliable all-day control'
-  },
-  {
-    name: 'Texturizing Hair Wax',
-    category: 'Hair Styling',
-    description: 'Medium hold wax formula enriched with natural beeswax for effortless reworkable volume.',
-    size: '80g Jar',
-    benefit: 'Adds volume & separation'
-  },
-  {
-    name: 'Organic Cedarwood Beard Oil',
-    category: 'Beard Care',
-    description: 'Cold-pressed jojoba & argan oil infused with cedarwood for deep beard softness & scalp relief.',
-    size: '50ml Dropper',
-    benefit: 'Eliminates itch & hydrates'
-  },
-  {
-    name: 'Nourishing Hair & Scalp Serum',
-    category: 'Hair Therapy',
-    description: 'Lightweight serum packed with Keratin proteins to repair split ends and restore shine.',
-    size: '100ml Bottle',
-    benefit: 'Heat & humidity protection'
-  },
-  {
-    name: 'Scalp Revitalizing Shampoo',
-    category: 'Daily Care',
-    description: 'Sulfate-free tea tree & peppermint cleanser that clarifies pores and stimulates hair follicles.',
-    size: '250ml Bottle',
-    benefit: 'Refreshing mint cooling'
-  }
+  { name: 'Matte Finish Styling Pomade', desc: 'Strong hold, zero shine pomade for classic textured cuts.', volume: '100g' },
+  { name: 'Nourishing Beard Oil', desc: 'Argan and cedarwood essential blend for soft, non-greasy beard growth.', volume: '50ml' },
+  { name: 'Restorative Hair Serum', desc: 'Heat protection & frizz control serum for daily styling finish.', volume: '100ml' },
+  { name: 'Deep Cleansing Hair Shampoo', desc: 'Sulfate-free clarifying shampoo for scalp health & volume.', volume: '250ml' }
 ];
 
 export default function GroomingProducts() {
   return (
-    <section className="border-t border-border bg-surface/40 py-24 md:py-36">
+    <section className="border-t border-[#DDD4C6] bg-[#EFE8DE]/50 py-24 md:py-36">
       <div className="container-luxury">
-        <Reveal className="text-center max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-gold/40 bg-gold/10 px-4 py-1 text-xs font-semibold text-gold mb-4">
-            <Info size={13} />
-            <span>Salon Experience Line — Information Only (In-Store Usage)</span>
-          </div>
-          <h2 className="font-display text-4xl leading-tight text-white md:text-5xl">
-            Grooming Essentials Used <span className="gold-text italic">In Our Chairs.</span>
+        <Reveal className="max-w-2xl">
+          <span className="eyebrow">Professional Formulas</span>
+          <h2 className="mt-4 font-display text-4xl leading-tight text-[#2B2B2B] md:text-5xl">
+            In-Chair Grooming <span className="text-[#A87444] italic font-serif">Essentials.</span>
           </h2>
-          <p className="mt-4 text-muted text-base md:text-lg">
-            We curate and formulate high-performance grooming products to maintain your signature cut at home.
+          <p className="mt-4 text-[#6E6A63] text-base md:text-lg">
+            We use premium professional formulas during haircuts, hair spas, and beard services for optimal scalp care.
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3 lg:grid-cols-5">
-          {products.map((product, i) => (
-            <Reveal key={product.name} delay={i * 0.07}>
-              <div className="group relative flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-gold/60 hover:shadow-gold">
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {products.map((p, i) => (
+            <Reveal key={p.name} delay={i * 0.08}>
+              <div className="group relative flex h-full flex-col justify-between rounded-2xl border border-[#DDD4C6] bg-white p-6 shadow-card transition-all duration-300 hover:border-[#A87444]">
                 <div>
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-gold">
-                    {product.category}
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#EFE8DE] text-[#A87444]">
+                    <Sparkles size={20} />
+                  </div>
+                  <span className="mt-4 block text-[10px] uppercase font-bold tracking-wider text-[#A87444]">
+                    {p.volume}
                   </span>
-                  <h3 className="mt-2 font-display text-lg text-white group-hover:text-gold transition-colors">
-                    {product.name}
+                  <h3 className="mt-1 font-display text-lg text-[#2B2B2B]">
+                    {p.name}
                   </h3>
-                  <p className="mt-3 text-xs leading-relaxed text-muted">
-                    {product.description}
+                  <p className="mt-2 text-xs leading-relaxed text-[#6E6A63]">
+                    {p.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 border-t border-border/50 pt-4">
-                  <div className="flex items-center justify-between text-[11px] text-white">
-                    <span className="font-medium text-gold/90">{product.size}</span>
-                    <span className="flex items-center gap-1 text-muted"><ShieldCheck size={12} className="text-gold" /> {product.benefit}</span>
-                  </div>
+                <div className="mt-6 border-t border-[#DDD4C6]/60 pt-3 flex items-center gap-1.5 text-[11px] text-[#6E6A63]">
+                  <Info size={13} className="text-[#A87444]" />
+                  <span>In-Salon Application Only</span>
                 </div>
               </div>
             </Reveal>

@@ -3,28 +3,28 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #C9A227 #111111;
+  scrollbar-color: #A87444 #F8F6F2;
 }
 
 html {
-  background: #111111;
+  background: #F8F6F2;
 }
 
 body {
-  background-color: #111111;
-  color: #F8F8F8;
+  background-color: #F8F6F2;
+  color: #2B2B2B;
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: #C9A227;
-  color: #111111;
+  background: #A87444;
+  color: #FFFFFF;
 }
 
 /* Visible focus states for keyboard navigation (WCAG) */
@@ -33,27 +33,25 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #C9A227;
+  outline: 2px solid #A87444;
   outline-offset: 3px;
   border-radius: 2px;
 }
 
 .eyebrow {
-  @apply text-gold text-xs md:text-sm tracking-widest2 uppercase font-body font-semibold;
+  @apply text-[#A87444] text-xs md:text-sm tracking-widest2 uppercase font-body font-semibold;
 }
 
 .glass {
-  background: rgba(28, 28, 28, 0.85);
-  border: 1px solid rgba(201, 162, 39, 0.25);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #DDD4C6;
+  box-shadow: 0 4px 25px rgba(43, 43, 43, 0.05);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
 .gold-text {
-  background: linear-gradient(120deg, #DFBB48, #FFFFFF, #C9A227);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #A87444;
 }
 
 .container-luxury {
@@ -88,33 +86,22 @@ html.lenis {
   overflow: hidden;
 }
 
-@keyframes luxury-flow {
-  0% { transform: scale(1) translate(0px, 0px) rotate(0deg); }
-  33% { transform: scale(1.06) translate(-10px, -8px) rotate(0.2deg); }
-  66% { transform: scale(1.03) translate(8px, 6px) rotate(-0.2deg); }
-  100% { transform: scale(1) translate(0px, 0px) rotate(0deg); }
-}
-
-.animate-wallpaper-flow {
-  animation: luxury-flow 35s ease-in-out infinite;
-}
-
-/* Bespoke Royal Button Interactions (Non-Generic Custom Movement) */
+/* Warm Editorial Button Styling (Clean, Tactile & Refined) */
 .btn-royal-gold {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #C9A227 0%, #DFBB48 50%, #9B7B16 100%);
-  color: #111111;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  background: #A87444;
+  color: #FFFFFF;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   border-radius: 9999px;
   padding: 14px 32px;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 20px rgba(201, 162, 39, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px rgba(168, 116, 68, 0.22);
   cursor: pointer;
 }
 
@@ -125,14 +112,15 @@ html.lenis {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-  transition: left 0.6s ease;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
 }
 
 .btn-royal-gold:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 35px rgba(201, 162, 39, 0.5), 0 0 18px rgba(223, 187, 72, 0.6);
-  color: #000;
+  background: #8A5C33;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(168, 116, 68, 0.35);
+  color: #FFFFFF;
 }
 
 .btn-royal-gold:hover::before {
@@ -140,8 +128,8 @@ html.lenis {
 }
 
 .btn-royal-gold:active {
-  transform: translateY(1px) scale(0.97);
-  box-shadow: 0 2px 10px rgba(201, 162, 39, 0.3);
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 8px rgba(168, 116, 68, 0.2);
 }
 
 .btn-royal-outline {
@@ -149,38 +137,26 @@ html.lenis {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(201, 162, 39, 0.6);
-  background: rgba(28, 28, 28, 0.7);
-  backdrop-filter: blur(12px);
-  color: #C9A227;
+  border: 1px solid #DDD4C6;
+  background: #FFFFFF;
+  color: #2B2B2B;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   border-radius: 9999px;
   padding: 14px 32px;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 10px rgba(43, 43, 43, 0.04);
   cursor: pointer;
 }
 
-.btn-royal-outline::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(201, 162, 39, 0.2), transparent);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
 .btn-royal-outline:hover {
-  border-color: #C9A227;
-  color: #F8F8F8;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
-}
-
-.btn-royal-outline:hover::after {
-  opacity: 1;
+  border-color: #A87444;
+  background: #A87444;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 116, 68, 0.2);
 }
 
 .btn-royal-outline:active {

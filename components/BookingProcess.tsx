@@ -1,82 +1,52 @@
 'use client';
 
-import Link from 'next/link';
 import Reveal from './Reveal';
-import { Scissors, UserCheck, Calendar, CheckCircle2, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const steps = [
-  {
-    step: '01',
-    title: 'Choose Service',
-    description: 'Select your precision cut, beard sculpt, hair colour, or skin therapy from our menu.',
-    icon: Scissors
-  },
-  {
-    step: '02',
-    title: 'Select Barber',
-    description: 'Pick your preferred master barber or choose any available specialist.',
-    icon: UserCheck
-  },
-  {
-    step: '03',
-    title: 'Pick Date & Time',
-    description: 'Choose a convenient unhurried time slot that suits your daily schedule.',
-    icon: Calendar
-  },
-  {
-    step: '04',
-    title: 'Confirm Appointment',
-    description: 'Receive instant confirmation via SMS & WhatsApp with location pin.',
-    icon: CheckCircle2
-  }
+  { num: '01', title: 'Choose Service', desc: 'Select from precision haircuts, skin fades, beard sculpts or hair spa.' },
+  { num: '02', title: 'Select Barber', desc: 'Book directly with Prashant Sir, Tejas, or Kunal based on your preference.' },
+  { num: '03', title: 'Pick Date & Time', desc: 'Choose a convenient slot that fits your schedule without long wait times.' },
+  { num: '04', title: 'Confirm & Enjoy', desc: 'Arrive at Laxman Villa, Nashik Road and experience unhurried luxury grooming.' }
 ];
 
 export default function BookingProcess() {
   return (
-    <section className="border-t border-border bg-bg py-24 md:py-36">
+    <section className="border-t border-[#DDD4C6] bg-[#EFE8DE]/50 py-24 md:py-36">
       <div className="container-luxury">
         <Reveal className="text-center max-w-2xl mx-auto">
-          <span className="eyebrow">Seamless Reservation</span>
-          <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl">
-            Four Steps To Your <span className="gold-text italic">Signature Look.</span>
+          <span className="eyebrow">Seamless Experience</span>
+          <h2 className="mt-4 font-display text-4xl leading-tight text-[#2B2B2B] md:text-5xl">
+            How Appointment <span className="text-[#A87444] italic font-serif">Booking Works.</span>
           </h2>
-          <p className="mt-4 text-muted text-base md:text-lg">
-            Reserve your chair online in under 60 seconds with instant booking confirmation.
+          <p className="mt-4 text-[#6E6A63] text-base md:text-lg">
+            Four simple steps to secure your dedicated chair time with our senior master barbers.
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4 relative">
-          {steps.map((s, index) => {
-            const Icon = s.icon;
-            return (
-              <Reveal key={s.step} delay={index * 0.1}>
-                <div className="relative h-full flex flex-col justify-between rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-gold/60 hover:shadow-gold">
-                  <div>
-                    <div className="flex items-center justify-between">
-                      <span className="font-display text-3xl font-bold text-gold/40">
-                        {s.step}
-                      </span>
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gold/10 text-gold border border-gold/30">
-                        <Icon size={20} />
-                      </div>
-                    </div>
-
-                    <h3 className="mt-6 font-display text-xl text-white">
-                      {s.title}
-                    </h3>
-                    <p className="mt-2 text-xs leading-relaxed text-muted">
-                      {s.description}
-                    </p>
-                  </div>
+        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {steps.map((s, i) => (
+            <Reveal key={s.num} delay={i * 0.1}>
+              <div className="relative h-full rounded-2xl border border-[#DDD4C6] bg-white p-8 shadow-card flex flex-col justify-between transition-transform hover:-translate-y-1">
+                <div>
+                  <span className="font-display text-4xl font-bold text-[#A87444]">
+                    {s.num}
+                  </span>
+                  <h3 className="mt-4 font-display text-xl text-[#2B2B2B]">
+                    {s.title}
+                  </h3>
+                  <p className="mt-2 text-xs leading-relaxed text-[#6E6A63]">
+                    {s.desc}
+                  </p>
                 </div>
-              </Reveal>
-            );
-          })}
+              </div>
+            </Reveal>
+          ))}
         </div>
 
         <Reveal delay={0.4} className="mt-14 text-center">
-          <Link href="/book" className="btn-royal-gold inline-flex items-center gap-2">
-            Start Booking Now <ArrowRight size={16} />
+          <Link href="/book" className="btn-royal-gold">
+            Reserve Your Appointment Now
           </Link>
         </Reveal>
       </div>

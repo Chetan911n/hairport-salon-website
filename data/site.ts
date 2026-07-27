@@ -23,6 +23,7 @@ export type Branch = {
   status: 'verified' | 'placeholder';
   address: string;
   area: string;
+  landmark?: string;
   pincode: string;
   hours: string;
   phone: string;
@@ -40,6 +41,7 @@ export const branches: Branch[] = [
     status: 'verified',
     address: 'Shop No. 3-5 Laxman Villa, Nr, Taran Talav Rd, Gayakhe Colony, Nashik Road',
     area: 'Nashik Road (Near Datta Mandir Stop)',
+    landmark: 'Near Datta Mandir Stop & Taran Talav Rd',
     pincode: '422101',
     hours: 'Open Daily · Closes 9:00 PM',
     phone: '099223 38669',
@@ -108,3 +110,49 @@ export const seo = {
   defaultDescription:
     'THE HAIRPORT is a 4.5★ rated premium unisex salon in Nashik Road, Maharashtra. Precision cuts by Prashant Sir, Tejas & Kunal, hair spa, separate ladies section & warm water hair wash.',
 };
+
+export type Review = {
+  name: string;
+  comment: string;
+  rating: number;
+  date: string;
+  role?: string;
+};
+
+export const realGoogleReviews: Review[] = [
+  {
+    name: 'Paresh Chitnis',
+    comment: 'Prashant is a senior hairstylist. He is a very soft spoken and gentleman. PN Hairport is located at an accessible location. Very convenient place and good locality. The salon is very clean and professional.',
+    rating: 5,
+    date: 'Google Review',
+    role: 'Local Guide (95 Reviews)'
+  },
+  {
+    name: 'Siddharth Pareek',
+    comment: 'Exceptional service and attention to detail. Prashant Sir and team take the time to understand your hair type before styling.',
+    rating: 5,
+    date: 'Google Review',
+    role: 'Verified Customer'
+  },
+  {
+    name: 'Harshal Raut',
+    comment: 'Best salon in Nashik Road! Clean environment, courteous staff and great hair wash service.',
+    rating: 5,
+    date: 'Google Review',
+    role: 'Verified Customer'
+  },
+  {
+    name: 'Immanuel Barse',
+    comment: 'Thrilled with the service ... Good going Hairport !',
+    rating: 5,
+    date: 'Google Review',
+    role: 'Verified Customer'
+  },
+  {
+    name: 'Gopal Malani',
+    comment: 'Very good place for haircut with co operative staff.',
+    rating: 5,
+    date: 'Google Review',
+    role: 'Verified Customer'
+  }
+];

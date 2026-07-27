@@ -6,17 +6,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: '#111111',
-        surface: '#1C1C1C',
-        card: 'rgba(28, 28, 28, 0.85)',
+        bg: '#F8F6F2',
+        surface: '#EFE8DE',
+        card: '#FFFFFF',
         gold: {
-          DEFAULT: '#C9A227',
-          soft: '#DFBB48',
-          deep: '#9B7B16'
+          DEFAULT: '#A87444',
+          soft: '#C48B57',
+          deep: '#8A5C33'
         },
-        border: 'rgba(201, 162, 39, 0.22)',
-        muted: '#888888',
-        white: '#F8F8F8'
+        accent: {
+          DEFAULT: '#A87444',
+          soft: '#C48B57',
+          deep: '#8A5C33'
+        },
+        border: '#DDD4C6',
+        muted: '#6E6A63',
+        white: '#2B2B2B', // Main editorial text on light background
+        charcoal: '#2B2B2B'
       },
       fontFamily: {
         display: ['var(--font-playfair)', 'serif'],
@@ -26,12 +32,13 @@ const config: Config = {
         widest2: '0.35em'
       },
       backgroundImage: {
-        'gold-glow': 'radial-gradient(circle at 50% 50%, rgba(201, 162, 39, 0.18), transparent 70%)',
-        'grain': "url('/images/grain.png')"
+        'editorial-gradient': 'linear-gradient(180deg, #F8F6F2 0%, #EFE8DE 100%)',
+        'paper-grain': "url('https://www.transparenttextures.com/patterns/handmade-paper.png')"
       },
       boxShadow: {
-        gold: '0 0 35px rgba(201, 162, 39, 0.3)',
-        card: '0 8px 30px rgba(0, 0, 0, 0.7)'
+        gold: '0 8px 30px rgba(168, 116, 68, 0.15)',
+        card: '0 4px 25px rgba(43, 43, 43, 0.06)',
+        subtle: '0 2px 12px rgba(43, 43, 43, 0.04)'
       },
       animation: {
         'fade-up': 'fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',

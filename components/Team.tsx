@@ -34,14 +34,14 @@ export const teamMembers = [
 
 export default function Team() {
   return (
-    <section className="border-t border-border bg-bg py-24 md:py-36" id="team">
+    <section className="border-t border-[#DDD4C6] bg-[#F8F6F2] py-24 md:py-36" id="team">
       <div className="container-luxury">
         <Reveal className="text-center max-w-2xl mx-auto">
           <span className="eyebrow">Meet Our Artisans</span>
-          <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl">
-            Master Hairstylists Behind <span className="gold-text italic">The Chair.</span>
+          <h2 className="mt-4 font-display text-4xl leading-tight text-[#2B2B2B] md:text-5xl">
+            Master Hairstylists Behind <span className="text-[#A87444] italic font-serif">The Chair.</span>
           </h2>
-          <p className="mt-4 text-muted text-base md:text-lg">
+          <p className="mt-4 text-[#6E6A63] text-base md:text-lg">
             Our expert team brings years of dedicated salon mastery, attention to detail, and precision to every cut and trim.
           </p>
         </Reveal>
@@ -49,7 +49,7 @@ export default function Team() {
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {teamMembers.map((member, i) => (
             <Reveal key={member.name} delay={i * 0.1}>
-              <div className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-500 hover:-translate-y-2.5 hover:border-gold/60 hover:shadow-gold">
+              <div className="group relative overflow-hidden rounded-2xl border border-[#DDD4C6] bg-white p-6 shadow-card transition-all duration-300 hover:-translate-y-2 hover:border-[#A87444]">
                 {/* Image Container */}
                 <div className="relative h-72 w-full overflow-hidden rounded-xl">
                   <Image
@@ -59,34 +59,33 @@ export default function Team() {
                     height={450}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-transparent opacity-80" />
                   
                   {/* Rating Badge */}
-                  <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full border border-gold/40 bg-bg/80 px-3 py-1 text-xs font-semibold text-gold backdrop-blur-md">
-                    <Star size={12} className="fill-gold" />
+                  <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full border border-[#DDD4C6] bg-white/90 px-3 py-1 text-xs font-semibold text-[#A87444] shadow-subtle backdrop-blur-md">
+                    <Star size={12} className="fill-[#A87444]" />
                     <span>{member.rating}</span>
                   </div>
 
                   {/* Experience Badge */}
-                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full border border-white/20 bg-bg/70 px-3 py-1 text-xs text-white backdrop-blur-md">
-                    <Award size={13} className="text-gold" />
+                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full border border-[#DDD4C6] bg-white/90 px-3 py-1 text-xs text-[#2B2B2B] shadow-subtle backdrop-blur-md">
+                    <Award size={13} className="text-[#A87444]" />
                     <span>{member.experience}</span>
                   </div>
                 </div>
 
                 {/* Barber Info */}
                 <div className="mt-6">
-                  <h3 className="font-display text-2xl text-white group-hover:text-gold transition-colors">
+                  <h3 className="font-display text-2xl text-[#2B2B2B] group-hover:text-[#A87444] transition-colors">
                     {member.name}
                   </h3>
-                  <span className="mt-1 block text-xs font-semibold uppercase tracking-wider text-gold">
+                  <span className="mt-1 block text-xs font-semibold uppercase tracking-wider text-[#A87444]">
                     {member.role}
                   </span>
-                  <p className="mt-3 text-xs text-muted leading-relaxed">
-                    <strong className="text-white font-medium">Speciality:</strong> {member.speciality}
+                  <p className="mt-3 text-xs text-[#6E6A63] leading-relaxed">
+                    <strong className="text-[#2B2B2B] font-medium">Speciality:</strong> {member.speciality}
                   </p>
 
-                  <div className="mt-6 border-t border-border/50 pt-4">
+                  <div className="mt-6 border-t border-[#DDD4C6]/60 pt-4">
                     <Link
                       href="/book"
                       className="btn-royal-gold w-full text-xs py-2.5"

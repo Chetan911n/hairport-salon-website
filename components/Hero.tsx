@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ChevronDown, Star, Scissors } from 'lucide-react';
+import { ChevronDown, Star } from 'lucide-react';
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
@@ -16,19 +16,19 @@ export default function Hero() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-surface/80 px-4 py-1.5 backdrop-blur-md mb-8"
+          className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 shadow-subtle mb-8"
         >
           <div className="flex items-center text-gold">
             {[...Array(5)].map((_, i) => (
               <Star key={i} size={13} className="fill-gold" />
             ))}
           </div>
-          <span className="text-xs font-semibold text-white tracking-wide">
-            4.4★ Rated Barber Shop in Nashik
+          <span className="text-xs font-semibold text-charcoal tracking-wide">
+            4.5★ Rated Barber Shop in Nashik
           </span>
         </motion.div>
 
-        <h1 className="font-display text-[12vw] sm:text-[8vw] md:text-[6vw] lg:text-[5vw] leading-[1.02] text-white tracking-tight">
+        <h1 className="font-display text-[12vw] sm:text-[8vw] md:text-[6vw] lg:text-[5vw] leading-[1.02] text-charcoal tracking-tight">
           <span className="split-line">
             <motion.span
               initial={shouldReduceMotion ? false : { y: '110%' }}
@@ -69,7 +69,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4, duration: 1 }}
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-white/50"
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-muted"
         aria-hidden="true"
       >
         <ChevronDown className="animate-bounce" size={22} />

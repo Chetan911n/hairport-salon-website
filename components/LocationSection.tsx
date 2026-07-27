@@ -1,113 +1,126 @@
 'use client';
 
-import Link from 'next/link';
 import Reveal from './Reveal';
-import { MapPin, Clock, Phone, Navigation, Star, ArrowUpRight } from 'lucide-react';
+import { MapPin, Phone, Clock, Star, Navigation } from 'lucide-react';
 import { branches } from '@/data/site';
 
 export default function LocationSection() {
-  const verifiedBranch = (branches.find((b) => b.status === 'verified') || branches[0])!;
+  const branch = branches.find((b) => b.status === 'verified') || branches[0]!;
 
   return (
-    <section className="border-t border-border bg-bg py-24 md:py-36" id="contact">
+    <section className="border-t border-[#DDD4C6] bg-[#F8F6F2] py-24 md:py-36" id="contact">
       <div className="container-luxury">
-        <Reveal className="text-center max-w-2xl mx-auto">
-          <span className="eyebrow">Visit THE HAIRPORT</span>
-          <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl">
-            Nashik Road <span className="gold-text italic">Location &amp; Hours.</span>
+        <Reveal className="max-w-2xl">
+          <span className="eyebrow">Visit Our Salon</span>
+          <h2 className="mt-4 font-display text-4xl leading-tight text-[#2B2B2B] md:text-5xl">
+            Flagship Location in <span className="text-[#A87444] italic font-serif">Nashik Road.</span>
           </h2>
-          <p className="mt-4 text-muted text-base md:text-lg">
-            Located conveniently near Datta Mandir stop with dedicated sections for men and women, warm/cold water hair wash &amp; air-conditioned waiting room.
+          <p className="mt-4 text-[#6E6A63] text-base md:text-lg">
+            Located conveniently near Taran Talav Rd &amp; Datta Mandir stop with easy parking and unhurried service.
           </p>
         </Reveal>
 
-        <Reveal delay={0.2} className="mt-16 max-w-4xl mx-auto">
-          <div className="overflow-hidden rounded-3xl border border-gold/40 bg-surface/90 p-8 md:p-12 shadow-card grid gap-10 md:grid-cols-12 items-center">
-            {/* Left Info Column */}
-            <div className="md:col-span-7 flex flex-col gap-6">
-              <div className="flex items-center gap-2">
-                <span className="rounded-full border border-gold/40 bg-gold/10 px-3.5 py-1 text-xs font-semibold text-gold">
-                  Verified Google Listing
-                </span>
-                <span className="flex items-center gap-1 text-xs text-white">
-                  <Star size={13} className="fill-gold text-gold" /> {verifiedBranch.rating}★ ({verifiedBranch.reviewCount} Reviews)
-                </span>
+        <div className="mt-14 grid gap-8 lg:grid-cols-12">
+          {/* Main Location Card */}
+          <Reveal className="lg:col-span-7">
+            <div className="rounded-2xl border border-[#DDD4C6] bg-white p-8 md:p-10 shadow-card h-full flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between border-b border-[#DDD4C6]/60 pb-6 mb-6">
+                  <div>
+                    <h3 className="font-display text-2xl text-[#2B2B2B]">
+                      {branch.name}
+                    </h3>
+                    <p className="text-xs text-[#6E6A63] mt-1">{branch.landmark}</p>
+                  </div>
+                  <div className="flex items-center gap-1 rounded-full border border-[#DDD4C6] bg-[#EFE8DE] px-3 py-1 text-xs font-bold text-[#A87444]">
+                    <Star size={13} className="fill-[#A87444]" />
+                    <span>4.5★ (181+ Reviews)</span>
+                  </div>
+                </div>
+
+                <div className="space-y-5 text-sm text-[#2B2B2B]">
+                  <div className="flex items-start gap-3">
+                    <MapPin size={20} className="text-[#A87444] shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="block text-xs uppercase text-[#A87444] tracking-wider mb-0.5">Address</strong>
+                      <span>{branch.address}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Phone size={20} className="text-[#A87444] shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="block text-xs uppercase text-[#A87444] tracking-wider mb-0.5">Direct Line</strong>
+                      <a href={`tel:${branch.phone}`} className="hover:text-[#A87444] transition-colors font-medium">
+                        {branch.phone}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Clock size={20} className="text-[#A87444] shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="block text-xs uppercase text-[#A87444] tracking-wider mb-0.5">Operating Hours</strong>
+                      <span>{branch.hours}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              <h3 className="font-display text-3xl text-white">
-                {verifiedBranch.name}
-              </h3>
-
-              <div className="flex flex-col gap-4 text-sm text-muted">
-                <div className="flex items-start gap-3">
-                  <MapPin size={20} className="text-gold shrink-0 mt-0.5" />
-                  <span className="text-white font-light leading-relaxed">
-                    {verifiedBranch.address}, {verifiedBranch.area}, Nashik - {verifiedBranch.pincode}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <Clock size={20} className="text-gold shrink-0" />
-                  <span className="text-white font-light">
-                    {verifiedBranch.hours}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <Phone size={20} className="text-gold shrink-0" />
-                  <a href={`tel:${verifiedBranch.phone}`} className="text-gold hover:underline font-semibold text-base">
-                    {verifiedBranch.phone}
-                  </a>
-                </div>
-              </div>
-
-              <div className="mt-4 flex flex-wrap gap-4">
-                <Link href="/book" className="btn-royal-gold text-xs py-3 px-6">
-                  Book Appointment Now
-                </Link>
+              <div className="mt-8 pt-6 border-t border-[#DDD4C6]/60 flex flex-col sm:flex-row gap-4">
                 <a
-                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(verifiedBranch.mapsQuery)}`}
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(branch.address)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-royal-outline text-xs py-3 px-6 inline-flex items-center gap-2"
+                  className="btn-royal-gold text-xs py-3 px-6 flex items-center justify-center gap-2"
                 >
-                  <Navigation size={14} /> Get Directions <ArrowUpRight size={14} />
+                  <Navigation size={15} /> Get Driving Directions
+                </a>
+                <a
+                  href={`tel:${branch.phone}`}
+                  className="btn-royal-outline text-xs py-3 px-6 flex items-center justify-center gap-2"
+                >
+                  Call Salon Desk
                 </a>
               </div>
             </div>
+          </Reveal>
 
-            {/* Right Visual Card Column */}
-            <div className="md:col-span-5 relative h-80 rounded-2xl overflow-hidden border border-gold/30 bg-bg p-6 flex flex-col justify-between">
-              <div className="absolute inset-0 bg-[radial-gradient(#C9A227_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
-              
-              <div className="relative z-10 flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-xs font-bold text-white uppercase tracking-wider">Open Daily</span>
-                </div>
-                <span className="text-xs font-mono text-gold">Closes 9 PM</span>
+          {/* Quick Info Box */}
+          <Reveal delay={0.2} className="lg:col-span-5">
+            <div className="rounded-2xl border border-[#DDD4C6] bg-[#EFE8DE] p-8 shadow-card h-full flex flex-col justify-between">
+              <div>
+                <span className="eyebrow">Salon Features</span>
+                <h4 className="mt-3 font-display text-2xl text-[#2B2B2B]">
+                  Comfort &amp; Privacy
+                </h4>
+                <ul className="mt-6 space-y-4 text-xs md:text-sm text-[#6E6A63]">
+                  <li className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-[#A87444]" />
+                    Separate Men &amp; Women Styling Sections
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-[#A87444]" />
+                    Warm Water &amp; Cold Water Hair Wash
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-[#A87444]" />
+                    Senior Hairstylists Trained by Alim Hakim
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-[#A87444]" />
+                    Wheelchair Accessible Entry &amp; Parking
+                  </li>
+                </ul>
               </div>
 
-              <div className="relative z-10 text-center my-auto">
-                <MapPin size={36} className="text-gold mx-auto animate-bounce mb-2" />
-                <h4 className="font-display text-xl text-white">THE HAIRPORT</h4>
-                <p className="text-xs text-muted mt-1">Shop No. 3-5 Laxman Villa, Nr Taran Talav Rd</p>
-                <span className="mt-2 inline-block text-[11px] font-mono text-gold bg-gold/10 px-2.5 py-1 rounded-full border border-gold/30">
-                  Tel: 099223 38669
-                </span>
+              <div className="mt-8 rounded-xl bg-white border border-[#DDD4C6] p-4 text-xs text-[#2B2B2B]">
+                <strong className="block text-[#A87444] font-semibold mb-1">Accessibility Landmark:</strong>
+                Shop No. 3-5 Laxman Villa, Near Swimming Pool &amp; Datta Mandir Stop, Nashik Road.
               </div>
-
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(verifiedBranch.mapsQuery)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative z-10 rounded-xl bg-gold/10 border border-gold/40 py-2.5 text-center text-xs font-bold uppercase text-gold hover:bg-gold hover:text-bg transition-colors"
-              >
-                Open Google Maps Navigation
-              </a>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

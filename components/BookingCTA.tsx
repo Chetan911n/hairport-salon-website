@@ -14,9 +14,9 @@ export default function BookingCTA() {
           <div className="mt-10">
             <Link
               href="/book"
-              className="inline-block rounded-full bg-gold px-10 py-4 text-sm font-medium tracking-wide text-bg transition-all hover:shadow-gold hover:brightness-110"
+              className="btn-royal-gold"
             >
-              Book Appointment
+              Reserve Barbershop Service
             </Link>
           </div>
         </Reveal>

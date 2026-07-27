@@ -7,12 +7,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const links = [
-  { href: '/about', label: 'About' },
+  { href: '/about', label: 'Heritage' },
   { href: '/services', label: 'Services' },
-  { href: '/colour-guide', label: 'Colour Guide' },
-  { href: '/gallery', label: 'Gallery' },
-  { href: '/branches', label: 'Branches' },
-  { href: '/testimonials', label: 'Testimonials' },
+  { href: '/services/shaving', label: 'Shaving' },
+  { href: '/colour-guide', label: 'Fragrance Fitting' },
+  { href: '/services/skin', label: 'Skin & Facial' },
+  { href: '/services/hair', label: 'Hair & Styling' },
+  { href: '/services/hair-spa', label: 'Spa & Grooming' },
+  { href: '/branches', label: 'Barbershop Lounge' },
+  { href: '/testimonials', label: 'Reviews' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -36,16 +39,19 @@ export default function Nav() {
       }`}
     >
       <nav className="container-luxury flex items-center justify-between" aria-label="Primary">
-        <Link href="/" className="font-display text-xl tracking-widest2 text-white">
-          HAIR<span className="gold-text">PORT</span>
+        <Link href="/" className="font-display text-xl tracking-widest2 text-white flex items-center gap-2">
+          HAIR<span className="gold-text font-serif">PORT</span>
+          <span className="text-[10px] tracking-widest text-gold/80 border border-gold/40 px-2 py-0.5 rounded-full uppercase font-sans hidden sm:inline-block">
+            Est. 2018
+          </span>
         </Link>
 
-        <ul className="hidden md:flex items-center gap-10">
+        <ul className="hidden xl:flex items-center gap-7">
           {links.map((l) => (
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="relative text-sm tracking-wide text-muted hover:text-white transition-colors group"
+                className="relative text-xs tracking-wider uppercase font-medium text-muted hover:text-gold transition-colors group py-1"
               >
                 {l.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-gold transition-all duration-300 group-hover:w-full" />
@@ -54,12 +60,12 @@ export default function Nav() {
           ))}
         </ul>
 
-        <div className="hidden md:block">
+        <div className="hidden xl:block">
           <Link
             href="/book"
-            className="rounded-full border border-gold/60 px-6 py-2.5 text-sm tracking-wide text-gold transition-all hover:bg-gold hover:text-bg hover:shadow-gold"
+            className="btn-royal-gold text-xs py-2.5 px-6"
           >
-            Book Appointment
+            Book Barbershop
           </Link>
         </div>
 

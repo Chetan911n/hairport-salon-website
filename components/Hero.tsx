@@ -73,15 +73,15 @@ export default function Hero() {
         >
           <Link
             href="/book"
-            className="rounded-full bg-gold px-9 py-3.5 text-sm font-medium tracking-wide text-bg transition-all hover:shadow-gold hover:brightness-110"
+            className="btn-royal-gold"
           >
-            Book Appointment
+            Book Barbershop Ritual
           </Link>
           <Link
             href="/services"
-            className="rounded-full border border-white/20 px-9 py-3.5 text-sm tracking-wide text-white transition-all hover:border-gold hover:text-gold"
+            className="btn-royal-outline"
           >
-            Explore Services
+            Explore Grooming Menu
           </Link>
         </motion.div>
       </div>

@@ -10,8 +10,6 @@ export const featuredServicesList = [
     title: 'Classic Haircut',
     category: 'Hair Cut & Styling',
     description: 'Precision scissor and clipper work tailored to your head shape, finished with styling & hot towel.',
-    duration: '45 mins',
-    price: '₹350',
     icon: Scissors
   },
   {
@@ -19,8 +17,6 @@ export const featuredServicesList = [
     title: 'Skin Fade',
     category: 'Precision Cut',
     description: 'Seamless gradient fade from zero skin, detailed hair line shape-up and texture styling.',
-    duration: '45 mins',
-    price: '₹400',
     icon: Sparkles
   },
   {
@@ -28,8 +24,6 @@ export const featuredServicesList = [
     title: 'Beard Trim & Sculpt',
     category: 'Beard Care',
     description: 'Sharp razor lines, length trimming, hot oil massage and beard balm conditioning.',
-    duration: '30 mins',
-    price: '₹250',
     icon: Flame
   },
   {
@@ -37,8 +31,6 @@ export const featuredServicesList = [
     title: 'Royal Shave',
     category: 'Hot Towel Ritual',
     description: 'Traditional straight razor shave with essential pre-shave oils, steam, and cold towel finish.',
-    duration: '35 mins',
-    price: '₹300',
     icon: ShieldCheck
   },
   {
@@ -46,8 +38,6 @@ export const featuredServicesList = [
     title: 'Restorative Hair Spa',
     category: 'Scalp & Hair Therapy',
     description: 'Deep conditioning scalp massage, steam treatment, keratin rebuilding and scalp nourishment.',
-    duration: '50 mins',
-    price: '₹600',
     icon: Droplets
   },
   {
@@ -55,8 +45,6 @@ export const featuredServicesList = [
     title: 'Hair Colour (Global & Highlights)',
     category: 'Colour Artistry',
     description: 'Ammonia-free global colour coverage or hand-crafted highlight streaks for rich dimension.',
-    duration: '60 mins',
-    price: '₹800+',
     icon: Palette
   },
   {
@@ -64,8 +52,6 @@ export const featuredServicesList = [
     title: 'Signature Facial',
     category: 'Skin Therapy',
     description: 'Deep pore cleansing, exfoliation, face massage, and clarifying mask for healthy radiant skin.',
-    duration: '45 mins',
-    price: '₹700',
     icon: Sparkles
   },
   {
@@ -73,8 +59,6 @@ export const featuredServicesList = [
     title: 'Kids Haircut',
     category: 'Junior Styling',
     description: 'Patient, gentle styling experience for young gents with neat cut and fun styling.',
-    duration: '30 mins',
-    price: '₹250',
     icon: Smile
   }
 ];
@@ -106,9 +90,6 @@ export default function Services() {
                       <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gold/10 text-gold border border-gold/30">
                         <Icon size={22} />
                       </div>
-                      <span className="rounded-full border border-gold/30 bg-gold/10 px-3 py-1 text-xs font-semibold text-gold">
-                        {service.duration}
-                      </span>
                     </div>
 
                     <span className="mt-5 block text-xs tracking-wider uppercase text-gold font-semibold">
@@ -122,15 +103,12 @@ export default function Services() {
                     </p>
                   </div>
 
-                  <div className="mt-6 flex items-center justify-between border-t border-border/50 pt-4">
-                    <span className="font-display text-lg font-bold text-white">
-                      {service.price}
-                    </span>
+                  <div className="mt-6 flex items-center justify-end border-t border-border/50 pt-4">
                     <Link
                       href="/book"
                       className="inline-flex items-center gap-1 text-xs font-semibold uppercase text-gold transition-all hover:translate-x-1"
                     >
-                      Book <ArrowUpRight size={14} />
+                      Book Service <ArrowUpRight size={14} />
                     </Link>
                   </div>
                 </div>

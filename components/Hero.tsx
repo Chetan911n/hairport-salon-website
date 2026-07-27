@@ -9,116 +9,85 @@ export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden bg-[#F8F6F2] pt-28 pb-16">
-      {/* Background Image ONLY for Home Tab */}
-      <div className="absolute inset-0 pointer-events-none z-0">
+    <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden bg-[#F8F6F2] pt-24 pb-16">
+      {/* Full-Bleed Unsplash Background Image (Positioned Behind Text) */}
+      <div className="absolute inset-0 z-0">
         <Image
           src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1920&q=85"
-          alt="Home Tab Luxury Barbershop Background"
+          alt="THE HAIRPORT Luxury Barbershop Atmosphere"
           fill
           priority
-          className="object-cover opacity-20 mix-blend-multiply"
+          className="object-cover object-center opacity-35"
         />
-        {/* Soft Editorial Warm Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F8F6F2]/90 via-[#F8F6F2]/85 to-[#F8F6F2]" />
+        {/* Soft Warm Editorial Gradient Mask for Perfect Text Legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F8F6F2]/80 via-[#F8F6F2]/75 to-[#F8F6F2]" />
       </div>
 
-      <div className="relative z-10 container-luxury grid gap-12 lg:grid-cols-12 lg:items-center">
+      <div className="relative z-10 container-luxury flex flex-col items-center text-center max-w-4xl mx-auto pt-16">
         
-        {/* Left Column: Text & CTAs */}
-        <div className="lg:col-span-7 flex flex-col items-start text-left">
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="inline-flex items-center gap-2 rounded-full border border-[#DDD4C6] bg-white/95 px-4 py-1.5 shadow-subtle mb-6 backdrop-blur-md"
-          >
-            <div className="flex items-center text-[#A87444]">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={13} className="fill-[#A87444]" />
-              ))}
-            </div>
-            <span className="text-xs font-semibold text-[#2B2B2B] tracking-wide">
-              4.5★ Rated Barber Shop in Nashik Road
-            </span>
-          </motion.div>
+        {/* Rating Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="inline-flex items-center gap-2 rounded-full border border-[#DDD4C6] bg-white/90 px-4.5 py-1.5 shadow-subtle mb-6 backdrop-blur-md"
+        >
+          <div className="flex items-center text-[#A87444]">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} size={14} className="fill-[#A87444]" />
+            ))}
+          </div>
+          <span className="text-xs font-semibold text-[#2B2B2B] tracking-wide">
+            4.5★ Rated Barber Shop in Nashik Road (181+ Reviews)
+          </span>
+        </motion.div>
 
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.06] text-[#2B2B2B] tracking-tight">
-            Precision. <span className="text-[#A87444] italic font-serif">Style.</span> Confidence.
-          </h1>
+        {/* Hero Title */}
+        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.04] text-[#2B2B2B] tracking-tight">
+          Precision. <span className="text-[#A87444] italic font-serif">Style.</span> Confidence.
+        </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-6 max-w-xl text-base sm:text-lg text-[#6E6A63] font-light leading-relaxed"
-          >
-            Premium Barber Experience in Nashik. Tailored precision haircuts, skin fades, hot towel razor shaves, and unhurried grooming rituals by Prashant Sir &amp; team.
-          </motion.p>
+        {/* Hero Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-[#6E6A63] font-light leading-relaxed text-balance"
+        >
+          Premium Barber Experience in Nashik. Tailored precision haircuts, skin fades, hot towel razor shaves, and unhurried grooming rituals by Prashant Sir &amp; team.
+        </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
-          >
-            <Link href="/book" className="btn-royal-gold">
-              Book Appointment
-            </Link>
-            <a href="#services" className="btn-royal-outline">
-              Explore Services
-            </a>
-          </motion.div>
+        {/* Action Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
+        >
+          <Link href="/book" className="btn-royal-gold px-8 py-3.5">
+            Book Appointment
+          </Link>
+          <a href="#services" className="btn-royal-outline px-8 py-3.5">
+            Explore Services
+          </a>
+        </motion.div>
 
-          {/* Highlights Row */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
-            className="mt-10 pt-6 border-t border-[#DDD4C6]/80 flex items-center gap-6 text-xs text-[#6E6A63]"
-          >
-            <div className="flex items-center gap-2">
-              <Award size={16} className="text-[#A87444]" />
-              <span>Alim Hakim Trained</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <ShieldCheck size={16} className="text-[#A87444]" />
-              <span>Warm Water Hair Wash</span>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Right Column: High-Resolution Unsplash Barber Showcase Image */}
-        <div className="lg:col-span-5 relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="relative rounded-2xl overflow-hidden border-2 border-[#DDD4C6] bg-white p-2 shadow-card"
-          >
-            <div className="relative h-[420px] sm:h-[500px] w-full overflow-hidden rounded-xl">
-              <Image
-                src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=85"
-                alt="THE HAIRPORT Barber Craft in Action"
-                fill
-                priority
-                className="object-cover transition-transform duration-700 hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2B2B2B]/80 via-transparent to-transparent" />
-              
-              {/* Image Badge */}
-              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl bg-white/95 p-3.5 backdrop-blur-md border border-[#DDD4C6] shadow-subtle">
-                <div>
-                  <h4 className="font-display text-sm font-bold text-[#2B2B2B]">Master Barbering Craft</h4>
-                  <p className="text-[11px] text-[#6E6A63]">Shop No. 3-5 Laxman Villa, Nashik Road</p>
-                </div>
-                <span className="rounded-full bg-[#EFE8DE] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#A87444] border border-[#DDD4C6]">
-                  Verified
-                </span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+        {/* Feature Highlights */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="mt-12 pt-6 border-t border-[#DDD4C6]/80 flex flex-wrap items-center justify-center gap-8 text-xs font-medium text-[#6E6A63]"
+        >
+          <div className="flex items-center gap-2">
+            <Award size={16} className="text-[#A87444]" />
+            <span>Alim Hakim Trained Senior Barbers</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <ShieldCheck size={16} className="text-[#A87444]" />
+            <span>Warm &amp; Cold Water Hair Wash</span>
+          </div>
+        </motion.div>
 
       </div>
 
@@ -129,7 +98,7 @@ export default function Hero() {
         className="absolute bottom-4 left-1/2 z-10 -translate-x-1/2 text-[#6E6A63]"
         aria-hidden="true"
       >
-        <ChevronDown className="animate-bounce" size={20} />
+        <ChevronDown className="animate-bounce" size={22} />
       </motion.div>
     </section>
   );

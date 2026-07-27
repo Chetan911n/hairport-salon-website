@@ -10,7 +10,6 @@ const links = [
   { href: '/about', label: 'Heritage' },
   { href: '/services', label: 'Services' },
   { href: '/services/shaving', label: 'Shaving' },
-  { href: '/colour-guide', label: 'Fragrance Fitting' },
   { href: '/services/skin', label: 'Skin & Facial' },
   { href: '/services/hair', label: 'Hair & Styling' },
   { href: '/services/hair-spa', label: 'Spa & Grooming' },

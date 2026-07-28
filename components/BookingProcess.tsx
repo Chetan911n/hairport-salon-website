@@ -1,9 +1,9 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Calendar, UserCheck, Scissors, Sparkles } from 'lucide-react';
-import ParallaxBackground from './ParallaxBackground';
 
 const steps = [
   {
@@ -36,32 +36,55 @@ const easeLuxury = [0.22, 1, 0.36, 1];
 
 export default function BookingProcess() {
   return (
-    <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 text-white overflow-hidden" id="booking-process">
-      {/* 100% Bright Visible Parallax Image 4 Background */}
-      <ParallaxBackground
-        src="/images/image4_booking_reviews_feed_bg.jpg"
-        alt="THE HAIRPORT Image 4 Booking Process Background"
-        opacity={100}
-      />
+    <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 bg-[#0F172A] text-white overflow-hidden" id="booking-process">
+      <div className="container-luxury">
+        
+        {/* Header + Wood Texture Showcase Banner */}
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 1.0, ease: easeLuxury }}
+            className="lg:col-span-6"
+          >
+            <span className="eyebrow text-[#FACC15]">Seamless Experience</span>
+            <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold">
+              How Your Appointment <span className="text-[#FACC15] italic font-serif">Unfolds.</span>
+            </h2>
+            <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium">
+              Four simple steps from booking to leaving our salon chair with a master cut.
+            </p>
+          </motion.div>
 
-      <div className="relative z-10 container-luxury">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 1.0, ease: easeLuxury }}
-          className="text-center max-w-2xl mx-auto bg-black/80 p-8 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md mb-16"
-        >
-          <span className="eyebrow text-[#FACC15]">Seamless Experience</span>
-          <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold drop-shadow-lg">
-            How Your Appointment <span className="text-[#FACC15] italic font-serif">Unfolds.</span>
-          </h2>
-          <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium drop-shadow-md">
-            Four simple steps from booking to leaving our salon chair with a master cut.
-          </p>
-        </motion.div>
+          {/* Premium Wood Texture Image 4 Showcase Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 1.0, ease: easeLuxury }}
+            className="lg:col-span-6 relative h-64 sm:h-80 w-full overflow-hidden rounded-3xl border border-[#FACC15]/40 shadow-2xl"
+          >
+            <Image
+              src="/images/image4_booking_reviews_feed_bg.jpg"
+              alt="THE HAIRPORT Wood Texture Lounge Wall"
+              fill
+              className="object-cover object-center opacity-100 transition-transform duration-700 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#FACC15]">
+                Salon Atmosphere
+              </span>
+              <span className="text-[10px] text-white/80 uppercase font-semibold">
+                Unhurried Rituals
+              </span>
+            </div>
+          </motion.div>
+        </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 relative">
+        {/* Steps Grid */}
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (
@@ -72,7 +95,7 @@ export default function BookingProcess() {
                 viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.8, delay: i * 0.12, ease: easeLuxury }}
                 whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                className="group relative flex h-full flex-col justify-between rounded-2xl border border-[#FACC15]/40 bg-black/85 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FACC15] hover:shadow-[0_10px_30px_rgba(250,204,21,0.2)]"
+                className="group relative flex h-full flex-col justify-between rounded-2xl border border-[#FACC15]/40 bg-[#1E293B]/80 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FACC15] hover:shadow-[0_10px_30px_rgba(250,204,21,0.2)]"
               >
                 <div>
                   <div className="flex items-center justify-between">
@@ -80,7 +103,6 @@ export default function BookingProcess() {
                       {step.number}
                     </span>
                     
-                    {/* Circle Scale Animation */}
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
@@ -118,7 +140,7 @@ export default function BookingProcess() {
           transition={{ duration: 0.8, delay: 0.5, ease: easeLuxury }}
           className="mt-16 text-center"
         >
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 rounded-2xl border border-[#FACC15] bg-black/90 px-8 py-5 shadow-2xl backdrop-blur-md">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-4 rounded-2xl border border-[#FACC15] bg-[#1E293B] px-8 py-5 shadow-2xl backdrop-blur-md">
             <span className="text-sm font-bold text-[#F8FAFC]">
               Ready for your master haircut experience?
             </span>

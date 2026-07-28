@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-import ParallaxBackground from './ParallaxBackground';
 
 const products = [
   {
@@ -34,31 +33,54 @@ const easeLuxury = [0.22, 1, 0.36, 1];
 
 export default function GroomingProducts() {
   return (
-    <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 text-white overflow-hidden" id="products">
-      {/* 100% Bright Visible Parallax Image 5 Background */}
-      <ParallaxBackground
-        src="/images/image5_products_location_cta_footer_bg.jpg"
-        alt="THE HAIRPORT Image 5 Grooming Products Background"
-        opacity={100}
-      />
+    <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 bg-[#0C0C0C] text-white overflow-hidden" id="products">
+      <div className="container-luxury">
+        
+        {/* Editorial Side Feature Header with Image 5 Product Shelf Card */}
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 1.0, ease: easeLuxury }}
+            className="lg:col-span-6"
+          >
+            <span className="eyebrow text-[#FACC15]">Barber Essentials</span>
+            <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold">
+              Professional Grooming <span className="text-[#FACC15] italic font-serif">Products.</span>
+            </h2>
+            <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium leading-relaxed">
+              Hand-selected, salon-grade hair pomades, beard oils, and scalp therapies available in-store at Nashik Road.
+            </p>
+          </motion.div>
 
-      <div className="relative z-10 container-luxury">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 1.0, ease: easeLuxury }}
-          className="text-center max-w-2xl mx-auto bg-black/80 p-8 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md mb-16"
-        >
-          <span className="eyebrow text-[#FACC15]">Barber Essentials</span>
-          <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold drop-shadow-lg">
-            Professional Grooming <span className="text-[#FACC15] italic font-serif">Products.</span>
-          </h2>
-          <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium drop-shadow-md">
-            Hand-selected, salon-grade hair pomades, beard oils, and scalp therapies available in-store at Nashik Road.
-          </p>
-        </motion.div>
+          {/* Floating Product Shelf Image 5 Showcase Card */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 1.0, ease: easeLuxury }}
+            className="lg:col-span-6 relative h-64 sm:h-80 w-full overflow-hidden rounded-3xl border border-[#FACC15]/40 shadow-2xl"
+          >
+            <Image
+              src="/images/image5_products_location_cta_footer_bg.jpg"
+              alt="THE HAIRPORT Luxury Product Shelf Display"
+              fill
+              className="object-cover object-center opacity-100 transition-transform duration-700 hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#FACC15]">
+                Salon Product Display
+              </span>
+              <span className="text-[10px] text-white/80 uppercase font-semibold">
+                Authentic Formulas
+              </span>
+            </div>
+          </motion.div>
+        </div>
 
+        {/* Product Cards */}
         <div className="grid gap-8 md:grid-cols-3">
           {products.map((product, i) => (
             <motion.div
@@ -68,7 +90,7 @@ export default function GroomingProducts() {
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.8, delay: i * 0.12, ease: easeLuxury }}
               whileHover={{ rotate: 0, y: -6, transition: { duration: 0.3 } }}
-              className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-black/85 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FACC15] hover:shadow-[0_10px_30px_rgba(250,204,21,0.25)]"
+              className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-[#1E293B]/80 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FACC15] hover:shadow-[0_10px_30px_rgba(250,204,21,0.25)]"
             >
               <div>
                 <div className="relative h-60 w-full overflow-hidden rounded-xl border border-[#FACC15]/30">

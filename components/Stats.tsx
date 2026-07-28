@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import ParallaxBackground from './ParallaxBackground';
 import AnimatedCounter from './AnimatedCounter';
 
 const stats = [
@@ -16,13 +15,9 @@ const easeLuxury = [0.22, 1, 0.36, 1];
 
 export default function Stats() {
   return (
-    <section className="relative border-t border-[#FACC15]/30 py-20 text-white overflow-hidden">
-      {/* 100% Bright Visible Parallax Image 1 Background */}
-      <ParallaxBackground
-        src="/images/image1_hero_stats_bg.jpg"
-        alt="THE HAIRPORT Statistics Background"
-        opacity={100}
-      />
+    <section className="relative border-t border-[#FACC15]/30 py-20 bg-[#0F172A] text-white overflow-hidden">
+      {/* Solid Dark Luxury Surface with Subtle Gold Accent Lines */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#0C0C0C] via-[#0F172A] to-[#0C0C0C]" />
 
       <div className="relative z-10 container-luxury">
         <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
@@ -35,7 +30,7 @@ export default function Stats() {
               transition={{ duration: 0.8, delay: i * 0.12, ease: easeLuxury }}
               className="text-center"
             >
-              <div className="group rounded-2xl border border-[#FACC15]/50 bg-black/85 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[#FACC15] hover:shadow-[0_0_20px_rgba(250,204,21,0.2)]">
+              <div className="group rounded-2xl border border-[#FACC15]/40 bg-[#1E293B]/90 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-[#FACC15] hover:shadow-[0_0_25px_rgba(250,204,21,0.2)]">
                 <div className="font-display text-4xl font-bold text-[#FACC15] md:text-5xl">
                   {s.isRating ? (
                     <span>4.5★</span>

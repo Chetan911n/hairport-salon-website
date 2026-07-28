@@ -3,23 +3,15 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Instagram, Facebook } from 'lucide-react';
-import ParallaxBackground from './ParallaxBackground';
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-[#FACC15]/30 pt-20 pb-12 text-white overflow-hidden" id="footer">
-      {/* 100% Bright Visible Parallax Image 5 Background */}
-      <ParallaxBackground
-        src="/images/image5_products_location_cta_footer_bg.jpg"
-        alt="THE HAIRPORT Image 5 Footer Background"
-        opacity={100}
-      />
-
-      <div className="relative z-10 container-luxury">
+    <footer className="relative border-t border-[#FACC15]/30 pt-20 pb-12 bg-[#0C0C0C] text-white overflow-hidden" id="footer">
+      <div className="container-luxury">
         <div className="grid gap-12 lg:grid-cols-12 pb-16 border-b border-[#FACC15]/30">
           
           {/* Brand Info Column */}
-          <div className="lg:col-span-5 bg-black/85 p-8 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md">
+          <div className="lg:col-span-5 bg-[#1E293B]/90 p-8 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md">
             <Link href="/" className="inline-block">
               <span className="font-display text-2xl font-bold tracking-widest text-[#FACC15]">
                 THE HAIRPORT
@@ -59,7 +51,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links Column */}
-          <div className="lg:col-span-3 bg-black/85 p-8 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md">
+          <div className="lg:col-span-3 bg-[#1E293B]/90 p-8 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md">
             <h4 className="font-display text-sm font-bold uppercase tracking-wider text-[#FACC15]">
               Quick Navigation
             </h4>
@@ -74,7 +66,7 @@ export default function Footer() {
           </div>
 
           {/* Contact & Hours Column */}
-          <div className="lg:col-span-4 bg-black/85 p-8 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md">
+          <div className="lg:col-span-4 bg-[#1E293B]/90 p-8 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md">
             <h4 className="font-display text-sm font-bold uppercase tracking-wider text-[#FACC15]">
               Salon Contact &amp; Hours
             </h4>
@@ -101,7 +93,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Copyright */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#F8FAFC] font-medium bg-black/85 p-4 rounded-2xl border border-[#FACC15]/30 backdrop-blur-md">
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#F8FAFC] font-medium bg-[#1E293B]/90 p-4 rounded-2xl border border-[#FACC15]/30 backdrop-blur-md">
           <p>© {new Date().getFullYear()} THE HAIRPORT Nashik Road. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="hover:text-[#FACC15]">Privacy Policy</Link>

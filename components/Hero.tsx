@@ -1,24 +1,28 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ChevronDown, Star, Award, ShieldCheck } from 'lucide-react';
-import ParallaxBackground from './ParallaxBackground';
 
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
-
   const easeLuxury = [0.22, 1, 0.36, 1];
 
   return (
     <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden pt-24 pb-16">
-      {/* Gentle Parallax Image 1 Background */}
-      <ParallaxBackground
-        src="/images/image1_hero_stats_bg.jpg"
-        alt="THE HAIRPORT Luxury Vintage Barbershop Hero Background"
-        opacity={100}
-        priority
-      />
+      {/* Full-Screen Cinematic Next.js Image with object-cover (No CSS background-repeat) */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Image
+          src="/images/image1_hero_stats_bg.jpg"
+          alt="THE HAIRPORT Luxury Vintage Barbershop Hero Background"
+          fill
+          priority
+          className="object-cover object-center opacity-100"
+        />
+        {/* Subtle vignette for crisp text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
+      </div>
 
       <div className="relative z-10 container-luxury flex flex-col items-center text-center max-w-4xl mx-auto pt-16">
         
@@ -39,7 +43,7 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Hero Title - Opacity: 0 -> 1, Y: 40px -> 0, Duration: 1s */}
+        {/* Hero Title */}
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,7 +53,7 @@ export default function Hero() {
           Precision. <span className="text-[#FACC15] italic font-serif">Style.</span> Confidence.
         </motion.h1>
 
-        {/* Hero Subtitle - Starts 0.2s after headline */}
+        {/* Hero Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -59,7 +63,7 @@ export default function Hero() {
           Premium Barber Experience in Nashik. Tailored precision haircuts, skin fades, hot towel razor shaves, and unhurried grooming rituals by Prashant Sir &amp; team.
         </motion.p>
 
-        {/* Buttons - Appear 0.3s later */}
+        {/* Action Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

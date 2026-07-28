@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { Star, Quote, CheckCircle2 } from 'lucide-react';
-import ParallaxBackground from './ParallaxBackground';
 
 const reviewsList = [
   {
@@ -35,27 +34,20 @@ const easeLuxury = [0.22, 1, 0.36, 1];
 
 export default function Testimonials() {
   return (
-    <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 text-white overflow-hidden" id="testimonials">
-      {/* 100% Bright Visible Parallax Image 4 Background */}
-      <ParallaxBackground
-        src="/images/image4_booking_reviews_feed_bg.jpg"
-        alt="THE HAIRPORT Image 4 Google Reviews Background"
-        opacity={100}
-      />
-
-      <div className="relative z-10 container-luxury">
+    <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 bg-[#0C0C0C] text-white overflow-hidden" id="testimonials">
+      <div className="container-luxury">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 1.0, ease: easeLuxury }}
-          className="text-center max-w-2xl mx-auto bg-black/80 p-8 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md mb-16"
+          className="text-center max-w-2xl mx-auto bg-[#1E293B]/90 p-8 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md mb-16"
         >
           <span className="eyebrow text-[#FACC15]">Client Testimonials</span>
-          <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold drop-shadow-lg">
+          <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold">
             4.5★ Google Verified <span className="text-[#FACC15] italic font-serif">Reviews.</span>
           </h2>
-          <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium drop-shadow-md">
+          <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium">
             Over 181+ verified client reviews on Google Maps for our Nashik Road salon.
           </p>
         </motion.div>
@@ -69,7 +61,7 @@ export default function Testimonials() {
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.8, delay: i * 0.12, ease: easeLuxury }}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="group relative flex h-full flex-col justify-between rounded-2xl border border-[#FACC15]/40 bg-black/85 p-8 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FACC15] hover:shadow-[0_10px_30px_rgba(250,204,21,0.2)]"
+              className="group relative flex h-full flex-col justify-between rounded-2xl border border-[#FACC15]/40 bg-[#1E293B]/80 p-8 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FACC15] hover:shadow-[0_10px_30px_rgba(250,204,21,0.2)]"
             >
               <div>
                 <div className="flex items-center justify-between">

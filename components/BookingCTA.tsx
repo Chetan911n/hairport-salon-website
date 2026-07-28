@@ -1,21 +1,26 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Calendar, Phone } from 'lucide-react';
-import ParallaxBackground from './ParallaxBackground';
 
 const easeLuxury = [0.22, 1, 0.36, 1];
 
 export default function BookingCTA() {
   return (
     <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 text-white overflow-hidden" id="booking-cta">
-      {/* 100% Bright Visible Parallax Image 5 Background */}
-      <ParallaxBackground
-        src="/images/image5_products_location_cta_footer_bg.jpg"
-        alt="THE HAIRPORT Image 5 Final CTA Background"
-        opacity={100}
-      />
+      {/* Full-Width Cinematic Next.js Image with object-cover (No CSS background-repeat) */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Image
+          src="/images/image5_products_location_cta_footer_bg.jpg"
+          alt="THE HAIRPORT Image 5 Final CTA Background"
+          fill
+          priority
+          className="object-cover object-center opacity-100"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
+      </div>
 
       <div className="relative z-10 container-luxury">
         <motion.div
@@ -34,7 +39,6 @@ export default function BookingCTA() {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            {/* Button with 4-second subtle breathing animation */}
             <motion.div
               animate={{
                 boxShadow: [

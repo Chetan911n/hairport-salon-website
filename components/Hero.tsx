@@ -10,17 +10,17 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden bg-[#0F172A] pt-24 pb-16">
-      {/* Full-Bleed Crystal Clear Barbershop Background Image (NO BLUE TINT) */}
+      {/* Full-Bleed Bright Minimalist Barber Styling Station Background Image (Option 6 - NO BLUE TINT) */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=90"
-          alt="THE HAIRPORT Luxury Leather Barber Chairs Interior"
+          src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=1920&q=90"
+          alt="THE HAIRPORT Bright Minimalist Barber Styling Station"
           fill
           priority
           className="object-cover object-center opacity-100"
         />
-        {/* Minimal Bottom Shadow for Smooth Transition */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#0F172A]" />
+        {/* Minimal Bottom Transition Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-[#0F172A]" />
       </div>
 
       <div className="relative z-10 container-luxury flex flex-col items-center text-center max-w-4xl mx-auto pt-16">
@@ -52,7 +52,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-white font-semibold leading-relaxed text-balance drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] bg-[#0F172A]/50 px-6 py-2 rounded-2xl backdrop-blur-sm"
+          className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-white font-semibold leading-relaxed text-balance drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] bg-[#0F172A]/60 px-6 py-2 rounded-2xl backdrop-blur-sm"
         >
           Premium Barber Experience in Nashik. Tailored precision haircuts, skin fades, hot towel razor shaves, and unhurried grooming rituals by Prashant Sir &amp; team.
         </motion.p>

@@ -1,49 +1,30 @@
 import type { Metadata } from 'next';
 import PageHeader from '@/components/PageHeader';
-import Reveal from '@/components/Reveal';
+import Services from '@/components/Services';
 import BookingCTA from '@/components/BookingCTA';
 
 export const metadata: Metadata = {
-  title: 'Hair Colour',
-  description: "Global colour, balayage and correction using considered, low-damage techniques.",
+  title: 'Hair & Beard Colouring Services — THE HAIRPORT Nashik',
+  description: 'Ammonia-free global hair colour and targeted beard grey coverage formulas at THE HAIRPORT Nashik Road.',
 };
 
-const items = [
-  { name: "Global Colour", desc: "Full-head colour in a shade built around your skin tone." },
-  { name: "Balayage & Highlights", desc: "Hand-painted dimension for a natural grow-out." },
-  { name: "Colour Correction", desc: "Careful correction for colour that hasn't gone to plan elsewhere." }
-];
-
-export default function HairColourPage() {
+export default function HairColourServicePage() {
   return (
     <>
       <PageHeader
-        eyebrow="Services / Hair Colour"
-        title="Hair"
-        goldWord="Colour"
-        description="Global colour, balayage and correction using considered, low-damage techniques."
+        eyebrow="Specialized Services"
+        title="Ammonia-Free Hair &amp;"
+        italicTitle="Beard Colouring."
+        description="Global hair colour coverage and targeted beard grey blending for a rich natural shade."
+        imageSrc="/images/image1_hero_stats_bg.jpg"
+        imageAlt="THE HAIRPORT Hair Colouring Services"
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Services', href: '/services' }
+        ]}
       />
 
-      <section className="py-24 md:py-32">
-        <div className="container-luxury">
-          <p className="mb-10 max-w-xl text-sm text-muted">
-            Treatment names below are illustrative examples of what this
-            category typically covers. Please confirm the exact, current
-            menu and duration with the salon directly.
-          </p>
-          <div className="grid gap-5 md:grid-cols-3">
-            {items.map((item, i) => (
-              <Reveal key={item.name} delay={i * 0.08}>
-                <div className="h-full rounded-2xl border border-border bg-card p-8 transition-all hover:-translate-y-1 hover:border-gold/40 hover:shadow-gold">
-                  <h2 className="font-display text-xl text-white">{item.name}</h2>
-                  <p className="mt-3 text-sm leading-relaxed text-muted">{item.desc}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      <Services />
       <BookingCTA />
     </>
   );

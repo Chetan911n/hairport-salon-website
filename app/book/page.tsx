@@ -1,28 +1,29 @@
-import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import PageHeader from '@/components/PageHeader';
 import BookingFlow from '@/components/BookingFlow';
 
 export const metadata: Metadata = {
-  title: 'Book Appointment',
-  description: 'Book your appointment at Hairport, Nashik.',
+  title: 'Book Your Barber Chair — THE HAIRPORT Nashik Road',
+  description: 'Reserve your haircut appointment online with Prashant Sir or senior barbers at THE HAIRPORT Nashik Road.',
 };
 
 export default function BookPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Book Appointment"
-        title="Reserve your"
-        goldWord="chair."
-        description="Choose a service, branch, and time that suits you. This form is a request — our team will confirm your slot."
+        eyebrow="Online Chair Reservation"
+        title="Reserve Your Master Cut"
+        italicTitle="Experience."
+        description="Select your service, choose your preferred master barber, and lock in your appointment slot with instant WhatsApp confirmation."
+        imageSrc="/images/image1_hero_stats_bg.jpg"
+        imageAlt="THE HAIRPORT Barber Chair Booking Background"
+        breadcrumbs={[
+          { label: 'Home', href: '/' }
+        ]}
       />
-      <section className="pb-28 pt-4 md:pb-40">
-        <div className="container-luxury">
-          <Suspense fallback={<div className="text-center text-muted font-sans py-20">Loading booking portal...</div>}>
-            <BookingFlow />
-          </Suspense>
-        </div>
+
+      <section className="py-20 bg-[#0C0C0C]">
+        <BookingFlow />
       </section>
     </>
   );

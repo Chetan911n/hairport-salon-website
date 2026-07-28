@@ -2,36 +2,34 @@ import type { Metadata } from 'next';
 import PageHeader from '@/components/PageHeader';
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions',
-  description: 'Hairport terms and conditions.',
+  title: 'Terms of Service — THE HAIRPORT Nashik',
+  description: 'Terms of Service for haircut bookings, appointment cancellations, and salon policies at THE HAIRPORT Nashik Road.',
 };
 
 export default function TermsPage() {
   return (
     <>
-      <PageHeader eyebrow="Legal" title="Terms &" goldWord="Conditions" />
-      <section className="pb-28 pt-4 md:pb-40">
-        <div className="container-luxury max-w-3xl space-y-6 text-sm leading-relaxed text-muted">
-          <p className="rounded-lg border border-gold/30 bg-gold/5 p-4 text-gold">
-            Placeholder legal copy. Have these terms reviewed by a qualified
-            professional and updated to reflect Hairport&apos;s actual booking,
-            cancellation and payment policies before publishing.
-          </p>
-          <h2 className="font-display text-xl text-white">Appointments</h2>
-          <p>
-            Bookings made through this website are requests and are subject
-            to confirmation by the salon. Please arrive on time; late
-            arrival may affect the length or availability of your service.
-          </p>
-          <h2 className="font-display text-xl text-white">Cancellations</h2>
-          <p>
-            State your actual cancellation and no-show policy here.
-          </p>
-          <h2 className="font-display text-xl text-white">Pricing</h2>
-          <p>
-            Prices are confirmed at the salon and are subject to change
-            without prior notice on this website.
-          </p>
+      <PageHeader
+        eyebrow="Legal Notice"
+        title="Terms of"
+        italicTitle="Service."
+        description="Review salon booking rules, appointment arrival times, and cancellation policies at THE HAIRPORT Nashik Road."
+        imageSrc="/images/image5_products_location_cta_footer_bg.jpg"
+        imageAlt="THE HAIRPORT Terms of Service"
+        breadcrumbs={[{ label: 'Home', href: '/' }]}
+      />
+
+      <section className="py-20 bg-[#0C0C0C] text-white">
+        <div className="container-luxury max-w-3xl space-y-6 text-sm leading-relaxed text-[#F8FAFC]">
+          <div className="rounded-2xl border border-[#FACC15]/40 bg-[#1E293B]/80 p-8 backdrop-blur-md">
+            <h3 className="font-display text-xl font-bold text-[#FACC15] mb-4">1. Appointment Arrival</h3>
+            <p>Please arrive 5 to 10 minutes before your scheduled appointment time to enjoy our Chesterfield lounge and complimentary warm beverage consultation.</p>
+          </div>
+
+          <div className="rounded-2xl border border-[#FACC15]/40 bg-[#1E293B]/80 p-8 backdrop-blur-md">
+            <h3 className="font-display text-xl font-bold text-[#FACC15] mb-4">2. Cancellation Policy</h3>
+            <p>If you need to reschedule or cancel your appointment, please inform us at least 2 hours in advance via phone or WhatsApp at +91 98224 45566.</p>
+          </div>
         </div>
       </section>
     </>

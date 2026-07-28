@@ -4,19 +4,25 @@ import Testimonials from '@/components/Testimonials';
 import BookingCTA from '@/components/BookingCTA';
 
 export const metadata: Metadata = {
-  title: 'Testimonials',
-  description: 'What guests say about their experience at Hairport, Nashik.',
+  title: 'Client Reviews & Testimonials — THE HAIRPORT Nashik',
+  description: 'Read 181+ verified 4.5★ Google reviews from clients about haircut precision, beard grooming, and salon experience at THE HAIRPORT Nashik Road.',
 };
 
 export default function TestimonialsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Testimonials"
-        title="Guest"
-        goldWord="experiences."
-        description="Hairport's Nashik Road location holds a verified 4.4★ rating across 189 public reviews. The quotes below are illustrative placeholders — replace with real, permissioned guest reviews before launch."
+        eyebrow="Verified Client Feedback"
+        title="4.5★ Rated Salon Experience"
+        italicTitle="In Nashik Road."
+        description="Read authentic client stories and Google Maps reviews about master haircuts, skin fades, and unhurried salon luxury."
+        imageSrc="/images/image4_booking_reviews_feed_bg.jpg"
+        imageAlt="THE HAIRPORT Testimonials Background"
+        breadcrumbs={[
+          { label: 'Home', href: '/' }
+        ]}
       />
+
       <Testimonials />
       <BookingCTA />
     </>

@@ -15,16 +15,15 @@ const highlights = [
 export default function About() {
   return (
     <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 text-white overflow-hidden" id="about">
-      {/* Image 3 Background for About Section */}
+      {/* 100% Bright Visible New Image 3 Background for About Section */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/image3_about_team_bg.jpg"
-          alt="THE HAIRPORT Image 3 Barber Wall Background"
+          alt="THE HAIRPORT New Image 3 Barber Wall Background"
           fill
           priority
-          className="object-cover object-center opacity-95"
+          className="object-cover object-center opacity-100"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70" />
       </div>
 
       <div className="relative z-10 container-luxury">

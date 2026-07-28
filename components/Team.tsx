@@ -35,20 +35,19 @@ export const teamMembers = [
 export default function Team() {
   return (
     <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 text-white overflow-hidden" id="team">
-      {/* Image 3 Background for Meet the Barbers Section */}
+      {/* 100% Bright Visible New Image 3 Background for Meet the Barbers Section */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/image3_about_team_bg.jpg"
-          alt="THE HAIRPORT Image 3 Barber Wall Background"
+          alt="THE HAIRPORT New Image 3 Barber Wall Background"
           fill
           priority
-          className="object-cover object-center opacity-95"
+          className="object-cover object-center opacity-100"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
       </div>
 
       <div className="relative z-10 container-luxury">
-        <Reveal className="text-center max-w-2xl mx-auto">
+        <Reveal className="text-center max-w-2xl mx-auto bg-black/80 p-8 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md mb-12">
           <span className="eyebrow text-[#FACC15]">Meet Our Artisans</span>
           <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold drop-shadow-lg">
             Master Hairstylists Behind <span className="text-[#FACC15] italic font-serif">The Chair.</span>
@@ -58,7 +57,7 @@ export default function Team() {
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-3">
           {teamMembers.map((member, i) => (
             <Reveal key={member.name} delay={i * 0.1}>
               <div className="group relative overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-black/85 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-[#FACC15]">

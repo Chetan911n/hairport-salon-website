@@ -10,7 +10,7 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden pt-24 pb-16">
-      {/* User Uploaded Image 1 Hero Background */}
+      {/* 100% Bright Visible Image 1 Hero Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
           src="/images/image1_hero_stats_bg.jpg"
@@ -19,8 +19,6 @@ export default function Hero() {
           priority
           className="object-cover object-center opacity-100"
         />
-        {/* Soft subtle bottom gradient transition */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
       </div>
 
       <div className="relative z-10 container-luxury flex flex-col items-center text-center max-w-4xl mx-auto pt-16">
@@ -52,7 +50,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-white font-semibold leading-relaxed text-balance drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] bg-black/70 px-6 py-2.5 rounded-2xl backdrop-blur-md border border-[#FACC15]/30"
+          className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-white font-semibold leading-relaxed text-balance drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] bg-black/75 px-6 py-2.5 rounded-2xl backdrop-blur-md border border-[#FACC15]/30"
         >
           Premium Barber Experience in Nashik. Tailored precision haircuts, skin fades, hot towel razor shaves, and unhurried grooming rituals by Prashant Sir &amp; team.
         </motion.p>

@@ -75,20 +75,19 @@ export const featuredServicesList = [
 export default function Services() {
   return (
     <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 text-white overflow-hidden" id="services">
-      {/* User Uploaded Image 2 Background for Services Section */}
+      {/* 100% Bright Visible Image 2 Background for Services Section */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/image2_services_bg.jpg"
           alt="THE HAIRPORT Image 2 Barber Tools Background"
           fill
           priority
-          className="object-cover object-center opacity-95"
+          className="object-cover object-center opacity-100"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/75" />
       </div>
 
       <div className="relative z-10 container-luxury">
-        <Reveal className="max-w-2xl">
+        <Reveal className="max-w-2xl bg-black/80 p-8 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md mb-12">
           <span className="eyebrow text-[#FACC15]">Barbershop Services &amp; Pricing</span>
           <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold drop-shadow-lg">
             Precision Crafts. <span className="text-[#FACC15] italic font-serif">Verified Rates.</span>
@@ -98,7 +97,7 @@ export default function Services() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {featuredServicesList.map((service, i) => {
             const Icon = service.icon;
             return (

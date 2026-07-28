@@ -11,12 +11,12 @@ export default function Hero() {
     <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden bg-transparent pt-24 pb-16">
       <div className="relative z-10 container-luxury flex flex-col items-center text-center max-w-4xl mx-auto pt-16">
         
-        {/* Rating Badge (Box Fill: Deep Navy Blue #0F172A, Text: Vibrant Yellow #FACC15) */}
+        {/* Rating Badge (Neutral Dark Glass with Gold Text) */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 rounded-full border border-[#FACC15]/80 bg-[#0F172A]/90 px-5 py-2 shadow-2xl mb-6 backdrop-blur-md"
+          className="inline-flex items-center gap-2 rounded-full border border-[#FACC15]/80 bg-black/80 px-5 py-2 shadow-2xl mb-6 backdrop-blur-md"
         >
           <div className="flex items-center text-[#FACC15]">
             {[...Array(5)].map((_, i) => (
@@ -38,7 +38,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-white font-semibold leading-relaxed text-balance drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] bg-[#0F172A]/50 px-6 py-2 rounded-2xl backdrop-blur-sm"
+          className="mt-6 max-w-2xl text-base sm:text-lg md:text-xl text-white font-semibold leading-relaxed text-balance drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] bg-black/60 px-6 py-2 rounded-2xl backdrop-blur-md"
         >
           Premium Barber Experience in Nashik. Tailored precision haircuts, skin fades, hot towel razor shaves, and unhurried grooming rituals by Prashant Sir &amp; team.
         </motion.p>
@@ -65,14 +65,14 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="mt-12 flex flex-wrap items-center justify-center gap-4"
         >
-          <div className="flex items-center gap-2.5 rounded-full border border-[#FACC15]/80 bg-[#0F172A]/90 px-5 py-2.5 shadow-2xl backdrop-blur-md">
+          <div className="flex items-center gap-2.5 rounded-full border border-[#FACC15]/80 bg-black/80 px-5 py-2.5 shadow-2xl backdrop-blur-md">
             <Award size={18} className="text-[#FACC15]" />
             <span className="text-xs font-bold text-[#FACC15] tracking-wide">
               Alim Hakim Trained Senior Barbers
             </span>
           </div>
 
-          <div className="flex items-center gap-2.5 rounded-full border border-[#FACC15]/80 bg-[#0F172A]/90 px-5 py-2.5 shadow-2xl backdrop-blur-md">
+          <div className="flex items-center gap-2.5 rounded-full border border-[#FACC15]/80 bg-black/80 px-5 py-2.5 shadow-2xl backdrop-blur-md">
             <ShieldCheck size={18} className="text-[#FACC15]" />
             <span className="text-xs font-bold text-[#FACC15] tracking-wide">
               Warm &amp; Cold Water Hair Wash

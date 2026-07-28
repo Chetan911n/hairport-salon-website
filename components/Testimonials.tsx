@@ -6,14 +6,14 @@ import { Star, Quote } from 'lucide-react';
 
 export default function Testimonials() {
   return (
-    <section className="border-t border-[#FACC15]/20 bg-transparent py-24 md:py-36 text-white" id="reviews">
+    <section className="border-t border-[#FACC15]/20 bg-[#0F172A] py-24 md:py-36 text-white" id="reviews">
       <div className="container-luxury">
         <Reveal className="text-center max-w-2xl mx-auto">
           <span className="eyebrow text-[#FACC15]">Verified Guest Feedback</span>
-          <h2 className="font-display text-4xl leading-tight text-white md:text-5xl font-bold drop-shadow-lg">
+          <h2 className="font-display text-4xl leading-tight text-white md:text-5xl font-bold">
             Real Reviews From <span className="text-[#FACC15] italic font-serif">Google Business.</span>
           </h2>
-          <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium drop-shadow-md">
+          <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium">
             Read what our clients say about Prashant Sir, Tejas, Kunal, and our Nashik Road salon experience.
           </p>
         </Reveal>
@@ -21,8 +21,7 @@ export default function Testimonials() {
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {realGoogleReviews.map((r, i) => (
             <Reveal key={r.name} delay={i * 0.08}>
-              {/* Frosted Dark Navy Card Fill over continuous background */}
-              <div className="relative flex h-full flex-col justify-between rounded-2xl border border-[#FACC15]/40 bg-[#0F172A]/90 p-8 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FACC15]">
+              <div className="relative flex h-full flex-col justify-between rounded-2xl border border-[#FACC15]/40 bg-[#1E293B] p-8 shadow-2xl transition-all duration-300 hover:border-[#FACC15]">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex text-[#FACC15]">
@@ -46,7 +45,7 @@ export default function Testimonials() {
                       {r.role || 'Google Verified Guest'}
                     </span>
                   </div>
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-[#FACC15] border border-[#FACC15]/40 bg-[#1E293B] px-2.5 py-1 rounded-full">
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-[#FACC15] border border-[#FACC15]/40 bg-[#0F172A] px-2.5 py-1 rounded-full">
                     {r.date}
                   </span>
                 </div>

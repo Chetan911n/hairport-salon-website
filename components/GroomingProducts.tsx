@@ -1,7 +1,6 @@
 'use client';
 
 import Reveal from './Reveal';
-import Image from 'next/image';
 
 const products = [
   { name: 'Matte Finish Styling Pomade', desc: 'Strong hold, zero shine pomade for clean texture & scalp care.', volume: '100g' },
@@ -12,7 +11,7 @@ const products = [
 
 export default function GroomingProducts() {
   return (
-    <section className="border-t border-[#FACC15]/20 bg-transparent py-24 md:py-36 text-white">
+    <section className="border-t border-[#FACC15]/20 bg-[#0F172A] py-24 md:py-36 text-white">
       <div className="container-luxury">
         <Reveal className="max-w-2xl">
           <span className="eyebrow text-[#FACC15]">Professional Formulas</span>
@@ -27,9 +26,9 @@ export default function GroomingProducts() {
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {products.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.08}>
-              <div className="rounded-2xl border border-[#FACC15]/40 bg-black/80 p-6 shadow-2xl backdrop-blur-md h-full flex flex-col justify-between hover:border-[#FACC15] transition-all">
+              <div className="rounded-2xl border border-[#FACC15]/40 bg-[#1E293B] p-6 shadow-2xl h-full flex flex-col justify-between hover:border-[#FACC15] transition-all">
                 <div>
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-[#FACC15] border border-[#FACC15]/40 bg-black px-2.5 py-1 rounded-full">
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-[#FACC15] border border-[#FACC15]/40 bg-[#0F172A] px-2.5 py-1 rounded-full">
                     {p.volume}
                   </span>
                   <h3 className="mt-4 font-display text-xl font-bold text-[#FACC15]">

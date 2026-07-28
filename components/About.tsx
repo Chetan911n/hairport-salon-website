@@ -14,13 +14,13 @@ const highlights = [
 
 export default function About() {
   return (
-    <section className="border-t border-[#FACC15]/20 bg-transparent py-24 md:py-36 text-white" id="about">
+    <section className="border-t border-[#FACC15]/20 bg-[#0F172A] py-24 md:py-36 text-white" id="about">
       <div className="container-luxury">
         <div className="grid gap-16 lg:grid-cols-12 lg:items-center">
           {/* Left Column: Overlapping Visual Showcase */}
           <div className="lg:col-span-6 relative">
             <Reveal>
-              <div className="relative rounded-2xl overflow-hidden border border-[#FACC15]/40 shadow-2xl bg-black/80 backdrop-blur-md">
+              <div className="relative rounded-2xl overflow-hidden border border-[#FACC15]/40 shadow-2xl bg-[#1E293B]">
                 <Image
                   src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80"
                   alt="THE HAIRPORT Salon Interior Nashik"
@@ -33,8 +33,8 @@ export default function About() {
 
             {/* Overlapping Floating Badge */}
             <Reveal delay={0.2} className="absolute -bottom-8 -right-4 sm:right-6 max-w-xs">
-              <div className="rounded-2xl border border-[#FACC15] bg-black/90 p-5 shadow-2xl backdrop-blur-md flex items-center gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FACC15] text-black">
+              <div className="rounded-2xl border border-[#FACC15] bg-[#0F172A] p-5 shadow-2xl flex items-center gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#FACC15] text-[#0F172A]">
                   <Award size={24} />
                 </div>
                 <div>

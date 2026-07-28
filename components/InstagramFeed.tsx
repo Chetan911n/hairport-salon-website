@@ -13,12 +13,12 @@ const posts = [
 
 export default function InstagramFeed() {
   return (
-    <section className="border-t border-[#FACC15]/20 bg-transparent py-20 text-white">
+    <section className="border-t border-[#FACC15]/20 bg-[#0F172A] py-20 text-white">
       <div className="container-luxury">
         <Reveal className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
             <span className="eyebrow text-[#FACC15]">Social Feed</span>
-            <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-white drop-shadow-lg">
+            <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-white">
               Follow Us <span className="text-[#FACC15] italic font-serif">@hairport_nashik</span>
             </h2>
           </div>
@@ -35,7 +35,7 @@ export default function InstagramFeed() {
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           {posts.map((post, i) => (
             <Reveal key={i} delay={i * 0.08}>
-              <div className="group relative h-64 w-full overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-[#0F172A]/90 shadow-2xl backdrop-blur-md">
+              <div className="group relative h-64 w-full overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-[#1E293B] shadow-2xl">
                 <Image
                   src={post.image}
                   alt={`Instagram Post ${i + 1}`}

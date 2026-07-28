@@ -10,11 +10,11 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden pt-24 pb-16">
-      {/* Tom Ford / Rolex Campaign Charcoal Luxury Hero Background */}
+      {/* User Uploaded Image 1 Hero Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
-          src="/images/hairport_hero_tom_ford_dark.jpg"
-          alt="THE HAIRPORT Tom Ford Luxury Barbershop Interior"
+          src="/images/image1_hero_stats_bg.jpg"
+          alt="THE HAIRPORT Luxury Vintage Barbershop Hero Background"
           fill
           priority
           className="object-cover object-center opacity-100"

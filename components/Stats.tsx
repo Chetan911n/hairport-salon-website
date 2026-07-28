@@ -13,10 +13,10 @@ const stats = [
 export default function Stats() {
   return (
     <section className="relative border-t border-[#FACC15]/30 py-20 text-white overflow-hidden">
-      {/* Image 1 Background for Statistics Section */}
+      {/* User Uploaded Image 1 Background for Statistics Section */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hairport_hero_tom_ford_dark.jpg"
+          src="/images/image1_hero_stats_bg.jpg"
           alt="THE HAIRPORT Statistics Background"
           fill
           priority

@@ -34,14 +34,26 @@ export const teamMembers = [
 
 export default function Team() {
   return (
-    <section className="border-t border-[#FACC15]/20 bg-[#0F172A] py-24 md:py-36 text-white" id="team">
-      <div className="container-luxury">
+    <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 text-white overflow-hidden" id="team">
+      {/* Image 3 Background for Meet the Barbers Section */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/image3_about_team_bg.jpg"
+          alt="THE HAIRPORT Image 3 Barber Wall Background"
+          fill
+          priority
+          className="object-cover object-center opacity-95"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+      </div>
+
+      <div className="relative z-10 container-luxury">
         <Reveal className="text-center max-w-2xl mx-auto">
           <span className="eyebrow text-[#FACC15]">Meet Our Artisans</span>
-          <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold">
+          <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold drop-shadow-lg">
             Master Hairstylists Behind <span className="text-[#FACC15] italic font-serif">The Chair.</span>
           </h2>
-          <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium">
+          <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium drop-shadow-md">
             Our expert team brings years of dedicated salon mastery, attention to detail, and precision to every cut and trim.
           </p>
         </Reveal>
@@ -49,7 +61,7 @@ export default function Team() {
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {teamMembers.map((member, i) => (
             <Reveal key={member.name} delay={i * 0.1}>
-              <div className="group relative overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-[#0F172A] p-6 shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:border-[#FACC15]">
+              <div className="group relative overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-black/85 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-[#FACC15]">
                 {/* Image Container */}
                 <div className="relative h-72 w-full overflow-hidden rounded-xl border border-[#FACC15]/30">
                   <Image
@@ -61,13 +73,13 @@ export default function Team() {
                   />
                   
                   {/* Rating Badge */}
-                  <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full border border-[#FACC15] bg-[#0F172A]/95 px-3 py-1 text-xs font-bold text-[#FACC15] shadow-lg backdrop-blur-md">
+                  <div className="absolute top-3 right-3 flex items-center gap-1 rounded-full border border-[#FACC15] bg-black/95 px-3 py-1 text-xs font-bold text-[#FACC15] shadow-lg backdrop-blur-md">
                     <Star size={12} className="fill-[#FACC15]" />
                     <span>{member.rating}</span>
                   </div>
 
                   {/* Experience Badge */}
-                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full border border-[#FACC15] bg-[#0F172A]/95 px-3 py-1 text-xs font-bold text-[#F8FAFC] shadow-lg backdrop-blur-md">
+                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 rounded-full border border-[#FACC15] bg-black/95 px-3 py-1 text-xs font-bold text-[#F8FAFC] shadow-lg backdrop-blur-md">
                     <Award size={13} className="text-[#FACC15]" />
                     <span>{member.experience}</span>
                   </div>

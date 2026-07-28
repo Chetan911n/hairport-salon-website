@@ -15,17 +15,16 @@ const highlights = [
 export default function About() {
   return (
     <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 text-white overflow-hidden" id="about">
-      {/* User Uploaded 8K Tom Ford Chesterfield Leather Lounge Background for Section 3 */}
+      {/* Image 3 Background for About Section */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/section3_lounge_bg.jpg"
-          alt="THE HAIRPORT Luxury Chesterfield Lounge Section 3 Background"
+          src="/images/image3_about_team_bg.jpg"
+          alt="THE HAIRPORT Image 3 Barber Wall Background"
           fill
           priority
-          className="object-cover object-center opacity-100"
+          className="object-cover object-center opacity-95"
         />
-        {/* Soft subtle dark gradient for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70" />
       </div>
 
       <div className="relative z-10 container-luxury">
@@ -61,7 +60,7 @@ export default function About() {
           {/* Right Column: About Content */}
           <div className="lg:col-span-6">
             <Reveal>
-              <div className="rounded-3xl border border-[#FACC15]/40 bg-black/80 p-8 sm:p-10 shadow-2xl backdrop-blur-md">
+              <div className="rounded-3xl border border-[#FACC15]/40 bg-black/85 p-8 sm:p-10 shadow-2xl backdrop-blur-md">
                 <span className="eyebrow text-[#FACC15]">Our Barber Heritage</span>
                 <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold">
                   15+ Years of Master Barber <span className="text-[#FACC15] italic font-serif">Craftsmanship.</span>

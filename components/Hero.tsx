@@ -10,14 +10,14 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden bg-[#0F172A] pt-24 pb-16">
-      {/* Full-Bleed Barbershop Background Image */}
+      {/* Full-Bleed Luxury Barber Chairs Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1920&q=90"
-          alt="THE HAIRPORT Luxury Barbershop Atmosphere"
+          src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=90"
+          alt="THE HAIRPORT Luxury Leather Barber Chairs Interior"
           fill
           priority
-          className="object-cover object-center opacity-80"
+          className="object-cover object-center opacity-85"
         />
         {/* Deep Navy Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/85 via-[#0F172A]/60 to-[#0F172A]/90" />

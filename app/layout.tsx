@@ -86,8 +86,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="bg-[#0F172A] text-[#F8FAFC] font-body antialiased relative min-h-screen">
-        {/* Full-Length Stacked Luxury Barbershop Background Image */}
-        <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden bg-[#0F172A]">
+        {/* Fixed Full-Length Continuous Barbershop Background Image */}
+        <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden bg-[#0F172A]">
           <Image
             src="/images/gentsbox_full_scroll_bg.png"
             alt="THE HAIRPORT Ultra Luxury Continuous Scroll Barbershop Background"
@@ -95,8 +95,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             priority
             className="object-cover object-top opacity-95"
           />
-          {/* Subtle Ambient Vignette Overlay */}
-          <div className="absolute inset-0 bg-[#0F172A]/20" />
+          {/* Subtle Ambient Overlay */}
+          <div className="absolute inset-0 bg-[#0F172A]/15" />
         </div>
 
         <a

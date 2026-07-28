@@ -6,14 +6,14 @@ import { Star, Quote } from 'lucide-react';
 
 export default function Testimonials() {
   return (
-    <section className="border-t border-[#E2E8F0] bg-[#FFFFFF] py-24 md:py-36" id="reviews">
+    <section className="border-t border-[#FACC15]/20 bg-transparent py-24 md:py-36 text-white" id="reviews">
       <div className="container-luxury">
         <Reveal className="text-center max-w-2xl mx-auto">
-          <span className="eyebrow text-[#EAB308]">Verified Guest Feedback</span>
-          <h2 className="font-display text-4xl leading-tight text-[#1F2937] md:text-5xl font-bold">
-            Real Reviews From <span className="text-[#EAB308] italic font-serif">Google Business.</span>
+          <span className="eyebrow text-[#FACC15]">Verified Guest Feedback</span>
+          <h2 className="font-display text-4xl leading-tight text-white md:text-5xl font-bold drop-shadow-lg">
+            Real Reviews From <span className="text-[#FACC15] italic font-serif">Google Business.</span>
           </h2>
-          <p className="mt-4 text-[#1F2937] text-base md:text-lg font-medium">
+          <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium drop-shadow-md">
             Read what our clients say about Prashant Sir, Tejas, Kunal, and our Nashik Road salon experience.
           </p>
         </Reveal>
@@ -21,8 +21,8 @@ export default function Testimonials() {
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {realGoogleReviews.map((r, i) => (
             <Reveal key={r.name} delay={i * 0.08}>
-              {/* Box Fill: Deep Navy Blue #0F172A, Box Text: Vibrant Yellow #FACC15 */}
-              <div className="relative flex h-full flex-col justify-between rounded-2xl border border-[#FACC15]/40 bg-[#0F172A] p-8 shadow-2xl transition-all duration-300 hover:border-[#FACC15]">
+              {/* Frosted Dark Navy Card Fill over continuous background */}
+              <div className="relative flex h-full flex-col justify-between rounded-2xl border border-[#FACC15]/40 bg-[#0F172A]/90 p-8 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-[#FACC15]">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex text-[#FACC15]">

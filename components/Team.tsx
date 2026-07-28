@@ -34,14 +34,14 @@ export const teamMembers = [
 
 export default function Team() {
   return (
-    <section className="border-t border-[#E2E8F0] bg-[#FFFFFF] py-24 md:py-36" id="team">
+    <section className="border-t border-[#FACC15]/20 bg-transparent py-24 md:py-36 text-white" id="team">
       <div className="container-luxury">
         <Reveal className="text-center max-w-2xl mx-auto">
-          <span className="eyebrow text-[#EAB308]">Meet Our Artisans</span>
-          <h2 className="mt-4 font-display text-4xl leading-tight text-[#1F2937] md:text-5xl font-bold">
-            Master Hairstylists Behind <span className="text-[#EAB308] italic font-serif">The Chair.</span>
+          <span className="eyebrow text-[#FACC15]">Meet Our Artisans</span>
+          <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold drop-shadow-lg">
+            Master Hairstylists Behind <span className="text-[#FACC15] italic font-serif">The Chair.</span>
           </h2>
-          <p className="mt-4 text-[#1F2937] text-base md:text-lg font-medium">
+          <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium drop-shadow-md">
             Our expert team brings years of dedicated salon mastery, attention to detail, and precision to every cut and trim.
           </p>
         </Reveal>
@@ -49,8 +49,8 @@ export default function Team() {
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {teamMembers.map((member, i) => (
             <Reveal key={member.name} delay={i * 0.1}>
-              {/* Box Fill: Deep Navy Blue #0F172A, Box Text: Vibrant Yellow #FACC15 */}
-              <div className="group relative overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-[#0F172A] p-6 shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:border-[#FACC15]">
+              {/* Frosted Dark Navy Card Fill over continuous background */}
+              <div className="group relative overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-[#0F172A]/90 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-[#FACC15]">
                 {/* Image Container */}
                 <div className="relative h-72 w-full overflow-hidden rounded-xl border border-[#FACC15]/30">
                   <Image

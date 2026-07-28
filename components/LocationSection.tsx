@@ -9,7 +9,7 @@ export default function LocationSection() {
   const branch = branches.find((b) => b.status === 'verified') || branches[0]!;
 
   return (
-    <section className="border-t border-[#FACC15]/20 bg-[#0F172A] py-24 md:py-36" id="contact">
+    <section className="border-t border-[#FACC15]/20 bg-transparent py-24 md:py-36 text-white" id="contact">
       <div className="container-luxury">
         <Reveal className="max-w-2xl">
           <span className="eyebrow text-[#FACC15]">Visit Our Salon</span>
@@ -22,9 +22,9 @@ export default function LocationSection() {
         </Reveal>
 
         <div className="mt-14 grid gap-8 lg:grid-cols-12">
-          {/* Main Location Card (Box Fill: Deep Navy Blue #0F172A, Box Text: Vibrant Yellow #FACC15) */}
+          {/* Main Location Card (Box Fill: Deep Navy Blue #0F172A/90) */}
           <Reveal className="lg:col-span-7">
-            <div className="rounded-2xl border border-[#FACC15]/40 bg-[#0F172A] p-8 md:p-10 shadow-2xl h-full flex flex-col justify-between">
+            <div className="rounded-2xl border border-[#FACC15]/40 bg-[#0F172A]/90 p-8 md:p-10 shadow-2xl h-full flex flex-col justify-between backdrop-blur-md">
               <div>
                 <div className="flex items-center justify-between border-b border-[#FACC15]/30 pb-6 mb-6">
                   <div>
@@ -91,7 +91,7 @@ export default function LocationSection() {
 
           {/* Luxury Dark Gold Location Map Card */}
           <Reveal delay={0.2} className="lg:col-span-5">
-            <div className="rounded-2xl border border-[#FACC15]/40 bg-[#0F172A] p-8 shadow-2xl h-full flex flex-col justify-between">
+            <div className="rounded-2xl border border-[#FACC15]/40 bg-[#0F172A]/90 p-8 shadow-2xl h-full flex flex-col justify-between backdrop-blur-md">
               <div>
                 <span className="eyebrow text-[#FACC15]">Interactive Location Map</span>
                 <h4 className="mt-2 font-display text-2xl font-bold text-[#FACC15]">

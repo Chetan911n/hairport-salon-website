@@ -12,14 +12,14 @@ const steps = [
 
 export default function BookingProcess() {
   return (
-    <section className="border-t border-[#E2E8F0] bg-[#FFFFFF] py-24 md:py-36">
+    <section className="border-t border-[#FACC15]/20 bg-transparent py-24 md:py-36 text-white">
       <div className="container-luxury">
         <Reveal className="text-center max-w-2xl mx-auto">
-          <span className="eyebrow text-[#EAB308]">Seamless Experience</span>
-          <h2 className="mt-4 font-display text-4xl leading-tight text-[#1F2937] md:text-5xl font-bold">
-            How Appointment <span className="text-[#EAB308] italic font-serif">Booking Works.</span>
+          <span className="eyebrow text-[#FACC15]">Seamless Experience</span>
+          <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold drop-shadow-lg">
+            How Appointment <span className="text-[#FACC15] italic font-serif">Booking Works.</span>
           </h2>
-          <p className="mt-4 text-[#1F2937] text-base md:text-lg font-medium">
+          <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium drop-shadow-md">
             Four simple steps to secure your dedicated chair time with our senior master barbers.
           </p>
         </Reveal>
@@ -27,8 +27,8 @@ export default function BookingProcess() {
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
             <Reveal key={s.num} delay={i * 0.1}>
-              {/* Box Fill: Deep Navy Blue #0F172A, Box Text: Vibrant Yellow #FACC15 */}
-              <div className="relative h-full rounded-2xl border border-[#FACC15]/40 bg-[#0F172A] p-8 shadow-2xl flex flex-col justify-between transition-transform hover:-translate-y-1 hover:border-[#FACC15]">
+              {/* Frosted Dark Navy Box Fill over continuous background */}
+              <div className="relative h-full rounded-2xl border border-[#FACC15]/40 bg-[#0F172A]/90 p-8 shadow-2xl backdrop-blur-md flex flex-col justify-between transition-transform hover:-translate-y-1 hover:border-[#FACC15]">
                 <div>
                   <span className="font-display text-4xl font-bold text-[#FACC15]">
                     {s.num}

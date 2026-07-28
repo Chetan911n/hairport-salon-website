@@ -73,14 +73,14 @@ export const featuredServicesList = [
 
 export default function Services() {
   return (
-    <section className="border-t border-[#E2E8F0] bg-[#FFFFFF] py-24 md:py-36" id="services">
+    <section className="border-t border-[#FACC15]/20 bg-transparent py-24 md:py-36 text-white" id="services">
       <div className="container-luxury">
         <Reveal className="max-w-2xl">
-          <span className="eyebrow text-[#EAB308]">Barbershop Services &amp; Pricing</span>
-          <h2 className="mt-4 font-display text-4xl leading-tight text-[#1F2937] md:text-5xl font-bold">
-            Precision Crafts. <span className="text-[#EAB308] italic font-serif">Verified Rates.</span>
+          <span className="eyebrow text-[#FACC15]">Barbershop Services &amp; Pricing</span>
+          <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold drop-shadow-lg">
+            Precision Crafts. <span className="text-[#FACC15] italic font-serif">Verified Rates.</span>
           </h2>
-          <p className="mt-4 text-[#1F2937] text-base md:text-lg font-medium leading-relaxed">
+          <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium leading-relaxed drop-shadow-md">
             Transparent pricing sourced directly from our salon register. Each service includes personal consultation &amp; hot towel finish.
           </p>
         </Reveal>
@@ -90,8 +90,8 @@ export default function Services() {
             const Icon = service.icon;
             return (
               <Reveal key={service.slug} delay={i * 0.06}>
-                {/* Box Fill: Deep Navy Blue #0F172A, Box Text: Vibrant Yellow #FACC15 */}
-                <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-[#0F172A] p-6 shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:border-[#FACC15]">
+                {/* Frosted Dark Navy Box Fill (#0F172A/90) over continuous background */}
+                <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-[#0F172A]/90 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-[#FACC15]">
                   <div>
                     <div className="flex items-center justify-between">
                       <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1E293B] text-[#FACC15] border border-[#FACC15]/40">

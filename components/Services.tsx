@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, Scissors, Sparkles, Flame, Droplets, Palette, Smile, ShieldCheck } from 'lucide-react';
 import Reveal from './Reveal';
@@ -85,19 +86,42 @@ export default function Services() {
           </p>
         </Reveal>
 
+        {/* Tom Ford Dark Charcoal Flat-Lay Barber Tools Banner */}
+        <Reveal delay={0.2} className="mt-12">
+          <div className="group relative overflow-hidden rounded-3xl border border-[#FACC15]/40 shadow-2xl bg-black/80 backdrop-blur-md">
+            <Image
+              src="/images/hairport_tools_flatlay_tom_ford.jpg"
+              alt="THE HAIRPORT Professional Barber Tools Craft"
+              width={1400}
+              height={600}
+              className="w-full h-64 sm:h-80 md:h-96 object-cover object-center transition-transform duration-700 group-hover:scale-105 opacity-95"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex items-end p-8">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-widest text-[#FACC15] border border-[#FACC15]/40 bg-black/80 px-3 py-1 rounded-full">
+                  Craftsmanship &amp; Tools
+                </span>
+                <h3 className="mt-2 font-display text-2xl md:text-3xl font-bold text-white">
+                  Handcrafted Scissor &amp; Razor Precision
+                </h3>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {featuredServicesList.map((service, i) => {
             const Icon = service.icon;
             return (
               <Reveal key={service.slug} delay={i * 0.06}>
-                {/* Frosted Dark Navy Box Fill (#0F172A/90) over continuous background */}
-                <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-[#0F172A]/90 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-[#FACC15]">
+                {/* Frosted Dark Navy Box Fill over continuous background */}
+                <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-black/85 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-[#FACC15]">
                   <div>
                     <div className="flex items-center justify-between">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1E293B] text-[#FACC15] border border-[#FACC15]/40">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-black text-[#FACC15] border border-[#FACC15]/40">
                         <Icon size={22} />
                       </div>
-                      <span className="rounded-full border border-[#FACC15]/50 bg-[#1E293B] px-3.5 py-1 text-xs font-bold text-[#FACC15]">
+                      <span className="rounded-full border border-[#FACC15]/50 bg-black px-3.5 py-1 text-xs font-bold text-[#FACC15]">
                         {service.price}
                       </span>
                     </div>

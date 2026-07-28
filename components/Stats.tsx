@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Reveal from './Reveal';
 
 const stats = [
@@ -11,12 +12,25 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="border-t border-[#FACC15]/20 bg-[#0F172A] py-16 text-white">
-      <div className="container-luxury">
+    <section className="relative border-t border-[#FACC15]/30 py-20 text-white overflow-hidden">
+      {/* Tom Ford Dark Charcoal Flat-Lay Barber Tools Background for Section 2 */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hairport_tools_flatlay_tom_ford.jpg"
+          alt="THE HAIRPORT Tom Ford Flat-Lay Barber Tools Background"
+          fill
+          priority
+          className="object-cover object-center opacity-90"
+        />
+        {/* Dark subtle overlay for contrast */}
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
+      </div>
+
+      <div className="relative z-10 container-luxury">
         <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.08} className="text-center">
-              <div className="rounded-2xl border border-[#FACC15]/40 bg-[#1E293B] p-6 shadow-2xl transition-all hover:border-[#FACC15]">
+              <div className="rounded-2xl border border-[#FACC15]/50 bg-black/85 p-6 shadow-2xl backdrop-blur-md transition-all hover:border-[#FACC15]">
                 <div className="font-display text-4xl font-bold text-[#FACC15] md:text-5xl">
                   {s.value}
                 </div>

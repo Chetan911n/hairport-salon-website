@@ -1,21 +1,19 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { MapPin, Phone, Instagram, Facebook } from 'lucide-react';
+import ParallaxBackground from './ParallaxBackground';
 
 export default function Footer() {
   return (
     <footer className="relative border-t border-[#FACC15]/30 pt-20 pb-12 text-white overflow-hidden" id="footer">
-      {/* 100% Bright Visible Image 5 Background */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/image5_products_location_cta_footer_bg.jpg"
-          alt="THE HAIRPORT Image 5 Footer Background"
-          fill
-          className="object-cover object-center opacity-100"
-        />
-      </div>
+      {/* 100% Bright Visible Parallax Image 5 Background */}
+      <ParallaxBackground
+        src="/images/image5_products_location_cta_footer_bg.jpg"
+        alt="THE HAIRPORT Image 5 Footer Background"
+        opacity={100}
+      />
 
       <div className="relative z-10 container-luxury">
         <div className="grid gap-12 lg:grid-cols-12 pb-16 border-b border-[#FACC15]/30">
@@ -35,7 +33,9 @@ export default function Footer() {
             </p>
             
             <div className="mt-6 flex items-center gap-4">
-              <a
+              <motion.a
+                whileHover={{ y: -2 }}
+                transition={{ duration: 0.2 }}
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
@@ -43,8 +43,10 @@ export default function Footer() {
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ y: -2 }}
+                transition={{ duration: 0.2 }}
                 href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
@@ -52,7 +54,7 @@ export default function Footer() {
                 aria-label="Facebook"
               >
                 <Facebook size={18} />
-              </a>
+              </motion.a>
             </div>
           </div>
 

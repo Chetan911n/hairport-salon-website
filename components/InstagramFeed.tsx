@@ -1,9 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
-import Reveal from './Reveal';
+import { motion } from 'framer-motion';
 import { Instagram, ExternalLink } from 'lucide-react';
+import ParallaxBackground from './ParallaxBackground';
 
 const feedPosts = [
   {
@@ -32,22 +32,26 @@ const feedPosts = [
   }
 ];
 
+const easeLuxury = [0.22, 1, 0.36, 1];
+
 export default function InstagramFeed() {
   return (
     <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 text-white overflow-hidden" id="instagram">
-      {/* 100% Bright Visible Image 4 Background */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/image4_booking_reviews_feed_bg.jpg"
-          alt="THE HAIRPORT Image 4 Instagram Feed Background"
-          fill
-          priority
-          className="object-cover object-center opacity-100"
-        />
-      </div>
+      {/* 100% Bright Visible Parallax Image 4 Background */}
+      <ParallaxBackground
+        src="/images/image4_booking_reviews_feed_bg.jpg"
+        alt="THE HAIRPORT Image 4 Instagram Feed Background"
+        opacity={100}
+      />
 
       <div className="relative z-10 container-luxury">
-        <Reveal className="text-center max-w-2xl mx-auto bg-black/80 p-8 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 1.0, ease: easeLuxury }}
+          className="text-center max-w-2xl mx-auto bg-black/80 p-8 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md mb-16"
+        >
           <span className="eyebrow text-[#FACC15]">@thehairport_nashik</span>
           <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold drop-shadow-lg">
             Follow Our Craft On <span className="text-[#FACC15] italic font-serif">Instagram.</span>
@@ -55,11 +59,17 @@ export default function InstagramFeed() {
           <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium drop-shadow-md">
             Daily transformation videos, haircuts, beard trims, and salon highlights.
           </p>
-        </Reveal>
+        </motion.div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {feedPosts.map((post, i) => (
-            <Reveal key={post.id} delay={i * 0.08}>
+            <motion.div
+              key={post.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.8, delay: i * 0.1, ease: easeLuxury }}
+            >
               <a
                 href="https://instagram.com"
                 target="_blank"
@@ -70,7 +80,7 @@ export default function InstagramFeed() {
                   src={post.image}
                   alt={post.title}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-90"
+                  className="object-cover transition-transform duration-700 group-hover:scale-108 opacity-90"
                 />
                 
                 {/* Hover Overlay */}
@@ -87,7 +97,7 @@ export default function InstagramFeed() {
                   </span>
                 </div>
               </a>
-            </Reveal>
+            </motion.div>
           ))}
         </div>
       </div>

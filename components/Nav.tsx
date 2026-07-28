@@ -1,116 +1,151 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, Calendar } from 'lucide-react';
-import { branches } from '@/data/site';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Scissors, Menu, X, Phone, Calendar } from 'lucide-react';
 
-const links = [
-  { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services & Rates' },
-  { href: '/branches', label: 'Nashik Road' },
-  { href: '/colour-guide', label: 'Colour Guide' },
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/about', label: 'About Us' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/branches', label: 'Nashik Location' },
   { href: '/contact', label: 'Contact' },
 ];
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const verifiedBranch = branches.find((b) => b.status === 'verified') || branches[0]!;
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'py-3.5 bg-black/90 backdrop-blur-md border-b border-[#FACC15]/30 shadow-2xl' : 'py-6 bg-gradient-to-b from-black/80 to-transparent'
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
+        isScrolled
+          ? 'h-[72px] bg-[#0C0C0C]/75 backdrop-blur-[20px] border-b border-[#FACC15]/40 shadow-2xl'
+          : 'h-[90px] bg-transparent border-b border-transparent'
       }`}
     >
-      <nav className="container-luxury flex items-center justify-between" aria-label="Primary">
-        <Link href="/" className="font-display text-xl sm:text-2xl tracking-widest2 text-white flex items-center gap-2 drop-shadow-md font-bold">
-          HAIR<span className="text-[#FACC15] font-serif">PORT</span>
-          <span className="text-[10px] tracking-widest text-[#FACC15] border border-[#FACC15]/40 bg-black/80 px-2.5 py-0.5 rounded-full uppercase font-sans font-bold hidden sm:inline-block">
-            Est. 2018
-          </span>
+      <div className="container-luxury flex h-full items-center justify-between">
+        {/* Brand Logo */}
+        <Link href="/" className="flex items-center gap-3 group">
+          <motion.div
+            animate={{ scale: isScrolled ? 0.9 : 1 }}
+            transition={{ duration: 0.3 }}
+            className="flex h-10 w-10 items-center justify-center rounded-xl bg-black text-[#FACC15] border border-[#FACC15]/50 shadow-md group-hover:border-[#FACC15]"
+          >
+            <Scissors size={20} className="transition-transform group-hover:rotate-12" />
+          </motion.div>
+          
+          <motion.div
+            animate={{ scale: isScrolled ? 0.92 : 1 }}
+            transition={{ duration: 0.3 }}
+            className="flex flex-col origin-left"
+          >
+            <span className="font-display text-xl font-bold tracking-widest text-[#FACC15] drop-shadow-sm">
+              THE HAIRPORT
+            </span>
+            <span className="text-[9px] tracking-widest uppercase text-[#F8FAFC] font-semibold -mt-1">
+              NASHIK ROAD
+            </span>
+          </motion.div>
         </Link>
 
-        <ul className="hidden lg:flex items-center gap-8">
-          {links.map((l) => (
-            <li key={l.href}>
-              <Link
-                href={l.href}
-                className="relative text-xs tracking-wider uppercase font-bold text-white hover:text-[#FACC15] transition-colors group py-1 drop-shadow-sm"
-              >
-                {l.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-[#FACC15] transition-all duration-300 group-hover:w-full" />
-              </Link>
-            </li>
+        {/* Desktop Nav Links */}
+        <nav className="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-wider text-[#F8FAFC]">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="relative py-1 transition-colors hover:text-[#FACC15] group"
+            >
+              {link.label}
+              <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#FACC15] transition-all duration-300 group-hover:w-full" />
+            </Link>
           ))}
-        </ul>
+        </nav>
 
+        {/* Right CTA Actions */}
         <div className="hidden sm:flex items-center gap-4">
           <a
-            href={`tel:${verifiedBranch.phone}`}
-            className="flex items-center gap-2 text-xs font-bold text-[#FACC15] hover:text-[#FDE047] transition-colors"
+            href="tel:+919822445566"
+            className="flex items-center gap-2 text-xs font-bold text-[#FACC15] hover:text-white transition-colors"
           >
             <Phone size={14} />
-            <span>{verifiedBranch.phone}</span>
+            <span className="font-mono">+91 98224 45566</span>
           </a>
-          <Link href="/book" className="btn-royal-gold text-xs py-2 px-5 font-bold shadow-lg flex items-center gap-1.5">
-            <Calendar size={14} />
-            <span>Book Chair</span>
+
+          <Link
+            href="/book"
+            className="btn-royal-gold text-xs py-2.5 px-5 font-bold shadow-lg"
+          >
+            Book Appointment
           </Link>
         </div>
 
+        {/* Mobile Menu Toggle */}
         <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden text-[#FACC15] p-2 focus:outline-none"
-          aria-label="Toggle menu"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden flex h-10 w-10 items-center justify-center rounded-xl bg-black border border-[#FACC15]/40 text-[#FACC15]"
+          aria-label="Toggle Navigation Menu"
         >
-          {mobileOpen ? <X size={26} /> : <Menu size={26} />}
+          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
-      </nav>
+      </div>
 
-      {/* Mobile Drawer */}
-      {mobileOpen && (
-        <div className="lg:hidden overflow-hidden bg-black/95 border-b border-[#FACC15]/30 shadow-2xl backdrop-blur-lg">
-          <ul className="container-luxury py-6 space-y-4">
-            {links.map((l) => (
-              <li key={l.href}>
+      {/* Mobile Navigation Drawer */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden border-b border-[#FACC15]/40 bg-[#0C0C0C]/95 backdrop-blur-2xl px-6 py-6"
+          >
+            <nav className="flex flex-col gap-4 text-sm font-bold uppercase tracking-wider text-[#F8FAFC]">
+              {navLinks.map((link) => (
                 <Link
-                  href={l.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block text-sm font-bold tracking-wider uppercase text-white hover:text-[#FACC15]"
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-[#FACC15] transition-colors py-2 border-b border-white/5"
                 >
-                  {l.label}
+                  {link.label}
                 </Link>
-              </li>
-            ))}
-            <li className="pt-4 border-t border-[#FACC15]/20 flex flex-col gap-3">
-              <a
-                href={`tel:${verifiedBranch.phone}`}
-                className="flex items-center gap-2 text-sm font-bold text-[#FACC15]"
-              >
-                <Phone size={16} />
-                <span>{verifiedBranch.phone}</span>
-              </a>
-              <Link
-                href="/book"
-                onClick={() => setMobileOpen(false)}
-                className="btn-royal-gold text-xs py-3 text-center font-bold"
-              >
-                Book Appointment
-              </Link>
-            </li>
-          </ul>
-        </div>
-      )}
+              ))}
+              
+              <div className="mt-4 flex flex-col gap-3">
+                <a
+                  href="tel:+919822445566"
+                  className="flex items-center gap-2 text-xs font-bold text-[#FACC15]"
+                >
+                  <Phone size={14} /> +91 98224 45566
+                </a>
+                <Link
+                  href="/book"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="btn-royal-gold w-full text-center text-xs py-3 font-bold"
+                >
+                  Book Appointment
+                </Link>
+              </div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

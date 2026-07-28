@@ -1,36 +1,34 @@
 'use client';
 
-import { useEffect, type ReactNode } from 'react';
-import Lenis from '@studio-freight/lenis';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import React, { useEffect } from 'react';
+import Lenis from 'lenis';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
-export default function SmoothScrollProvider({ children }: { children: ReactNode }) {
+export default function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
+    // Respect reduced motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
 
     const lenis = new Lenis({
-      duration: 1.15,
-      easing: (t: number) => 1 - Math.pow(1 - t, 3),
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
     });
 
-    lenis.on('scroll', ScrollTrigger.update);
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
 
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-    gsap.ticker.lagSmoothing(0);
+    requestAnimationFrame(raf);
 
     return () => {
       lenis.destroy();
-      gsap.ticker.remove(() => {});
     };
   }, []);
 

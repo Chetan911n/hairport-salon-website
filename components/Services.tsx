@@ -74,39 +74,28 @@ export const featuredServicesList = [
 
 export default function Services() {
   return (
-    <section className="border-t border-[#FACC15]/20 bg-[#0F172A] py-24 md:py-36 text-white" id="services">
-      <div className="container-luxury">
+    <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 text-white overflow-hidden" id="services">
+      {/* Image 2 Background for Services Section (Flat-Lay Barber Tools) */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hairport_tools_flatlay_tom_ford.jpg"
+          alt="THE HAIRPORT Image 2 Barber Tools Services Background"
+          fill
+          priority
+          className="object-cover object-center opacity-95"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+      </div>
+
+      <div className="relative z-10 container-luxury">
         <Reveal className="max-w-2xl">
           <span className="eyebrow text-[#FACC15]">Barbershop Services &amp; Pricing</span>
-          <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold">
+          <h2 className="mt-4 font-display text-4xl leading-tight text-white md:text-5xl font-bold drop-shadow-lg">
             Precision Crafts. <span className="text-[#FACC15] italic font-serif">Verified Rates.</span>
           </h2>
-          <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium leading-relaxed">
+          <p className="mt-4 text-[#F8FAFC] text-base md:text-lg font-medium leading-relaxed drop-shadow-md">
             Transparent pricing sourced directly from our salon register. Each service includes personal consultation &amp; hot towel finish.
           </p>
-        </Reveal>
-
-        {/* Tom Ford Dark Charcoal Flat-Lay Barber Tools Banner */}
-        <Reveal delay={0.2} className="mt-12">
-          <div className="group relative overflow-hidden rounded-3xl border border-[#FACC15]/40 shadow-2xl bg-[#1E293B]">
-            <Image
-              src="/images/hairport_tools_flatlay_tom_ford.jpg"
-              alt="THE HAIRPORT Professional Barber Tools Craft"
-              width={1400}
-              height={600}
-              className="w-full h-64 sm:h-80 md:h-96 object-cover object-center transition-transform duration-700 group-hover:scale-105 opacity-95"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/40 to-transparent flex items-end p-8">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-[#FACC15] border border-[#FACC15]/40 bg-[#0F172A] px-3 py-1 rounded-full">
-                  Craftsmanship &amp; Tools
-                </span>
-                <h3 className="mt-2 font-display text-2xl md:text-3xl font-bold text-white">
-                  Handcrafted Scissor &amp; Razor Precision
-                </h3>
-              </div>
-            </div>
-          </div>
         </Reveal>
 
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -114,13 +103,13 @@ export default function Services() {
             const Icon = service.icon;
             return (
               <Reveal key={service.slug} delay={i * 0.06}>
-                <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-[#0F172A] p-6 shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:border-[#FACC15]">
+                <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-black/85 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-[#FACC15]">
                   <div>
                     <div className="flex items-center justify-between">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#1E293B] text-[#FACC15] border border-[#FACC15]/40">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-black text-[#FACC15] border border-[#FACC15]/40">
                         <Icon size={22} />
                       </div>
-                      <span className="rounded-full border border-[#FACC15]/50 bg-[#1E293B] px-3.5 py-1 text-xs font-bold text-[#FACC15]">
+                      <span className="rounded-full border border-[#FACC15]/50 bg-black px-3.5 py-1 text-xs font-bold text-[#FACC15]">
                         {service.price}
                       </span>
                     </div>

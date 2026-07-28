@@ -13,17 +13,16 @@ const stats = [
 export default function Stats() {
   return (
     <section className="relative border-t border-[#FACC15]/30 py-20 text-white overflow-hidden">
-      {/* Tom Ford Dark Charcoal Flat-Lay Barber Tools Background for Section 2 */}
+      {/* Image 1 Background for Statistics Section */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hairport_tools_flatlay_tom_ford.jpg"
-          alt="THE HAIRPORT Tom Ford Flat-Lay Barber Tools Background"
+          src="/images/hairport_hero_tom_ford_dark.jpg"
+          alt="THE HAIRPORT Statistics Background"
           fill
           priority
           className="object-cover object-center opacity-90"
         />
-        {/* Dark subtle overlay for contrast */}
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-[2px]" />
       </div>
 
       <div className="relative z-10 container-luxury">

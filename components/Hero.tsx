@@ -10,22 +10,22 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden pt-24 pb-16">
-      {/* Rolex / Tom Ford 8K Ultra-Luxury 3-Station Barbershop Hero Background */}
+      {/* Tom Ford / Rolex Campaign Charcoal Luxury Hero Background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
-          src="/images/hairport_hero_master_station.jpg"
-          alt="THE HAIRPORT Luxury 3-Station Barbershop Interior"
+          src="/images/hairport_hero_tom_ford_dark.jpg"
+          alt="THE HAIRPORT Tom Ford Luxury Barbershop Interior"
           fill
           priority
           className="object-cover object-center opacity-100"
         />
-        {/* Soft bottom-only gradient transition into page content */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80" />
+        {/* Soft subtle bottom gradient transition */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
       </div>
 
       <div className="relative z-10 container-luxury flex flex-col items-center text-center max-w-4xl mx-auto pt-16">
         
-        {/* Rating Badge (Neutral Dark Glass with Gold Text) */}
+        {/* Rating Badge */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}

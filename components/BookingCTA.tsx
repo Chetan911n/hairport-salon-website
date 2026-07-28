@@ -1,26 +1,47 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import Reveal from './Reveal';
+import { Calendar, Phone } from 'lucide-react';
 
 export default function BookingCTA() {
   return (
-    <section className="border-t border-[#FACC15]/20 bg-[#0F172A] py-24 text-white">
-      <div className="container-luxury text-center">
-        <Reveal>
-          <div className="rounded-3xl border border-[#FACC15]/40 bg-[#1E293B] p-12 md:p-16 shadow-2xl">
-            <span className="eyebrow text-[#FACC15]">Reserve Your Chair</span>
-            <h2 className="mx-auto max-w-2xl font-display text-4xl leading-tight text-white font-bold md:text-5xl">
-              Your next great look starts with a <span className="text-[#FACC15] italic font-serif">booking.</span>
-            </h2>
-            <div className="pt-6">
-              <Link
-                href="/book"
-                className="btn-royal-gold px-8 py-3.5 shadow-xl font-bold"
-              >
-                Reserve Barbershop Service
-              </Link>
-            </div>
+    <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 text-white overflow-hidden" id="booking-cta">
+      {/* 100% Bright Visible Image 5 Background */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/image5_products_location_cta_footer_bg.jpg"
+          alt="THE HAIRPORT Image 5 Final CTA Background"
+          fill
+          priority
+          className="object-cover object-center opacity-100"
+        />
+      </div>
+
+      <div className="relative z-10 container-luxury">
+        <Reveal className="text-center max-w-3xl mx-auto bg-black/85 p-10 sm:p-14 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md shadow-2xl">
+          <span className="eyebrow text-[#FACC15]">Reserve Your Chair</span>
+          <h2 className="mt-4 font-display text-4xl sm:text-5xl md:text-6xl leading-tight text-white font-bold drop-shadow-lg">
+            Experience Unhurried <span className="text-[#FACC15] italic font-serif">Salon Luxury.</span>
+          </h2>
+          <p className="mt-6 text-[#F8FAFC] text-base md:text-lg font-medium leading-relaxed drop-shadow-md max-w-xl mx-auto">
+            Book your appointment with Prashant Sir &amp; team at Nashik Road. Walk out feeling refreshed, sharp, and confident.
+          </p>
+
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/book"
+              className="btn-royal-gold px-8 py-4 text-sm font-bold shadow-2xl flex items-center gap-2"
+            >
+              <Calendar size={18} /> Book Appointment Online
+            </Link>
+            <a
+              href="tel:+919822445566"
+              className="btn-royal-outline px-8 py-4 text-sm font-bold shadow-xl flex items-center gap-2"
+            >
+              <Phone size={18} /> Call +91 98224 45566
+            </a>
           </div>
         </Reveal>
       </div>

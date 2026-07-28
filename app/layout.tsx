@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Playfair_Display, Inter } from 'next/font/google';
 import './globals.css';
 import SmoothScrollProvider from '@/components/SmoothScrollProvider';
@@ -85,8 +86,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="bg-[#0F172A] text-[#F8FAFC] font-body antialiased relative min-h-screen">
-        {/* Main Background: Deep Navy Blue (#0F172A) */}
-        <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#0F172A]" />
+        {/* Full-Length Stacked Luxury Barbershop Background Image */}
+        <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden bg-[#0F172A]">
+          <Image
+            src="/images/gentsbox_full_scroll_bg.png"
+            alt="THE HAIRPORT Ultra Luxury Continuous Scroll Barbershop Background"
+            fill
+            priority
+            className="object-cover object-top opacity-95"
+          />
+          {/* Subtle Ambient Vignette Overlay */}
+          <div className="absolute inset-0 bg-[#0F172A]/20" />
+        </div>
 
         <a
           href="#main-content"

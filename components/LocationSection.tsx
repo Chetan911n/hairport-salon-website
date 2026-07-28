@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Reveal from './Reveal';
 import { MapPin, Phone, Clock, Star, Navigation } from 'lucide-react';
 import { branches } from '@/data/site';
@@ -88,35 +89,38 @@ export default function LocationSection() {
             </div>
           </Reveal>
 
-          {/* Quick Info Box (Box Fill: Deep Navy Blue #0F172A, Box Text: Vibrant Yellow #FACC15) */}
+          {/* Luxury Dark Gold Location Map Card */}
           <Reveal delay={0.2} className="lg:col-span-5">
             <div className="rounded-2xl border border-[#FACC15]/40 bg-[#0F172A] p-8 shadow-2xl h-full flex flex-col justify-between">
               <div>
-                <span className="eyebrow text-[#FACC15]">Salon Features</span>
-                <h4 className="mt-3 font-display text-2xl font-bold text-[#FACC15]">
-                  Comfort &amp; Privacy
+                <span className="eyebrow text-[#FACC15]">Interactive Location Map</span>
+                <h4 className="mt-2 font-display text-2xl font-bold text-[#FACC15]">
+                  Nashik Road Salon Map
                 </h4>
-                <ul className="mt-6 space-y-4 text-xs md:text-sm font-semibold text-[#F8FAFC]">
-                  <li className="flex items-center gap-2.5">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#FACC15] shrink-0" />
-                    Separate Men &amp; Women Styling Sections
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#FACC15] shrink-0" />
-                    Warm Water &amp; Cold Water Hair Wash
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#FACC15] shrink-0" />
-                    Senior Hairstylists Trained by Alim Hakim
-                  </li>
-                  <li className="flex items-center gap-2.5">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[#FACC15] shrink-0" />
-                    Wheelchair Accessible Entry &amp; Parking
-                  </li>
-                </ul>
+
+                {/* Styled Dark Gold Map Preview */}
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(branch.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative mt-6 block overflow-hidden rounded-xl border border-[#FACC15]/40 shadow-xl"
+                >
+                  <Image
+                    src="/images/hairport_nashik_map.jpg"
+                    alt="THE HAIRPORT Nashik Road Map Location"
+                    width={600}
+                    height={340}
+                    className="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-[#0F172A]/40 transition-opacity group-hover:bg-[#0F172A]/20 flex items-center justify-center">
+                    <span className="btn-royal-gold text-xs py-2.5 px-5 shadow-2xl flex items-center gap-1.5 font-bold">
+                      <Navigation size={14} /> Open Live Google Map
+                    </span>
+                  </div>
+                </a>
               </div>
 
-              <div className="mt-8 rounded-xl bg-[#1E293B] border border-[#FACC15]/40 p-5 shadow-lg text-xs text-[#F8FAFC]">
+              <div className="mt-6 rounded-xl bg-[#1E293B] border border-[#FACC15]/40 p-5 shadow-lg text-xs text-[#F8FAFC]">
                 <strong className="block text-[#FACC15] font-bold text-sm mb-1.5">Accessibility Landmark:</strong>
                 <span className="font-semibold leading-relaxed block text-[#F8FAFC]">
                   Shop No. 3-5 Laxman Villa, Near Swimming Pool &amp; Datta Mandir Stop, Nashik Road.

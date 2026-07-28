@@ -75,16 +75,16 @@ export const featuredServicesList = [
 export default function Services() {
   return (
     <section className="relative border-t border-[#FACC15]/30 py-24 md:py-36 text-white overflow-hidden" id="services">
-      {/* Image 2 Background for Services Section (Flat-Lay Barber Tools) */}
+      {/* User Uploaded Image 2 Background for Services Section */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hairport_tools_flatlay_tom_ford.jpg"
-          alt="THE HAIRPORT Image 2 Barber Tools Services Background"
+          src="/images/image2_services_bg.jpg"
+          alt="THE HAIRPORT Image 2 Barber Tools Background"
           fill
           priority
           className="object-cover object-center opacity-95"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/75" />
       </div>
 
       <div className="relative z-10 container-luxury">

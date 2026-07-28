@@ -11,16 +11,16 @@ const stats = [
 
 export default function Stats() {
   return (
-    <section className="border-t border-[#DDD4C6] bg-[#F8F6F2] py-16">
+    <section className="border-t border-[#FACC15]/20 bg-transparent py-16 text-white">
       <div className="container-luxury">
         <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
           {stats.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.08} className="text-center">
-              <div className="rounded-2xl border border-[#C5A059]/40 bg-[#2B2B2B] p-6 shadow-2xl transition-all hover:border-[#E2C067]">
-                <div className="font-display text-4xl font-bold text-[#E2C067] md:text-5xl">
+              <div className="rounded-2xl border border-[#FACC15]/40 bg-black/80 p-6 shadow-2xl backdrop-blur-md transition-all hover:border-[#FACC15]">
+                <div className="font-display text-4xl font-bold text-[#FACC15] md:text-5xl">
                   {s.value}
                 </div>
-                <p className="mt-2 text-xs font-bold uppercase tracking-wider text-[#F8F6F2]">
+                <p className="mt-2 text-xs font-bold uppercase tracking-wider text-[#F8FAFC]">
                   {s.label}
                 </p>
               </div>

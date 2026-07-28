@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { Playfair_Display, Inter } from 'next/font/google';
 import './globals.css';
 import SmoothScrollProvider from '@/components/SmoothScrollProvider';
@@ -85,18 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-black text-[#F8FAFC] font-body antialiased relative min-h-screen">
-        {/* Continuous Barbershop Background Image at 100% Opacity with ZERO Blue Tint */}
-        <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden bg-black">
-          <Image
-            src="/images/gentsbox_full_scroll_bg.png"
-            alt="THE HAIRPORT Ultra Luxury Continuous Scroll Barbershop Background"
-            fill
-            priority
-            className="object-cover object-top opacity-100"
-          />
-        </div>
-
+      <body className="bg-[#0F172A] text-[#F8FAFC] font-body antialiased relative min-h-screen">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#FACC15] focus:text-black focus:px-4 focus:py-2 focus:rounded"

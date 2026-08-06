@@ -2,8 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Scissors, Menu, X, Phone, Calendar } from 'lucide-react';
+import { Menu, X, Phone, Calendar } from 'lucide-react';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -35,7 +36,7 @@ export default function Nav() {
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
         isScrolled
-          ? 'h-[72px] bg-[#0C0C0C]/75 backdrop-blur-[20px] border-b border-[#FACC15]/40 shadow-2xl'
+          ? 'h-[72px] bg-[#0C0C0C]/85 backdrop-blur-[20px] border-b border-[#FACC15]/40 shadow-2xl'
           : 'h-[90px] bg-transparent border-b border-transparent'
       }`}
     >
@@ -45,9 +46,15 @@ export default function Nav() {
           <motion.div
             animate={{ scale: isScrolled ? 0.9 : 1 }}
             transition={{ duration: 0.3 }}
-            className="flex h-10 w-10 items-center justify-center rounded-xl bg-black text-[#FACC15] border border-[#FACC15]/50 shadow-md group-hover:border-[#FACC15]"
+            className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-black border border-[#FACC15]/50 shadow-md group-hover:border-[#FACC15]"
           >
-            <Scissors size={20} className="transition-transform group-hover:rotate-12" />
+            <Image
+              src="/images/pn_hairport_logo.jpg"
+              alt="PN HAIRPORT Monogram Logo"
+              width={44}
+              height={44}
+              className="object-cover object-center"
+            />
           </motion.div>
           
           <motion.div
@@ -56,10 +63,10 @@ export default function Nav() {
             className="flex flex-col origin-left"
           >
             <span className="font-display text-xl font-bold tracking-widest text-[#FACC15] drop-shadow-sm">
-              THE HAIRPORT
+              PN HAIRPORT
             </span>
             <span className="text-[9px] tracking-widest uppercase text-[#F8FAFC] font-semibold -mt-1">
-              NASHIK ROAD
+              UNISEX SALON &amp; BARBERSHOP — NASHIK ROAD
             </span>
           </motion.div>
         </Link>
@@ -81,68 +88,71 @@ export default function Nav() {
         {/* Right CTA Actions */}
         <div className="hidden sm:flex items-center gap-4">
           <a
-            href="tel:+919822445566"
+            href="tel:+919922338669"
             className="flex items-center gap-2 text-xs font-bold text-[#FACC15] hover:text-white transition-colors"
           >
             <Phone size={14} />
-            <span className="font-mono">+91 98224 45566</span>
+            <span className="font-mono">099223 38669</span>
           </a>
 
           <Link
             href="/book"
-            className="btn-royal-gold text-xs py-2.5 px-5 font-bold shadow-lg"
+            className="btn-royal-gold inline-flex items-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-wider"
           >
-            Book Appointment
+            <Calendar size={14} />
+            Book Chair
           </Link>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden flex h-10 w-10 items-center justify-center rounded-xl bg-black border border-[#FACC15]/40 text-[#FACC15]"
-          aria-label="Toggle Navigation Menu"
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#FACC15]/40 text-[#FACC15] md:hidden"
+          aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Mobile Drawer Navigation */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-b border-[#FACC15]/40 bg-[#0C0C0C]/95 backdrop-blur-2xl px-6 py-6"
+            className="border-b border-[#FACC15]/40 bg-[#0C0C0C]/95 backdrop-blur-2xl md:hidden overflow-hidden"
           >
-            <nav className="flex flex-col gap-4 text-sm font-bold uppercase tracking-wider text-[#F8FAFC]">
+            <div className="container-luxury py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="hover:text-[#FACC15] transition-colors py-2 border-b border-white/5"
+                  className="text-sm font-bold uppercase tracking-wider text-white hover:text-[#FACC15] py-2 border-b border-white/10"
                 >
                   {link.label}
                 </Link>
               ))}
-              
-              <div className="mt-4 flex flex-col gap-3">
+
+              <div className="pt-2 flex flex-col gap-3">
                 <a
-                  href="tel:+919822445566"
-                  className="flex items-center gap-2 text-xs font-bold text-[#FACC15]"
+                  href="tel:+919922338669"
+                  className="flex items-center gap-2 text-sm font-bold text-[#FACC15]"
                 >
-                  <Phone size={14} /> +91 98224 45566
+                  <Phone size={16} />
+                  <span>099223 38669</span>
                 </a>
+
                 <Link
                   href="/book"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="btn-royal-gold w-full text-center text-xs py-3 font-bold"
+                  className="btn-royal-gold text-center py-3 text-xs font-bold uppercase tracking-wider"
                 >
-                  Book Appointment
+                  Book Barber Chair
                 </Link>
               </div>
-            </nav>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

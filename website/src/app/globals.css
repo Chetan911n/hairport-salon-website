@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #FACC15 #0F172A;
+}
+
+html {
+  background: #0F172A;
+}
+
+body {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #FACC15;
+  color: #0F172A;
+}
+
+/* Visible focus states for keyboard navigation (WCAG) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #FACC15;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.eyebrow {
+  @apply text-[#FACC15] text-xs md:text-sm tracking-widest2 uppercase font-body font-bold;
+}
+
+.glass {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(250, 204, 21, 0.3);
+  box-shadow: 0 4px 25px rgba(15, 23, 42, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.gold-text {
+  color: #FACC15;
+}
+
+.container-luxury {
+  @apply mx-auto w-full max-w-[1400px] px-6 md:px-12 lg:px-20;
+}
+
+.split-line {
+  overflow: hidden;
+  display: block;
+}
+
+/* Reduced motion support (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Lenis smooth scroll helper classes */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Vibrant Yellow Button on Deep Navy Fill */
+.btn-royal-gold {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FACC15;
+  color: #0F172A;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  padding: 14px 32px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(250, 204, 21, 0.3);
+  cursor: pointer;
+}
+
+.btn-royal-gold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-royal-gold:hover {
+  background: #EAB308;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(250, 204, 21, 0.45);
+}
+
+.btn-royal-gold:hover::before {
+  left: 100%;
+}
+
+.btn-royal-outline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0F172A;
+  color: #FACC15;
+  border: 1px solid #FACC15;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  padding: 14px 32px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-royal-outline:hover {
+  background: #FACC15;
+  color: #0F172A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(250, 204, 21, 0.3);
+}
+
+/* Box Styling utility */
+.card-navy-yellow {
+  background-color: #0F172A;
+  color: #F8FAFC;
+  border: 1px solid rgba(250, 204, 21, 0.3);
+}

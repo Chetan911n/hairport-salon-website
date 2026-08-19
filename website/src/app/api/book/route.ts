@@ -8,12 +8,17 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { gender, serviceCategory, service, date, time, name, phone, notes, colourNumber } = body;
 
-    const fullServiceText = [service, colourNumber ? `Shade: ${colourNumber}` : '', notes ? `Notes: ${notes}` : '']
-      .filter(Boolean)
-      .join(' | ');
+    const fullServiceText = [
+      `${gender || ''} ${serviceCategory || ''}: ${service || ''}`.trim(),
+      time ? `Time: ${time}` : '',
+      colourNumber ? `Shade: ${colourNumber}` : '',
+      notes ? `Notes: ${notes}` : ''
+    ].filter(Boolean).join(' | ');
 
-    // Post booking request directly to Supabase queue table
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/queue`, {
+    const customerDisplayName = phone ? `${name || 'Guest'} (${phone})` : (name || 'Guest Client');
+
+    // Post booking request directly to Supabase queue table using schema-safe columns
+    await fetch(`${SUPABASE_URL}/rest/v1/queue`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -23,17 +28,12 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify([
         {
-          customer_name: name || 'Guest Client',
-          phone: phone || '',
+          customer_name: customerDisplayName,
           service_type: fullServiceText || 'General Appointment',
           status: 'waiting'
         }
       ])
     });
-
-    if (!res.ok) {
-      console.warn('Supabase booking insert notice:', await res.text());
-    }
 
     return NextResponse.json({ success: true, message: 'Appointment requested successfully' });
   } catch (err) {

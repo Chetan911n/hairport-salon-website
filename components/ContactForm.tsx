@@ -57,22 +57,6 @@ export default function ContactForm() {
       console.warn('Inquiry Supabase insert notice:', err);
     }
 
-    try {
-      await fetch('/api/book', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: data.name,
-          phone: data.phone,
-          serviceCategory: 'Website Inquiry',
-          service: data.message,
-          notes: data.email ? `Email: ${data.email}` : undefined
-        }),
-      });
-    } catch (err) {
-      console.warn('Inquiry API route notice:', err);
-    }
-
     setSubmitted(true);
     reset();
   };

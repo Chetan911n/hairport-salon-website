@@ -160,27 +160,6 @@ export default function BookingFlow() {
       });
     } catch (err) {
       console.warn('Direct Supabase insert notice:', err);
-    }
-
-    try {
-      await fetch('/api/book', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          gender,
-          serviceCategory,
-          service,
-          branchId,
-          date: selectedDate?.toISOString(),
-          time: selectedTime,
-          name: details?.name,
-          phone: details?.phone,
-          notes: details?.notes,
-          colourNumber: details?.colourNumber,
-        }),
-      });
-    } catch (err) {
-      console.warn('Booking API notice:', err);
     } finally {
       setConfirmed(true);
       setSubmitting(false);

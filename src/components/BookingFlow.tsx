@@ -31,8 +31,7 @@ export const SERVICES_CONFIG = {
       { name: 'Perming Treatment', description: 'Professional texturizing perm for long-lasting curls and volume.' },
     ],
     Waxing: [
-      { name: 'Ear & Nose Waxing', description: 'Gentle, quick hair removal for ears and nostrils.' },
-      { name: 'Eyebrow Shaping', description: 'Precision threading or wax shaping for clean eyebrow contours.' },
+      { name: 'Waxing', description: 'Professional smooth waxing and skin care treatment.' }
     ]
   },
   Female: {
@@ -54,8 +53,7 @@ export const SERVICES_CONFIG = {
       { name: 'Face Steam Therapy', description: 'Herbal facial steam and essential oil misting.' },
     ],
     Waxing: [
-      { name: 'Full Face Threading/Waxing', description: 'Soft, gentle hair removal for upper lip, chin, and sideburns.' },
-      { name: 'Arm & Leg Waxing', description: 'Smooth, soothing waxing treatment with post-wax skin lotion.' },
+      { name: 'Waxing', description: 'Professional smooth waxing and skin care treatment.' }
     ]
   }
 };

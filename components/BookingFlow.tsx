@@ -24,8 +24,7 @@ const SERVICES_CONFIG = {
       { name: 'Facial & Skin Cleanup', description: 'Deep pore cleansing, exfoliation, face massage, and clarifying mask for healthy skin.' },
     ],
     Waxing: [
-      { name: 'Ear & Nose Waxing', description: 'Gentle, quick hair removal for ears and nostrils.' },
-      { name: 'Eyebrow Shaping', description: 'Precision threading or wax shaping for clean eyebrow contours.' },
+      { name: 'Waxing', description: 'Professional smooth waxing and skin care treatment.' }
     ]
   },
   Female: {
@@ -40,8 +39,7 @@ const SERVICES_CONFIG = {
       { name: 'Skin De-Tan & Cleanup', description: 'Exfoliating scrub and tan-removal mask for refreshed skin.' },
     ],
     Waxing: [
-      { name: 'Full Face Threading/Waxing', description: 'Soft, gentle hair removal for upper lip, chin, and sideburns.' },
-      { name: 'Arm & Leg Waxing', description: 'Smooth, soothing waxing treatment with post-wax skin lotion.' },
+      { name: 'Waxing', description: 'Professional smooth waxing and skin care treatment.' }
     ]
   }
 };

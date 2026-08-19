@@ -29,8 +29,50 @@ export default function ContactForm() {
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
   const onSubmit = async (data: FormValues) => {
-    await new Promise((r) => setTimeout(r, 900));
-    console.log('Contact form submission', data);
+    const SUPABASE_URL = 'https://eggtejmtahbcbhokgyll.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVnZ3Rlam10YWhiY2Job2tneWxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQzODg0NzMsImV4cCI6MjA5OTk2NDQ3M30.7EEwWnfKqQ8wvr3Fe4kKh-4dFFg-wqT3xdHKSnS6TVI';
+
+    const fullMessage = `[WEBSITE INQUIRY] ${data.message}${data.email ? ` | Email: ${data.email}` : ''}`;
+    const displayName = `${data.name} (${data.phone})`;
+
+    try {
+      // Direct Supabase insert into queue table (triggers real-time arrival in concierge webapp)
+      await fetch(`${SUPABASE_URL}/rest/v1/queue`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify([
+          {
+            customer_name: displayName,
+            service_type: fullMessage,
+            status: 'waiting'
+          }
+        ])
+      });
+    } catch (err) {
+      console.warn('Inquiry Supabase insert notice:', err);
+    }
+
+    try {
+      await fetch('/api/book', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.name,
+          phone: data.phone,
+          serviceCategory: 'Website Inquiry',
+          service: data.message,
+          notes: data.email ? `Email: ${data.email}` : undefined
+        }),
+      });
+    } catch (err) {
+      console.warn('Inquiry API route notice:', err);
+    }
+
     setSubmitted(true);
     reset();
   };

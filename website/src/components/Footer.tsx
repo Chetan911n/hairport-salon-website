@@ -40,7 +40,7 @@ export default function Footer() {
               <motion.a
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
-                href="https://instagram.com"
+                href="https://www.instagram.com/pn_thehairport/"
                 target="_blank"
                 rel="noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#FACC15]/40 bg-black text-[#FACC15] transition-colors hover:bg-[#FACC15] hover:text-[#0F172A]"

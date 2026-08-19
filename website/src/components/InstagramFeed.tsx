@@ -63,7 +63,7 @@ export default function InstagramFeed() {
               transition={{ duration: 0.8, delay: i * 0.1, ease: easeLuxury }}
             >
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/pn_thehairport/"
                 target="_blank"
                 rel="noreferrer"
                 className="group relative block aspect-square overflow-hidden rounded-2xl border border-[#FACC15]/40 bg-black shadow-2xl backdrop-blur-md"

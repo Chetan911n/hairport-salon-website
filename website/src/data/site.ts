@@ -58,7 +58,8 @@ export const contact = {
   phoneFormatted: '+91 99223 38669',
   whatsapp: '+919922338669',
   email: 'reception@hairport.com',
-  instagram: '@hairport_nashik',
+  instagram: '@pn_thehairport',
+  instagramUrl: 'https://www.instagram.com/pn_thehairport/',
 };
 
 export type Service = {

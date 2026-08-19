@@ -72,44 +72,49 @@ export type Service = {
 export const serviceCategories = [
   {
     slug: 'hair',
-    title: 'Hair Cut & Styling',
-    description: 'Precision cutting by senior hairstylists tailored to face structure, hair texture and lifestyle.',
+    title: 'Hair Cut & Styling (Men & Women)',
+    description: 'Precision cutting, hair wash, and hair styling tailored to your head shape and lifestyle.',
+  },
+  {
+    slug: 'treatments',
+    title: 'Hair Treatments (Blue Tox, Nanoplastia, Keratin)',
+    description: 'Advanced hair restructuring, smoothing, Bluetox, Keratin, and Perming therapies for Men & Women.',
   },
   {
     slug: 'hair-colour',
-    title: 'Hair Colour (Global & Highlights)',
-    description: 'Global colour, highlights and root touch-ups using premium low-damage formulations.',
+    title: 'Hair Colouring',
+    description: 'Ammonia-free hair colour coverage and grey blending for rich, radiant hair.',
   },
   {
     slug: 'hair-spa',
-    title: 'Warm/Cold Hair Wash & Spa',
-    description: 'Restorative scalp massages, warm/cold water hair washes, and deep conditioning therapies.',
+    title: 'Warm Water Hair Wash & Spa',
+    description: 'Restorative scalp massages, warm/cold water hair washes, and deep scalp conditioning.',
   },
   {
     slug: 'skin',
-    title: 'Skin & Facial Therapies',
-    description: 'Custom facials, steam cleansers, and skin treatments in dedicated private sections.',
+    title: 'Skin Scrub, Cleansing, De-Tan & Face Steam',
+    description: 'Deep cleansing, face scrub, tan removal packs, and facial steam in private sections.',
   },
   {
     slug: 'bridal',
-    title: 'Bridal & Toddler Styling',
-    description: 'Unhurried bridal makeover packages and gentle, patient haircuts for kids and toddlers.',
+    title: 'Bridal Makeover & Haircut',
+    description: 'Unhurried bridal makeover packages and gentle haircuts for kids.',
   },
 ];
 
 export const sampleServices: Service[] = [
   { slug: 'signature-cut', name: 'Signature Haircut by Prashant Sir', category: 'hair', description: 'Expert precision haircut by Alim Hakim-trained senior hairstylist Prashant.' },
-  { slug: 'beard-sculpt', name: 'Beard Trim & Sculpt by Tejas', category: 'hair', description: 'Custom beard shaping, hot towel conditioning, and razor edge lines.' },
-  { slug: 'hair-wash-spa', name: 'Warm Water Wash & Spa by Kunal', category: 'hair-spa', description: 'Relaxing scalp massage and warm water hair wash.' },
-  { slug: 'signature-facial', name: 'Skin Refresh Facial', category: 'skin', description: 'Tailored deep-pore facial for healthy, glowing skin.' },
-  { slug: 'toddler-cut', name: 'Gentle Toddler & Kids Cut', category: 'bridal', description: 'Patient, fun haircut experience for toddlers and kids.' },
+  { slug: 'blue-tox', name: 'Blue Tox Hair Treatment', category: 'treatments', description: 'Bluetox hair restructuring and zero-frizz therapy.' },
+  { slug: 'nano-plastia', name: 'Nano Plastia Organic Therapy', category: 'treatments', description: 'Nanoplastia hair alignment for glossy, silky smooth locks.' },
+  { slug: 'beard-sculpt', name: 'Beard Trim & Sculpt by Tejas', category: 'hair', description: 'Custom beard shaping, hot oil massage, and razor edge lines.' },
+  { slug: 'skin-cleansing', name: 'Deep Cleansing & Face Steam', category: 'skin', description: 'Deep pore cleansing, face scrub, de-tan pack, and face steam.' },
 ];
 
 export const seo = {
   siteUrl: 'https://hairportsalon.online',
   defaultTitle: 'THE HAIRPORT — Premium Salon in Nashik Road (4.5★ Rated)',
   defaultDescription:
-    'THE HAIRPORT is a 4.5★ rated premium unisex salon in Nashik Road, Maharashtra. Precision cuts by Prashant Sir, Tejas & Kunal, hair spa, separate ladies section & warm water hair wash.',
+    'THE HAIRPORT is a 4.5★ rated premium unisex salon in Nashik Road, Maharashtra. Precision cuts by Prashant Sir, Blue Tox, Nanoplastia, Keratin, face steam, skin cleansing & separate ladies section.',
 };
 
 export type Review = {

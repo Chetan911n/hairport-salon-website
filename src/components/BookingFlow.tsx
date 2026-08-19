@@ -10,18 +10,25 @@ import { branches } from '@/data/site';
 
 const steps = ['Service', 'Date & time', 'Your info', 'Confirm'];
 
-const SERVICES_CONFIG = {
+export const SERVICES_CONFIG = {
   Male: {
     Hair: [
-      { name: 'Classic Haircut', description: 'Precision scissor and clipper cut tailored to your head shape, finished with styling & hot towel.' },
-      { name: 'Skin Fade', description: 'Seamless gradient fade from zero skin, detailed hairline shape-up and texture styling.' },
+      { name: 'Classic Haircut & Fade', description: 'Precision scissor and clipper cut tailored to your head shape, finished with styling & hot towel.' },
       { name: 'Hair Wash & Styling', description: 'Relaxing scalp wash, hair conditioning and professional blowout styling.' },
-      { name: 'Hair Spa', description: 'Restorative scalp massage, steam treatment and scalp nourishment.' },
+      { name: 'Hair Colour', description: 'Premium ammonia-free hair colouring for natural grey coverage or custom shades.' },
     ],
     Skin: [
-      { name: 'Beard Trim & Sculpt', description: 'Sharp razor lines, length trimming, hot oil massage and beard balm conditioning.' },
-      { name: 'Royal Clean Shave', description: 'Traditional straight razor shave with essential pre-shave oils, steam, and cold towel finish.' },
-      { name: 'Facial & Skin Cleanup', description: 'Deep pore cleansing, exfoliation, face massage, and clarifying mask for healthy skin.' },
+      { name: 'Face Scrub', description: 'Exfoliating face scrub to remove dead skin cells and unclog pores.' },
+      { name: 'Deep Cleansing', description: 'Deep skin cleansing therapy for clear, oil-free, revitalized skin.' },
+      { name: 'Skin De-Tan', description: 'Targeted tan removal and skin lightening treatment.' },
+      { name: 'Face Steam', description: 'Soothing face steam treatment with warm towel pore relaxation.' },
+    ],
+    Treatments: [
+      { name: 'Blue Tox Treatment', description: 'Advanced Bluetox hair therapy for deep restructuring, frizz elimination, and intense shine.' },
+      { name: 'Nano Plastia Treatment', description: 'Nanoplastia organic smoothing and hair alignment therapy.' },
+      { name: 'Smoothing Treatment', description: 'Long-lasting hair smoothing and silk alignment.' },
+      { name: 'Keratin Treatment', description: 'Protein-infused Keratin therapy for smooth, frizz-free, manageable hair.' },
+      { name: 'Perming Treatment', description: 'Professional texturizing perm for long-lasting curls and volume.' },
     ],
     Waxing: [
       { name: 'Ear & Nose Waxing', description: 'Gentle, quick hair removal for ears and nostrils.' },
@@ -30,14 +37,21 @@ const SERVICES_CONFIG = {
   },
   Female: {
     Hair: [
-      { name: 'Hair Trim & Layering', description: 'Expert hair trim, split-end removal, and face-framing layer cuts.' },
-      { name: 'Restorative Hair Spa', description: 'Deep conditioning treatment, keratin rebuilding, scalp massage, and steam.' },
-      { name: 'Global Hair Colour', description: 'Ammonia-free global colour coverage for rich, radiant shine.' },
-      { name: 'Highlights & Balayage', description: 'Hand-crafted highlight streaks or soft gradient balayage.' },
+      { name: 'Hair Styling', description: 'Professional hair blowout, iron curls, or occasion styling.' },
+      { name: 'Hair Wash & Conditioning', description: 'Restorative scalp wash, deep conditioning massage, and hair dry.' },
+    ],
+    Treatments: [
+      { name: 'Blue Tox Treatment', description: 'Advanced Bluetox hair therapy for deep restructuring, frizz elimination, and intense shine.' },
+      { name: 'Nano Plastia Treatment', description: 'Nanoplastia organic smoothing and hair alignment therapy.' },
+      { name: 'Smoothing Treatment', description: 'Long-lasting hair smoothing and silk alignment.' },
+      { name: 'Keratin Treatment', description: 'Protein-infused Keratin therapy for smooth, frizz-free, manageable hair.' },
+      { name: 'Perming Treatment', description: 'Professional texturizing perm for long-lasting curls and volume.' },
     ],
     Skin: [
-      { name: 'Radiance Skin Facial', description: 'Custom herbal or gold facial therapy for deep cleansing and radiant glow.' },
-      { name: 'Skin De-Tan & Cleanup', description: 'Exfoliating scrub and tan-removal mask for refreshed skin.' },
+      { name: 'Face Scrub & Exfoliation', description: 'Gentle facial scrub to smooth texture and enhance skin glow.' },
+      { name: 'Deep Cleansing Facial', description: 'Custom deep cleansing therapy for radiant, hydrated skin.' },
+      { name: 'Skin De-Tan Pack', description: 'Specialized de-tan formula for sun tan removal and bright complexion.' },
+      { name: 'Face Steam Therapy', description: 'Herbal facial steam and essential oil misting.' },
     ],
     Waxing: [
       { name: 'Full Face Threading/Waxing', description: 'Soft, gentle hair removal for upper lip, chin, and sideburns.' },
@@ -91,7 +105,7 @@ const timeSlots = [
 export default function BookingFlow() {
   const [step, setStep] = useState(0);
   const [gender, setGender] = useState<'Male' | 'Female'>('Male');
-  const [serviceCategory, setServiceCategory] = useState<'Hair' | 'Skin' | 'Waxing'>('Hair');
+  const [serviceCategory, setServiceCategory] = useState<'Hair' | 'Skin' | 'Treatments' | 'Waxing'>('Hair');
   const [branchId] = useState('nashik-road');
   const [service, setService] = useState<string | null>(null);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -127,40 +141,6 @@ export default function BookingFlow() {
 
   const handleConfirm = async () => {
     setSubmitting(true);
-
-    const SUPABASE_URL = 'https://eggtejmtahbcbhokgyll.supabase.co';
-    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVnZ3Rlam10YWhiY2Job2tneWxsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQzODg0NzMsImV4cCI6MjA5OTk2NDQ3M30.7EEwWnfKqQ8wvr3Fe4kKh-4dFFg-wqT3xdHKSnS6TVI';
-
-    const fullServiceText = [
-      `${gender || ''} ${serviceCategory || ''}: ${service || ''}`.trim(),
-      selectedTime ? `Time: ${selectedTime}` : '',
-      details?.colourNumber ? `Shade: ${details.colourNumber}` : '',
-      details?.notes ? `Notes: ${details.notes}` : ''
-    ].filter(Boolean).join(' | ');
-
-    const customerDisplayName = details?.phone ? `${details.name || 'Guest'} (${details.phone})` : (details?.name || 'Guest Client');
-
-    try {
-      // Direct Supabase insert into queue table (triggers real-time arrival in concierge webapp)
-      await fetch(`${SUPABASE_URL}/rest/v1/queue`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': SUPABASE_ANON_KEY,
-          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-          'Prefer': 'return=minimal'
-        },
-        body: JSON.stringify([
-          {
-            customer_name: customerDisplayName,
-            service_type: fullServiceText || 'General Appointment',
-            status: 'waiting'
-          }
-        ])
-      });
-    } catch (err) {
-      console.warn('Direct Supabase insert notice:', err);
-    }
 
     try {
       await fetch('/api/book', {
@@ -200,7 +180,7 @@ export default function BookingFlow() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mx-auto max-w-lg rounded-2xl border border-[#DDD4C6] bg-white p-10 text-center shadow-card"
+        className="mx-auto max-w-lg rounded-2xl border border-[#DDD4C6] bg-white p-10 text-center shadow-card text-black"
       >
         <CheckCircle2 className="mx-auto text-[#A87444]" size={48} />
         <h2 className="mt-6 font-display text-3xl font-bold text-[#2B2B2B]">Appointment requested</h2>
@@ -221,7 +201,7 @@ export default function BookingFlow() {
   }
 
   return (
-    <div className="mx-auto max-w-2xl">
+    <div className="mx-auto max-w-2xl text-black">
       {/* Step indicator */}
       <div className="mb-10 flex items-center justify-between gap-1">
         {steps.map((s, i) => (
@@ -273,8 +253,8 @@ export default function BookingFlow() {
                 </div>
 
                 {/* Service Category selector */}
-                <div className="mt-4 flex gap-3">
-                  {(["Hair", "Skin", "Waxing"] as const).map((cat) => (
+                <div className="mt-4 flex flex-wrap gap-2 sm:gap-3">
+                  {(["Hair", "Skin", "Treatments", "Waxing"] as const).map((cat) => (
                     <button
                       key={cat}
                       type="button"
@@ -282,7 +262,7 @@ export default function BookingFlow() {
                         setServiceCategory(cat);
                         setService(null);
                       }}
-                      className={`flex-1 rounded-xl border py-3 text-center transition-all cursor-pointer font-bold ${
+                      className={`flex-1 min-w-[100px] rounded-xl border py-2.5 px-3 text-center transition-all cursor-pointer font-bold text-xs sm:text-sm ${
                         serviceCategory === cat ? 'border-[#A87444] bg-[#A87444] text-white shadow-subtle' : 'border-[#DDD4C6] bg-[#F8F6F2] text-[#2B2B2B] hover:border-[#A87444]'
                       }`}
                     >
@@ -293,7 +273,7 @@ export default function BookingFlow() {
 
                 <h3 className="mt-8 font-display text-lg font-bold text-[#2B2B2B] border-b border-[#DDD4C6] pb-2">Select a treatment</h3>
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  {SERVICES_CONFIG[gender][serviceCategory].map((s) => (
+                  {SERVICES_CONFIG[gender][serviceCategory]?.map((s) => (
                     <button
                       key={s.name}
                       type="button"

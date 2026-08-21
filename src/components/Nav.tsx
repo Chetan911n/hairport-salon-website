@@ -46,28 +46,16 @@ export default function Nav() {
           <motion.div
             animate={{ scale: isScrolled ? 0.9 : 1 }}
             transition={{ duration: 0.3 }}
-            className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-black border border-[#FACC15]/50 shadow-md group-hover:border-[#FACC15]"
+            className="flex items-center"
           >
             <Image
-              src="/images/pn_hairport_logo.jpg"
-              alt="PN HAIRPORT Monogram Logo"
-              width={44}
-              height={44}
-              className="object-cover object-center"
+              src="/images/pn_hairport_logo_light.png"
+              alt="PN HAIRPORT hair n beauty lounge"
+              width={220}
+              height={50}
+              className="h-10 sm:h-12 w-auto object-contain drop-shadow-md"
+              priority
             />
-          </motion.div>
-          
-          <motion.div
-            animate={{ scale: isScrolled ? 0.92 : 1 }}
-            transition={{ duration: 0.3 }}
-            className="flex flex-col origin-left"
-          >
-            <span className="font-display text-xl font-bold tracking-widest text-[#FACC15] drop-shadow-sm">
-              PN HAIRPORT
-            </span>
-            <span className="text-[9px] tracking-widest uppercase text-[#F8FAFC] font-semibold -mt-1">
-              UNISEX SALON &amp; BARBERSHOP — NASHIK ROAD
-            </span>
           </motion.div>
         </Link>
 

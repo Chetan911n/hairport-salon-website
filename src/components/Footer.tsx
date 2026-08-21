@@ -13,24 +13,14 @@ export default function Footer() {
           
           {/* Brand Info Column */}
           <div className="lg:col-span-5 bg-[#1E293B]/90 p-8 rounded-3xl border border-[#FACC15]/40 backdrop-blur-md">
-            <Link href="/" className="flex items-center gap-3.5 group">
-              <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-black border border-[#FACC15]/50 shadow-md group-hover:border-[#FACC15]">
-                <Image
-                  src="/images/pn_hairport_logo.jpg"
-                  alt="PN HAIRPORT Logo"
-                  width={48}
-                  height={48}
-                  className="object-cover object-center"
-                />
-              </div>
-              <div>
-                <span className="font-display text-2xl font-bold tracking-widest text-[#FACC15] block">
-                  PN HAIRPORT
-                </span>
-                <span className="block text-[10px] tracking-widest uppercase text-[#F8FAFC]">
-                  NASHIK ROAD • UNISEX SALON &amp; BARBERSHOP
-                </span>
-              </div>
+            <Link href="/" className="flex items-center gap-3.5 group mb-4">
+              <Image
+                src="/images/pn_hairport_logo_light.png"
+                alt="PN HAIRPORT hair n beauty lounge"
+                width={220}
+                height={55}
+                className="h-12 w-auto object-contain drop-shadow-md"
+              />
             </Link>
             <p className="mt-4 text-xs leading-relaxed text-[#F8FAFC] font-medium">
               Nashik Road’s premier master barber destination. Precision haircuts, skin fades, hot towel razor shaves, Bluetox, Nanoplastia, and hair spa rituals by Prashant Sir &amp; team.

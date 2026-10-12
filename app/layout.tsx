@@ -6,6 +6,10 @@ import Footer from '@/components/Footer';
 import SmoothScrollProvider from '@/components/SmoothScrollProvider';
 import ScrollProgress from '@/components/ScrollProgress';
 import PageLoader from '@/components/PageLoader';
+import SystemError from '@/components/SystemError';
+
+// Set to false to restore regular operations at any time
+const SYSTEM_MAINTENANCE_OVERRIDE = true;
 
 const inter = Inter({
   subsets: ['latin'],
@@ -27,6 +31,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  if (SYSTEM_MAINTENANCE_OVERRIDE) {
+    return (
+      <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+        <body className="bg-[#0B0F19] font-sans text-[#E2E8F0] antialiased">
+          <SystemError />
+        </body>
+      </html>
+    );
+  }
+
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
       <body className="bg-[#0C0C0C] font-sans text-[#F8FAFC] antialiased selection:bg-[#FACC15] selection:text-black">

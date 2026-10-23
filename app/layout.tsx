@@ -9,7 +9,7 @@ import PageLoader from '@/components/PageLoader';
 import SystemError from '@/components/SystemError';
 
 // Set to false to restore regular operations at any time
-const SYSTEM_MAINTENANCE_OVERRIDE = true;
+const SYSTEM_MAINTENANCE_OVERRIDE = false;
 
 const inter = Inter({
   subsets: ['latin'],
